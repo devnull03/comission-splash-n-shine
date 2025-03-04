@@ -1,9 +1,3 @@
-import { writable } from "svelte/store";
-
-export const quoteDialogOpen = writable(false);
-export const isMobile = writable(false);
-export const servicesPageNavigating = writable(false);
-
 export const services = [
 	'metalic-epoxy-floors',
 	'flake-epoxy-floors',

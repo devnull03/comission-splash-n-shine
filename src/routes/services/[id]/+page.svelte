@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
-	import { serviceData } from '$lib/utils/stores.svelte';
 	import * as Carousel from '$lib/components/ui/carousel';
 	import * as Card from '$lib/components/ui/card';
 	import * as Dialog from '$lib/components/ui/dialog';
@@ -11,6 +10,7 @@
 	import { slide } from 'svelte/transition';
 	import { ScrollArea } from '$lib/components/ui/scroll-area';
 	import Image from '$lib/components/Image.svelte';
+	import { serviceData } from '$lib/data/services';
 
 	let selectedServiceData = $derived(serviceData[$page.params.id]);
 
