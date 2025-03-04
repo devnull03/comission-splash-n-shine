@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { PUBLIC_COMPANY_NAME, PUBLIC_DOMAIN } from '$env/static/public';
-	import { quoteDialogOpen } from '$lib/stores.svelte';
+	import { quoteDialogOpen } from '$lib/utils/stores.svelte';
 	import Image from '$lib/components/Image.svelte';
 	import Logo from '$lib/icons/Logo.svelte';
 

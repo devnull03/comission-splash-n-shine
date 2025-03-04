@@ -3,14 +3,14 @@
 	import PhoneCall from '../icons/PhoneCall.svelte';
 	import { Button, buttonVariants } from '$lib/components/ui/button';
 	import { onMount } from 'svelte';
-	import { scrollThreshold } from '$lib/animations.store';
+	import { scrollThreshold } from '$lib/utils/animations.store';
 	import * as Dialog from '$lib/components/ui/dialog';
 	import { Slider } from './ui/slider';
 	import { Input } from './ui/input';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import Image from '$lib/components/Image.svelte';
-	import { isMobile, quoteDialogOpen, servicesPageNavigating } from '$lib/stores.svelte';
+	import { isMobile, quoteDialogOpen, servicesPageNavigating } from '$lib/utils/stores.svelte';
 	import { slide } from 'svelte/transition';
 	import { toast } from 'svelte-sonner';
 	import { PUBLIC_FORM_KEY } from '$env/static/public';

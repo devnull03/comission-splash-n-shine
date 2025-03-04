@@ -1,141 +1,63 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { gsap } from 'gsap';
 	import Button from '$lib/components/ui/button/button.svelte';
-	import { scrollThreshold } from '$lib/animations.store';
+	import { scrollThreshold } from '$lib/utils/animations.store';
 	import { ScrollArea } from '$lib/components/ui/scroll-area';
 	import * as Card from '$lib/components/ui/card';
 	import { fade } from 'svelte/transition';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
-	import { isMobile, services, servicesPageNavigating } from '$lib/stores.svelte';
+	import { isMobile, services, servicesPageNavigating } from '$lib/utils/stores.svelte';
 	import Image from '$lib/components/Image.svelte';
-	import { optimize } from '$lib/image';
 	import Logo from '$lib/icons/Logo.svelte';
+	import { whyPoints, knowMorePoints } from '$lib/data/landing';
+	import type { Review } from '$lib/types/reviews';
+	import type { PageData } from './$types';
+	
+	let { data }: {data: PageData} = $props();
+	
+	const reviews: Review[] = data?.reviews || [];
+	const rating: number = data?.rating || 0;
+	const userRatingCount: number = data?.userRatingCount || 0;
 
 	let initScroll = $state(0);
-	let tweenInstance: gsap.core.Tween;
 	let servicesSection: HTMLElement;
 
-	const handleScroll = () => {
-		if (initScroll < $scrollThreshold) {
-			tweenInstance.reverse();
-		} else {
-			tweenInstance.play();
-		}
-	};
-
-	const whyPoints = [
-		{
-			title: 'Certified Expertise by Industry Leaders',
-			desc: 'Our team is certified and trained by two renowned companies, Leggari (U.S.) and Chromology (Toronto), ensuring the highest standards of epoxy craftsmanship.'
-		},
-		{
-			title: 'Unmatched Quality & Craftsmanship',
-			desc: 'We use top-grade materials and meticulous techniques to ensure your floors are as durable as they are beautiful.'
-		},
-		{
-			title: 'Custom Design And Color',
-			desc: 'Every project is unique, tailored to meet your vision. From metallic epoxy finishes to textured coatings, our range of premium options brings style and character to your space.'
-		},
-		{
-			title: '25-Year Warranty',
-			desc: 'We stand by the longevity and durability of our floors, offering a 25-year warranty for complete peace of mind. With Luxury Floors, you’re investing in quality that lasts.'
-		},
-		{
-			title: 'Portfolio of Proven Results',
-			desc: 'With an impressive portfolio that showcases our best work, you can see firsthand how Luxury Floors transforms spaces throughout Vancouver. Browse our gallery to discover the possibilities for your next project.'
-		}
-	];
-
-	const knowMorePoints = [
-		{
-			title: 'Metallic Epoxy Flooring',
-			desc: 'A Durable, High-Gloss Flooring Solution with Unique Swirl Effects'
-		},
-		{
-			title: 'Flake Epoxy Flooring',
-			desc: 'A Slip-Resistant, Textured Flooring with Customizable Colors and Patterns'
-		},
-		{
-			title: 'Epoxy Countertops',
-			desc: 'A Seamless, High-Gloss Surface with Exceptional Durability and Style'
-		},
-		{
-			title: 'Texture Deck',
-			desc: 'Enhance Your Deck with a Slip-Resistant, Durable, and Stylish Finish'
-		},
-		// {
-		// 	title: 'Concrete repair',
-		// 	desc: 'Restore and Strengthen Your Surfaces with Lasting Solutions'
-		// },
-		// {
-		// 	title: 'Asphalt repair',
-		// 	desc: 'Revitalize and Protect Your Pavement with Durable Restoration Solutions'
-		// },
-		{
-			title: 'Concrete Walls',
-			desc: 'Enhance Your Deck with a Slip-Resistant, Durable, and Stylish Finish'
-		}
-	];
-
-	const testimonials = [
-		{
-			author: 'Sarah L.',
-			testimonial:
-				"I couldn't be happier with my new metallic epoxy floor! Luxury Floors transformed my basement into a stunning space that looks like a high-end showroom. The team was professional, detail-oriented, and delivered exactly what they promised. Highly recommend them for anyone looking for premium flooring solutions."
-		},
-		{
-			author: 'David R.',
-			testimonial:
-				'We hired Luxury Floors to upgrade our retail store, and the results were beyond our expectations. The flake epoxy floor not only looks fantastic but is also incredibly durable and easy to clean. Our customers constantly compliment the sleek and modern design.'
-		},
-		{
-			author: 'Jessica R.',
-			testimonial:
-				"Luxury Floors lives up to its name! Their custom metallic floor has completely transformed the look of our home's entryway. The installation process was smooth, and the team was very knowledgeable, answering all our questions. A five-star experience."
-		},
-		{
-			author: 'James P.',
-			testimonial:
-				"Our garage floor was in bad shape, and we needed something durable yet attractive. Luxury Floors installed a flake epoxy floor that's both tough and beautiful. It's perfect for heavy use and adds so much value to our property. Thank you for the amazing work."
-		},
-		{
-			author: 'Andrew S.',
-			testimonial: 'Top-notch service and quality. My floors look amazing!'
-		},
-		{
-			author: 'Amrit B.',
-			testimonial:
-				"Luxury Floors exceeded our expectations with their exceptional craftsmanship and attention to detail. The custom metallic epoxy floor they installed in our living room is a true work of art. It's durable, easy to maintain, and adds a unique touch of elegance to our home. We've already recommended them to friends and family."
-		}
-	];
+	// let tweenInstance: gsap.core.Tween;
+	// const handleScroll = () => {
+	// 	if (initScroll < $scrollThreshold) {
+	// 		tweenInstance.reverse();
+	// 	} else {
+	// 		tweenInstance.play();
+	// 	}
+	// };
 
 	onMount(() => {
-		tweenInstance = gsap.to('#logo', {
-			duration: 0.3,
+		// tweenInstance = gsap.to('#logo', {
+		// 	duration: 0.3,
 
-			width: '4rem',
-			height: '4rem',
-			top: '1rem',
-			left: '6%',
-			zIndex: 50,
+		// 	width: '4rem',
+		// 	height: '4rem',
+		// 	top: '1rem',
+		// 	left: '6%',
+		// 	zIndex: 50,
 
-			filter: 'invert(1)',
-			webkitFilter: 'invert(1)',
+		// 	filter: 'invert(1)',
+		// 	webkitFilter: 'invert(1)',
 
-			ease: 'power2.inOut',
-			paused: initScroll < $scrollThreshold
-		});
+		// 	ease: 'power2.inOut',
+		// 	paused: initScroll < $scrollThreshold
+		// });
+
 		if ($page.url.toString().includes('services')) {
 			servicesSection.scrollIntoView({ behavior: 'smooth' });
-			handleScroll();
+			// handleScroll();
 		}
 	});
 
 	$effect(() => {
 		if ($servicesPageNavigating || $page.url.toString().includes('services')) {
-			handleScroll();
+			// handleScroll();
 			$servicesPageNavigating = false;
 			console.log('services page navigating');
 			
@@ -143,7 +65,7 @@
 	});
 </script>
 
-<svelte:window onscroll={handleScroll} bind:scrollY={initScroll} />
+<svelte:window bind:scrollY={initScroll} /> <!-- onscroll={handleScroll} -->
 
 <main class="flex w-screen flex-col items-center gap-16 pb-48 lg:gap-8">
 	<div id="logo" class="fixed top-[12vh] z-10 aspect-square h-[50vh] w-[50vh]">
@@ -152,7 +74,7 @@
 
 	<!-- landing screen -->
 	<section class="relative flex h-[80vh] w-full flex-row justify-evenly gap-0">
-		{#each Array(4) as _, i}
+		<!-- {#each Array(4) as _, i}
 			<Image
 				url={`/assets/landing/floor${i + 1}.png`}
 				description=""
@@ -161,7 +83,7 @@
 				quality={i === 3 ? 50 : 80}
 				fetchpriority="high"
 			/>
-		{/each}
+		{/each} -->
 
 		{#if initScroll > $scrollThreshold}
 			<div
@@ -259,26 +181,53 @@
 	<section class="flex w-full flex-col gap-12 pb-16 text-center lg:gap-16">
 		<h1 class="text-center text-4xl font-semibold leading-10">Testimonials</h1>
 
-		<ScrollArea orientation="horizontal" class="w-full">
-			<div class="flex flex-row gap-8 px-[30vw] pb-4">
-				{#each testimonials as item, idx (idx)}
-					<Card.Root class="min-h-[65vh] w-[80vw] bg-black lg:w-[30vw]">
-						<Card.Header>
-							<Image url="/assets/quote.png" description="" class="aspect-square w-16" />
-						</Card.Header>
-						<Card.Content>
-							<!-- <ScrollArea> -->
-							<div class="text-left font-semibold text-[#FFFFFFCC] lg:text-xl">
-								{item.testimonial}
-								<br />
-								<span class="text-[#C7A865]">{item.author}</span>
-							</div>
-							<!-- </ScrollArea> -->
-						</Card.Content>
-					</Card.Root>
-				{/each}
+		{#if reviews.length > 0}
+			<div class="flex flex-col items-center mb-4">
+				<div class="text-2xl font-bold">{rating.toFixed(1)} ★</div>
+				<div class="text-sm text-gray-600">Based on {userRatingCount} reviews</div>
 			</div>
-		</ScrollArea>
+			
+			<ScrollArea orientation="horizontal" class="w-full">
+				<div class="flex flex-row gap-8 px-[30vw] pb-4">
+					{#each reviews as review, idx (review.name)}
+						<Card.Root class="min-h-[65vh] w-[80vw] bg-black lg:w-[30vw]">
+							<Card.Header class="flex flex-row items-center gap-3">
+								<div class="flex-shrink-0">
+									{#if review.authorAttribution.photoUri}
+										<img 
+											src={review.authorAttribution.photoUri} 
+											alt={review.authorAttribution.displayName}
+											class="rounded-full w-12 h-12"
+										/>
+									{:else}
+										<div class="rounded-full w-12 h-12 bg-gray-400 flex items-center justify-center text-white">
+											{review.authorAttribution.displayName.charAt(0)}
+										</div>
+									{/if}
+								</div>
+								<div class="flex flex-col text-left text-white">
+									<div class="font-semibold">{review.authorAttribution.displayName}</div>
+									<div class="text-xs opacity-75">{review.relativePublishTimeDescription}</div>
+									<div class="text-yellow-400 mt-1">{'★'.repeat(review.rating)}<span class="text-gray-600">{'★'.repeat(5 - review.rating)}</span></div>
+								</div>
+							</Card.Header>
+							<Card.Content>
+								<div class="text-left font-medium text-[#FFFFFFCC] lg:text-xl">
+									{review.text.text}
+								</div>
+							</Card.Content>
+							<Card.Footer class="text-right">
+								<a href={review.googleMapsUri} target="_blank" rel="noopener noreferrer" class="text-sm text-blue-400 hover:underline">
+									View on Google Maps
+								</a>
+							</Card.Footer>
+						</Card.Root>
+					{/each}
+				</div>
+			</ScrollArea>
+		{:else}
+			<p class="text-center text-gray-500">No reviews available at this time.</p>
+		{/if}
 	</section>
 </main>
 

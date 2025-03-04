@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { optimize } from '$lib/image';
+	import { optimize } from '$lib/utils/image';
 
 	interface Props {
 		url: string;

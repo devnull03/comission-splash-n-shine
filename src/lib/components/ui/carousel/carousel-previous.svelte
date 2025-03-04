@@ -2,7 +2,7 @@
 	import ArrowLeft from "svelte-radix/ArrowLeft.svelte";
 	import type { VariantProps } from "tailwind-variants";
 	import { getEmblaContext } from "./context.js";
-	import { cn } from "$lib/utils.js";
+	import { cn } from "$lib/utils/utils";
 	import {
 		Button,
 		type Props,
