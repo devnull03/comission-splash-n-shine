@@ -16,84 +16,133 @@
 	</section>
 
 	<section class="p-10 font-[Cantarell] leading-10 lg:p-28">
-		<h3>Warranty Coverage</h3>
-		This warranty covers the following:
+		<p class="mb-6">
+			Welcome to Splash N Shine! By accessing or using our services, you agree to abide by the following
+			Terms and Conditions. Please read them carefully before proceeding.
+		</p>
+
+		<h3>1. Service Agreement</h3>
 		<ol>
 			<li>
-				Delamination: Separation or lifting of the epoxy coating due to application errors or
-				material defects.
+				By booking our services, you enter into a binding agreement with Splash N Shine. All services
+				will be rendered as per the details confirmed during the booking process.
 			</li>
 			<li>
-				Peeling and Cracking: Issues caused by normal wear and tear under standard usage conditions.
-			</li>
-			<li>
-				UV Resistance: Fading or discoloration caused by UV exposure, applicable only to UV-stable
-				coatings.
+				We reserve the right to modify or refuse services based on safety, accessibility, or weather
+				conditions.
 			</li>
 		</ol>
 		<br />
 
-		<h3>Exclusions from Warranty</h3>
-		This warranty does not cover:
+		<h3>2. Booking and Deposits</h3>
 		<ol>
+			<li>To secure your appointment, a $50 non-refundable deposit is required at the time of booking.</li>
+			<li>The deposit will be applied toward the total cost of your service.</li>
 			<li>
-				Improper Maintenance: Damage resulting from neglect, misuse, or failure to follow
-				maintenance guidelines.
-			</li>
-			<li>
-				Substrate Movement: Cracks or damage caused by structural movement, settling, or shifting of
-				the underlying surface.
-			</li>
-			<li>
-				Moisture Issues: Damage caused by excessive moisture, leaks, or water seepage from the
-				substrate.
-			</li>
-			<li>
-				Chemical Exposure: Damage caused by exposure to harsh chemicals, acids, or solvents not
-				approved for use on epoxy surfaces.
-			</li>
-			<li>
-				Third-Party Repairs or Modifications: Any issues arising from repairs or alterations made by
-				non-approved contractors.
-			</li>
-			<li>
-				Heavy Impact Damage: Chips, dents, or cracks caused by dropping heavy objects or extreme
-				impacts.
-			</li>
-			<li>
-				Natural Wear: Minor scratches, scuffs, or surface wear that do not affect the floor's
-				performance.
+				Rescheduling is permitted up to 48 hours before your appointment. Cancellations or reschedules
+				within 48 hours of the appointment will result in the forfeiture of the deposit.
 			</li>
 		</ol>
 		<br />
 
-		<h3>Warranty Conditions</h3>
-		To maintain warranty validity, the following conditions must be met:
+		<h3>3. Pricing and Payment</h3>
 		<ol>
-			<li>The flooring must be installed by Luxury Floors or its authorized contractors.</li>
-			<li>The customer must follow all provided maintenance and cleaning instructions.</li>
-			<li>The warranty is non-transferable and applies only to the original purchaser.</li>
 			<li>
-				The warranty claim must be submitted with proof of purchase and detailed photographs of the
-				damage.
+				All pricing is provided based on the information shared by the client, including total house
+				square footage, roof dimensions, and specific service requirements.
+			</li>
+			<li>
+				Final pricing may vary if the information provided is inaccurate or if additional services are
+				requested on-site.
+			</li>
+			<li>
+				Full payment is due upon completion of the service unless otherwise agreed upon in writing.
+			</li>
+			<li>Accepted payment methods include cash, credit/debit cards, or electronic transfers.</li>
+		</ol>
+		<br />
+
+		<h3>4. Client Responsibilities</h3>
+		<ol>
+			<li>
+				Clients must provide accurate information regarding their property dimensions and requirements.
+			</li>
+			<li>
+				Clients are responsible for ensuring access to the property, including unlocking gates and removing
+				obstacles that could hinder service.
+			</li>
+			<li>
+				Splash N Shine is not liable for damage caused by pre-existing conditions, including loose fixtures,
+				fragile materials, or deteriorating surfaces.
 			</li>
 		</ol>
 		<br />
-		<h3>Warranty Claims</h3>
-		To file a warranty claim:
+
+		<h3>5. Liability and Warranty</h3>
 		<ol>
 			<li>
-				Contact us at info@luxuryfloors.ca or call [Insert Phone Number]. <!-- TODO: Add contact information -->
+				Splash N Shine will not be held responsible for damages caused by inaccurate information provided
+				by the client or pre-existing structural issues.
 			</li>
-			<li>Provide proof of purchase, the installation date, and details of the issue.</li>
 			<li>
-				Our team will inspect the floor and determine if the damage qualifies for warranty coverage.
+				While we strive for exceptional service, minor aesthetic imperfections may occur and are not grounds
+				for claims.
+			</li>
+			<li>
+				In the rare case of damage caused directly by our team, please notify us within 24 hours for resolution.
 			</li>
 		</ol>
-		If the claim is approved, Luxury Floors will repair or replace the affected area at no additional
-		cost to the customer. Limitations of Liability<br />
-		This warranty is limited to the repair or replacement of the epoxy flooring and does not cover consequential
-		or incidental damages, including loss of use or income.
+		<br />
+
+		<h3>6. Weather Policy</h3>
+		<ol>
+			<li>
+				Weather conditions may impact our ability to perform services safely and effectively.
+			</li>
+			<li>
+				In the event of inclement weather, appointments may be rescheduled at no additional cost to the
+				client.
+			</li>
+		</ol>
+		<br />
+
+		<h3>7. Privacy Policy</h3>
+		<ol>
+			<li>We respect your privacy and are committed to protecting your personal information.</li>
+			<li>
+				Client information will only be used for service-related purposes and will not be shared with
+				third parties without consent.
+			</li>
+		</ol>
+		<br />
+
+		<h3>8. Cancellation Policy</h3>
+		<ol>
+			<li>Clients must notify us at least 48 hours in advance for cancellations or rescheduling.</li>
+			<li>Failure to provide adequate notice will result in the forfeiture of the deposit.</li>
+			<li>
+				In the rare case of a cancellation initiated by Splash N Shine, clients will receive a full refund
+				of the deposit.
+			</li>
+		</ol>
+		<br />
+
+		<h3>9. Indemnification</h3>
+		<ol>
+			<li>
+				Clients agree to indemnify and hold Splash N Shine harmless from any claims, damages, or expenses
+				arising from the use of our services, except in cases of proven negligence by our team.
+			</li>
+		</ol>
+		<br />
+
+		<h3>10. Governing Law</h3>
+		<ol>
+			<li>
+				These Terms and Conditions are governed by the laws of British Columbia, and any disputes will be
+				resolved in accordance with local jurisdiction.
+			</li>
+		</ol>
 	</section>
 </main>
 
