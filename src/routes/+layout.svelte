@@ -77,13 +77,13 @@
 {#if scrollY !== 0}
 	<button
 		transition:fade
-		class="group fixed bottom-6 right-6 z-[999] rounded-full bg-[#C7A865] object-cover p-4 shadow-lg transition-all duration-500 hover:-translate-y-1"
+		class="group fixed bottom-6 right-6 z-[999] rounded-full bg-primary/90 object-cover p-4 shadow-lg transition-all duration-500 hover:-translate-y-1"
 		aria-label="Scroll to top"
 		onclick={() => {
 			window.scrollTo({ top: 0, behavior: 'smooth' });
 		}}
 	>
-		<CaretUp color="white" class="scale-125 transition-all duration-500 group-hover:scale-110" />
+		<CaretUp class="scale-125 transition-all duration-500 group-hover:scale-110 text-foreground" />
 	</button>
 {/if}
 

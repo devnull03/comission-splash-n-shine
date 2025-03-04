@@ -23,7 +23,7 @@ export const whyPoints = [
 
 export const knowMorePoints = [
 	{
-		title: 'Metallic Epoxy Flooring',
+		title: 'Metallic Epoxy ',
 		desc: 'A Durable, High-Gloss Flooring Solution with Unique Swirl Effects'
 	},
 	{

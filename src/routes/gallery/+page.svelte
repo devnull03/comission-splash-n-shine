@@ -4,7 +4,7 @@
 	import * as Dialog from '$lib/components/ui/dialog';
 	import { ScrollArea } from '$lib/components/ui/scroll-area';
 	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
-	import { services } from '$lib/utils/stores.svelte';
+	import { services } from '$lib/utils/stores';
 	import Image from '$lib/components/Image.svelte';
 
 	let dialogOpen = $state(false);

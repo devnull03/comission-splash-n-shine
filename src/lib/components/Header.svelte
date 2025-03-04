@@ -10,10 +10,10 @@
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import Image from '$lib/components/Image.svelte';
-	import { isMobile, quoteDialogOpen, servicesPageNavigating } from '$lib/utils/stores.svelte';
+	import { isMobile, quoteDialogOpen, servicesPageNavigating } from '$lib/utils/stores';
 	import { slide } from 'svelte/transition';
 	import { toast } from 'svelte-sonner';
-	import { PUBLIC_FORM_KEY } from '$env/static/public';
+	import { PUBLIC_COMPANY_NAME, PUBLIC_FORM_KEY } from '$env/static/public';
 	import { Cross2, HamburgerMenu } from 'svelte-radix';
 	import Logo from '$lib/icons/Logo.svelte';
 
@@ -47,17 +47,18 @@
 <svelte:window bind:scrollY={initScroll} />
 
 <nav class="realtive">
-	{#if !isLandingPage}
-		<div class="fixed left-[6%] top-4 z-[55] aspect-square h-16 w-16 invert">
-			<Logo class="h-full w-full" />
-		</div>
-	{/if}
+	<!-- {#if !isLandingPage} -->
+	<div class="fixed left-[6%] top-2 z-[55] aspect-square h-16 w-16">
+		<!-- <Logo class="h-full w-full" /> -->
+		 <Image url="/assets/logo.png" description="company logo header" />
+	</div>
+	<!-- {/if} -->
 
 	<div
-		class="fixed top-0 z-50 flex h-24 w-full flex-row justify-between border-b px-[6%] {initScroll <
+		class="fixed top-0 z-50 flex h-20 w-full flex-row justify-between border-b px-[6%] {initScroll <
 			$scrollThreshold && isLandingPage
 			? 'border-transparent bg-transparent'
-			: 'bg-white'} border-black transition-all duration-500 ease-in-out"
+			: ' bg-secondary'} border-black transition-all duration-500 ease-in-out"
 	>
 		<button
 			class="flex items-center pl-20 font-[Cantarell] text-xl lg:text-2xl {initScroll <
@@ -68,7 +69,7 @@
 			onclick={() => goto('/')}
 			aria-label="Go to home page"
 		>
-			Luxry Floors
+			{PUBLIC_COMPANY_NAME}
 		</button>
 
 		<button
@@ -97,7 +98,11 @@
 					onclick={() => ($servicesPageNavigating = true)}
 					class="{colorState ? 'text-white' : 'text-black'} font-semibold">Services</a
 				>
-
+				<a
+					href="/locations"
+					onclick={() => ($servicesPageNavigating = true)}
+					class="{colorState ? 'text-white' : 'text-black'} font-semibold">Location</a
+				>
 				<a
 					href="https://www.instagram.com/luxuryfloors.ca/"
 					aria-label="Go to instagram page"

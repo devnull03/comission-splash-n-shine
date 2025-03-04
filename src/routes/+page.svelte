@@ -7,15 +7,17 @@
 	import { fade } from 'svelte/transition';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
-	import { isMobile, services, servicesPageNavigating } from '$lib/utils/stores.svelte';
+	import { isMobile, servicesPageNavigating } from '$lib/utils/stores';
 	import Image from '$lib/components/Image.svelte';
-	import Logo from '$lib/icons/Logo.svelte';
 	import { whyPoints, knowMorePoints } from '$lib/data/landing';
+	import { services } from '$lib/data/services';
 	import type { Review } from '$lib/types/reviews';
 	import type { PageData } from './$types';
-	
-	let { data }: {data: PageData} = $props();
-	
+	import { PUBLIC_COMPANY_NAME } from '$env/static/public';
+	import { CaretDown, DoubleArrowDown } from 'svelte-radix';
+
+	let { data }: { data: PageData } = $props();
+
 	const reviews: Review[] = data?.reviews || [];
 	const rating: number = data?.rating || 0;
 	const userRatingCount: number = data?.userRatingCount || 0;
@@ -60,48 +62,44 @@
 			// handleScroll();
 			$servicesPageNavigating = false;
 			console.log('services page navigating');
-			
 		}
 	});
 </script>
 
-<svelte:window bind:scrollY={initScroll} /> <!-- onscroll={handleScroll} -->
+<svelte:window bind:scrollY={initScroll} />
 
 <main class="flex w-screen flex-col items-center gap-16 pb-48 lg:gap-8">
-	<div id="logo" class="fixed top-[12vh] z-10 aspect-square h-[50vh] w-[50vh]">
-		<Logo class="h-full w-full" width="50vh" height="50vh" />
-	</div>
-
-	<!-- landing screen -->
-	<section class="relative flex h-[80vh] w-full flex-row justify-evenly gap-0">
-		<!-- {#each Array(4) as _, i}
-			<Image
-				url={`/assets/landing/floor${i + 1}.png`}
-				description=""
-				class="h-[80vh] w-1/4 object-cover object-left"
-				size={[480]}
-				quality={i === 3 ? 50 : 80}
-				fetchpriority="high"
-			/>
-		{/each} -->
-
-		{#if initScroll > $scrollThreshold}
-			<div
-				transition:fade={{ duration: 300 }}
-				class="absolute left-1/2 top-1/2 flex w-full -translate-x-1/2 -translate-y-1/2 transform flex-col items-center"
-			>
-				<h1 class="text-shadow text-center text-[10vw] font-semibold text-white">Luxury Floors</h1>
-				<p class="text-center font-[Cantarell] text-2xl text-white">
-					Premium, seamless, and durable floors for modern homes and commercial spaces.
-				</p>
-			</div>
-		{/if}
+	<section class="relative flex h-[85vh] w-full flex-row justify-evenly gap-0 text-background">
+		<Image
+			url="/assets/landing-hero.webp"
+			description="landing hero banner"
+			class="w-full object-cover"
+			fetchpriority="high"
+		/>
+		<div class="absolute h-full w-full bg-black/30">&nbsp;</div>
+		<div
+			class="absolute left-1/2 top-1/2 flex w-full -translate-x-1/2 -translate-y-1/2 transform flex-col items-center"
+		>
+			<h1 class="text-shadow text-center text-[10vw] font-semibold">
+				{PUBLIC_COMPANY_NAME}
+			</h1>
+			<p class="bg-primary/30 text-center font-[Cantarell] text-2xl font-semibold">
+				Professional Residential & Commercial Exterior Cleaning Near You
+			</p>
+			<p class="max-w-[80vw] text-center font-[Cantarell] text-2xl">
+				Expert Soft Wash & Pressure Washing in Vancouver & Surrey! We clean roofs, gutters, siding,
+				windows & driveways
+			</p>
+		</div>
 		<Button
 			onclick={() => goto('/gallery')}
-			variant="outline"
 			aria-label="View portfolio"
-			class="absolute bottom-[15%] mt-8 uppercase ">Portfolio</Button
+			class="absolute bottom-[20%] uppercase">Portfolio</Button
 		>
+		<button onclick={() => {}} class="absolute bottom-10 flex flex-col items-center text-white">
+			<span class="">Scroll Down</span>
+			<CaretDown class="h-6 w-6 animate-bounce" />
+		</button>
 	</section>
 
 	<!-- know more why -->
@@ -111,13 +109,13 @@
 		<div class="grid w-full grid-flow-row-dense grid-cols-6 grid-rows-3 gap-10">
 			<div class="col-span-6 flex w-full items-center justify-center">
 				<div class="overflow-hidden rounded-3xl lg:w-1/2">
-					<Image
+					<!-- <Image
 						url="/assets/landing/tiles.jpeg"
 						description=""
 						class="aspect-video h-auto w-full object-cover transition-all duration-500 ease-in-out hover:scale-110"
 						size={[640]}
 						quality={70}
-					/>
+					/> -->
 				</div>
 			</div>
 
@@ -155,14 +153,14 @@
 						class="aspect-square overflow-hidden rounded-3xl object-cover"
 						aria-label={`Learn more about ${point.title}`}
 					>
-						<Image
+						<!-- <Image
 							url={`/assets/landing/more${i + 1}.jpeg`}
 							description=""
 							class="aspect-square h-auto w-full object-cover transition-all duration-500 ease-in-out hover:scale-110"
 							size={[480]}
 							width="480"
 							quality={50}
-						/>
+						/> -->
 					</button>
 
 					<span class="font-[Alatsi] text-xl"> {point.title}</span>
@@ -182,25 +180,27 @@
 		<h1 class="text-center text-4xl font-semibold leading-10">Testimonials</h1>
 
 		{#if reviews.length > 0}
-			<div class="flex flex-col items-center mb-4">
+			<div class="mb-4 flex flex-col items-center">
 				<div class="text-2xl font-bold">{rating.toFixed(1)} ★</div>
 				<div class="text-sm text-gray-600">Based on {userRatingCount} reviews</div>
 			</div>
-			
+
 			<ScrollArea orientation="horizontal" class="w-full">
 				<div class="flex flex-row gap-8 px-[30vw] pb-4">
 					{#each reviews as review, idx (review.name)}
-						<Card.Root class="min-h-[65vh] w-[80vw] bg-black lg:w-[30vw]">
+						<Card.Root class="min-h-[65vh] w-[80vw] bg-foreground md:w-[50vw] lg:w-[30vw] rounded-sm">
 							<Card.Header class="flex flex-row items-center gap-3">
 								<div class="flex-shrink-0">
 									{#if review.authorAttribution.photoUri}
-										<img 
-											src={review.authorAttribution.photoUri} 
+										<img
+											src={review.authorAttribution.photoUri}
 											alt={review.authorAttribution.displayName}
-											class="rounded-full w-12 h-12"
+											class="h-12 w-12 rounded-full"
 										/>
 									{:else}
-										<div class="rounded-full w-12 h-12 bg-gray-400 flex items-center justify-center text-white">
+										<div
+											class="flex h-12 w-12 items-center justify-center rounded-full bg-gray-400 text-white"
+										>
 											{review.authorAttribution.displayName.charAt(0)}
 										</div>
 									{/if}
@@ -208,7 +208,11 @@
 								<div class="flex flex-col text-left text-white">
 									<div class="font-semibold">{review.authorAttribution.displayName}</div>
 									<div class="text-xs opacity-75">{review.relativePublishTimeDescription}</div>
-									<div class="text-yellow-400 mt-1">{'★'.repeat(review.rating)}<span class="text-gray-600">{'★'.repeat(5 - review.rating)}</span></div>
+									<div class="mt-1 text-yellow-400">
+										{'★'.repeat(review.rating)}<span class="text-gray-600"
+											>{'★'.repeat(5 - review.rating)}</span
+										>
+									</div>
 								</div>
 							</Card.Header>
 							<Card.Content>
@@ -217,7 +221,12 @@
 								</div>
 							</Card.Content>
 							<Card.Footer class="text-right">
-								<a href={review.googleMapsUri} target="_blank" rel="noopener noreferrer" class="text-sm text-blue-400 hover:underline">
+								<a
+									href={review.googleMapsUri}
+									target="_blank"
+									rel="noopener noreferrer"
+									class="text-sm text-blue-400 hover:underline"
+								>
 									View on Google Maps
 								</a>
 							</Card.Footer>
