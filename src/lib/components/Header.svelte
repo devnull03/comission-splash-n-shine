@@ -15,7 +15,6 @@
 	import { toast } from 'svelte-sonner';
 	import { PUBLIC_COMPANY_NAME, PUBLIC_FORM_KEY } from '$env/static/public';
 	import { Cross2, HamburgerMenu } from 'svelte-radix';
-	import Logo from '$lib/icons/Logo.svelte';
 
 	let initScroll = $state(0);
 	let isLandingPage = $derived($page.route.id === '/');

@@ -1,13 +1,19 @@
 <script lang="ts">
 	import Image from '$lib/components/Image.svelte';
-	import Logo from '$lib/icons/Logo.svelte';
 </script>
 
 <main class="mt-24 lg:mt-16">
 	<!-- landing -->
 	<section class="flex flex-col items-center justify-center gap-16 bg-black py-28 lg:flex-row">
 		<div class="foot-logo aspect-square h-[25vh]">
-			<Logo class="h-auto w-full" />
+			<Image
+				url="/assets/logo.png"
+				description="Luxury Floors Logo"
+				class="h-auto w-full"
+				size={[480]}
+				width="480"
+				quality={50}
+			/>
 		</div>
 
 		<div class="text-center text-3xl font-semibold text-white lg:text-4xl">Privacy Policy</div>
@@ -85,9 +91,19 @@
 		<h3>9. Contact Us</h3>
 		<p class="mb-4">For questions or concerns about this Privacy Policy, please contact us at:</p>
 		<p class="mb-2">Splash N Shine</p>
-		<p class="mb-2">📞 Phone: <a href="tel:7788045911" class="underline hover:text-blue-600">778-804-5911</a></p>
-		<p class="mb-2">📧 Email: <a href="mailto:info@splashnshine.ca" class="underline hover:text-blue-600">info@splashnshine.ca</a></p>
-		<p class="mb-6">🌐 Website: <a href="https://www.splashnshine.ca" class="underline hover:text-blue-600">www.splashnshine.ca</a></p>
+		<p class="mb-2">
+			📞 Phone: <a href="tel:7788045911" class="underline hover:text-blue-600">778-804-5911</a>
+		</p>
+		<p class="mb-2">
+			📧 Email: <a href="mailto:info@splashnshine.ca" class="underline hover:text-blue-600"
+				>info@splashnshine.ca</a
+			>
+		</p>
+		<p class="mb-6">
+			🌐 Website: <a href="https://www.splashnshine.ca" class="underline hover:text-blue-600"
+				>www.splashnshine.ca</a
+			>
+		</p>
 
 		<p class="font-bold">By using our services, you agree to this Privacy Policy.</p>
 	</section>

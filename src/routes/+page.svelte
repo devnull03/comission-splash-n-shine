@@ -64,8 +64,8 @@
 		</div>
 		<Button
 			onclick={() => goto('/locations')}
-			aria-label="View portfolio"
-			class="absolute bottom-[20%] uppercase">Locations</Button
+			aria-label="Get free quote"
+			class="absolute bottom-[20%] uppercase">Get Free Quote</Button
 		>
 		<button onclick={() => {}} class="absolute bottom-10 flex flex-col items-center text-white">
 			<span class="">Scroll Down</span>
@@ -92,21 +92,22 @@
 		<h1 class="text-center text-4xl font-semibold leading-10">Services</h1>
 
 		<div class="grid w-full gap-10 lg:grid-cols-3">
-			{#each Object.values(serviceData) as service, i}
+			{#each Object.keys(serviceData) as serviceKey, i}
+				{@const service = serviceData[serviceKey]}
 				<div class="flex flex-col items-center gap-4 text-center">
 					<button
-						onclick={() => goto(`/services/${services[i]}`)}
+						onclick={() => goto(`/services/${serviceKey}`)}
 						class="aspect-square overflow-hidden rounded-3xl object-cover"
 						aria-label={`Learn more about ${service.title}`}
 					>
-						<!-- <Image
-							url={`/assets/landing/more${i + 1}.jpeg`}
+						<Image
+							url={`/assets/services/${serviceKey}/1.webp`}
 							description=""
 							class="aspect-square h-auto w-full object-cover transition-all duration-500 ease-in-out hover:scale-110"
 							size={[480]}
 							width="480"
 							quality={50}
-						/> -->
+						/>
 					</button>
 
 					<span class="font-[Alatsi] text-xl"> {service.title}</span>
