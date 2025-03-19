@@ -3,7 +3,7 @@
 	import { page } from '$app/stores';
 	import { Button } from '$lib/components/ui/button';
 	import * as Accordion from '$lib/components/ui/accordion';
-	import { locationsData } from '$lib/data/locations';
+	import { contactInfo, locationsData } from '$lib/data/locations';
 	import { serviceData } from '$lib/data/services';
 	import { ChevronRight, DrawingPin, Mobile, EnvelopeClosed, Clock } from 'svelte-radix';
 
@@ -28,10 +28,10 @@
 
 			<div class="mb-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
 				<Button
-					href="tel:{selectedLocation.phone.replace(/[^\d+]/g, '')}"
+					href="tel:{contactInfo.phone.replace(/[^\d+]/g, '')}"
 					class="flex items-center gap-2 bg-primary hover:bg-primary/90"
 				>
-					<Mobile size="18" /> Call Now: {selectedLocation.phone}
+					<Mobile size="18" /> Call Now: {contactInfo.phone}
 				</Button>
 				<Button href="#contact" variant="outline" class="flex items-center gap-2">
 					Contact Us <ChevronRight size="18" />
@@ -81,20 +81,12 @@
 			<h2 class="mb-6 text-3xl font-bold">Contact Information</h2>
 			<div class="space-y-4">
 				<div class="flex items-start gap-3">
-					<DrawingPin class="mt-1" />
-					<div>
-						<h3 class="font-semibold">Address</h3>
-						<p>{selectedLocation.address}</p>
-					</div>
-				</div>
-
-				<div class="flex items-start gap-3">
 					<Mobile class="mt-1" />
 					<div>
 						<h3 class="font-semibold">Phone</h3>
 						<p>
-							<a href="tel:{selectedLocation.phone.replace(/[^\d+]/g, '')}" class="hover:text-primary">
-								{selectedLocation.phone}
+							<a href="tel:{contactInfo.phone.replace(/[^\d+]/g, '')}" class="hover:text-primary">
+								{contactInfo.phone}
 							</a>
 						</p>
 					</div>
@@ -105,22 +97,10 @@
 					<div>
 						<h3 class="font-semibold">Email</h3>
 						<p>
-							<a href="mailto:{selectedLocation.email}" class="hover:text-primary">
-								{selectedLocation.email}
+							<a href="mailto:{contactInfo.email}" class="hover:text-primary">
+								{contactInfo.email}
 							</a>
 						</p>
-					</div>
-				</div>
-
-				<div class="flex items-start gap-3">
-					<Clock class="mt-1" />
-					<div>
-						<h3 class="font-semibold">Business Hours</h3>
-						<ul>
-							{#each selectedLocation.hours as hours}
-								<li>{hours}</li>
-							{/each}
-						</ul>
 					</div>
 				</div>
 			</div>

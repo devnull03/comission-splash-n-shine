@@ -1,16 +1,14 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import Button from '$lib/components/ui/button/button.svelte';
-	import { scrollThreshold } from '$lib/utils/animations.store';
 	import { ScrollArea } from '$lib/components/ui/scroll-area';
 	import * as Card from '$lib/components/ui/card';
-	import { fade } from 'svelte/transition';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import { isMobile, servicesPageNavigating } from '$lib/utils/stores';
 	import Image from '$lib/components/Image.svelte';
-	import { whyPoints, knowMorePoints } from '$lib/data/landing';
-	import { services } from '$lib/data/services';
+	import { whyPoints } from '$lib/data/landing';
+	import { serviceData, services } from '$lib/data/services';
 	import type { Review } from '$lib/types/reviews';
 	import type { PageData } from './$types';
 	import { PUBLIC_COMPANY_NAME } from '$env/static/public';
@@ -25,41 +23,14 @@
 	let initScroll = $state(0);
 	let servicesSection: HTMLElement;
 
-	// let tweenInstance: gsap.core.Tween;
-	// const handleScroll = () => {
-	// 	if (initScroll < $scrollThreshold) {
-	// 		tweenInstance.reverse();
-	// 	} else {
-	// 		tweenInstance.play();
-	// 	}
-	// };
-
 	onMount(() => {
-		// tweenInstance = gsap.to('#logo', {
-		// 	duration: 0.3,
-
-		// 	width: '4rem',
-		// 	height: '4rem',
-		// 	top: '1rem',
-		// 	left: '6%',
-		// 	zIndex: 50,
-
-		// 	filter: 'invert(1)',
-		// 	webkitFilter: 'invert(1)',
-
-		// 	ease: 'power2.inOut',
-		// 	paused: initScroll < $scrollThreshold
-		// });
-
 		if ($page.url.toString().includes('services')) {
 			servicesSection.scrollIntoView({ behavior: 'smooth' });
-			// handleScroll();
 		}
 	});
 
 	$effect(() => {
 		if ($servicesPageNavigating || $page.url.toString().includes('services')) {
-			// handleScroll();
 			$servicesPageNavigating = false;
 			console.log('services page navigating');
 		}
@@ -68,10 +39,10 @@
 
 <svelte:window bind:scrollY={initScroll} />
 
-<main class="flex w-screen flex-col items-center gap-16 pb-48 lg:gap-8">
+<main class="flex w-screen flex-col items-center gap-16 pb-48 lg:gap-16">
 	<section class="relative flex h-[85vh] w-full flex-row justify-evenly gap-0 text-background">
 		<Image
-			url="/assets/landing-hero.webp"
+			url="/assets/landing/1.webp"
 			description="landing hero banner"
 			class="w-full object-cover"
 			fetchpriority="high"
@@ -92,9 +63,9 @@
 			</p>
 		</div>
 		<Button
-			onclick={() => goto('/gallery')}
+			onclick={() => goto('/locations')}
 			aria-label="View portfolio"
-			class="absolute bottom-[20%] uppercase">Portfolio</Button
+			class="absolute bottom-[20%] uppercase">Locations</Button
 		>
 		<button onclick={() => {}} class="absolute bottom-10 flex flex-col items-center text-white">
 			<span class="">Scroll Down</span>
@@ -102,39 +73,14 @@
 		</button>
 	</section>
 
-	<!-- know more why -->
-	<section class="flex w-full flex-col items-center px-[6%] pt-16 font-[Alatsi] lg:gap-12">
-		<h1 class="text-2xl leading-10">Why Luxury Flooring ?</h1>
-
-		<div class="grid w-full grid-flow-row-dense grid-cols-6 grid-rows-3 gap-10">
-			<div class="col-span-6 flex w-full items-center justify-center">
-				<div class="overflow-hidden rounded-3xl lg:w-1/2">
-					<!-- <Image
-						url="/assets/landing/tiles.jpeg"
-						description=""
-						class="aspect-video h-auto w-full object-cover transition-all duration-500 ease-in-out hover:scale-110"
-						size={[640]}
-						quality={70}
-					/> -->
-				</div>
-			</div>
-
-			{#each whyPoints as point, i}
-				<div
-					class="flex flex-row gap-2 font-[Alatsi] {$isMobile
-						? 'col-span-6'
-						: i <= 2
-							? 'col-span-2 items-center'
-							: 'col-span-3 px-[15%]'}"
-				>
-					<span class="mt-5 w-1/4 text-[7rem] leading-[50%] lg:w-auto lg:text-[9rem]">{i + 1}</span>
-					<span class="w-3/4 lg:w-auto">
-						{point.title} <br />
-						<span class="font-[Cantarell]">{point.desc}</span>
-					</span>
-				</div>
-			{/each}
-		</div>
+	<section class="flex w-full flex-col items-center gap-6 py-8 px-4">
+		<h1 class="text-center text-2xl font-semibold leading-tight md:text-5xl lg:text-4xl max-w-4xl mx-auto">
+			Transform Your Home with Professional Cleaning
+		</h1>
+		<div class="w-24 h-1 bg-primary rounded-full my-2"></div>
+		<p class="text-center text-lg text-muted-foreground max-w-3xl mx-auto">
+			Experience the difference professional cleaning makes. Our expert team delivers exceptional results that will enhance your property's curb appeal and value.
+		</p>
 	</section>
 
 	<!-- services -->
@@ -146,12 +92,12 @@
 		<h1 class="text-center text-4xl font-semibold leading-10">Services</h1>
 
 		<div class="grid w-full gap-10 lg:grid-cols-3">
-			{#each knowMorePoints as point, i}
+			{#each Object.values(serviceData) as service, i}
 				<div class="flex flex-col items-center gap-4 text-center">
 					<button
 						onclick={() => goto(`/services/${services[i]}`)}
 						class="aspect-square overflow-hidden rounded-3xl object-cover"
-						aria-label={`Learn more about ${point.title}`}
+						aria-label={`Learn more about ${service.title}`}
 					>
 						<!-- <Image
 							url={`/assets/landing/more${i + 1}.jpeg`}
@@ -163,8 +109,8 @@
 						/> -->
 					</button>
 
-					<span class="font-[Alatsi] text-xl"> {point.title}</span>
-					<span class="font-[Cantarell] text-[#00000099]">{point.desc}</span>
+					<span class="font-[Alatsi] text-xl"> {service.title}</span>
+					<span class="font-[Cantarell] text-[#00000099]">{service.shortDescription}</span>
 					<a
 						href="/services/{services[i]}"
 						class="border-b border-b-transparent text-xs italic transition-all duration-300 ease-in-out hover:border-b-black"
@@ -188,7 +134,9 @@
 			<ScrollArea orientation="horizontal" class="w-full">
 				<div class="flex flex-row gap-8 px-[30vw] pb-4">
 					{#each reviews as review, idx (review.name)}
-						<Card.Root class="min-h-[65vh] w-[80vw] bg-foreground md:w-[50vw] lg:w-[30vw] rounded-sm">
+						<Card.Root
+							class="min-h-[65vh] w-[80vw] rounded-sm bg-foreground md:w-[50vw] lg:w-[30vw]"
+						>
 							<Card.Header class="flex flex-row items-center gap-3">
 								<div class="flex-shrink-0">
 									{#if review.authorAttribution.photoUri}

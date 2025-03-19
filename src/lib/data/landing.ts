@@ -21,37 +21,6 @@ export const whyPoints = [
 	}
 ];
 
-export const knowMorePoints = [
-	{
-		title: 'Metallic Epoxy ',
-		desc: 'A Durable, High-Gloss Flooring Solution with Unique Swirl Effects'
-	},
-	{
-		title: 'Flake Epoxy Flooring',
-		desc: 'A Slip-Resistant, Textured Flooring with Customizable Colors and Patterns'
-	},
-	{
-		title: 'Epoxy Countertops',
-		desc: 'A Seamless, High-Gloss Surface with Exceptional Durability and Style'
-	},
-	{
-		title: 'Texture Deck',
-		desc: 'Enhance Your Deck with a Slip-Resistant, Durable, and Stylish Finish'
-	},
-	// {
-	// 	title: 'Concrete repair',
-	// 	desc: 'Restore and Strengthen Your Surfaces with Lasting Solutions'
-	// },
-	// {
-	// 	title: 'Asphalt repair',
-	// 	desc: 'Revitalize and Protect Your Pavement with Durable Restoration Solutions'
-	// },
-	{
-		title: 'Concrete Walls',
-		desc: 'Enhance Your Deck with a Slip-Resistant, Durable, and Stylish Finish'
-	}
-];
-
 export const testimonials = [
 	{
 		author: 'Sarah L.',

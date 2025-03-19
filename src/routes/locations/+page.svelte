@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
-	import { locationsData } from '$lib/data/locations';
+	import { contactInfo, locationsData } from '$lib/data/locations';
 	import { DrawingPin, Mobile, ArrowRight } from 'svelte-radix';
 
 	const locations = Object.entries(locationsData);
@@ -19,16 +19,11 @@
 				<div class="flex flex-col rounded-lg border bg-white p-6 shadow-lg transition-all hover:shadow-xl">
 					<h2 class="mb-4 text-2xl font-bold">{location.name}</h2>
 					
-					<div class="mb-4 flex flex-1 flex-col gap-3">
-						<div class="flex items-start gap-2">
-							<DrawingPin class="mt-1 shrink-0 text-primary" size="18" />
-							<p>{location.address}</p>
-						</div>
-						
+					<div class="mb-4 flex flex-1 flex-col gap-3">						
 						<div class="flex items-center gap-2">
 							<Mobile class="shrink-0 text-primary" size="18" />
-							<a href="tel:{location.phone.replace(/[^\d+]/g, '')}" class="hover:text-primary">
-								{location.phone}
+							<a href="tel:{contactInfo.phone.replace(/[^\d+]/g, '')}" class="hover:text-primary">
+								{contactInfo.phone}
 							</a>
 						</div>
 					</div>
@@ -54,8 +49,8 @@
 				<Button href="/contact" variant="secondary" class="font-semibold text-primary">
 					Contact Us
 				</Button>
-				<Button href="tel:+18005551234" variant="outline" class="border-white text-white hover:bg-white/10">
-					Call (800) 555-1234
+				<Button href="tel:+1{contactInfo.phone}" variant="outline" class="border-white text-white hover:bg-white/10">
+					Call {contactInfo.phone} 
 				</Button>
 			</div>
 		</div>

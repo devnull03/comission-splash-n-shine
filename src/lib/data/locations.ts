@@ -1,9 +1,5 @@
 export interface LocationData {
   name: string;
-  address: string;
-  phone: string;
-  email: string;
-  hours: string[];
   services: string[];
   faqItems: FaqItem[];
   mapEmbedUrl: string;
@@ -14,21 +10,22 @@ export interface FaqItem {
   answer: string;
 }
 
+export const contactInfo = {
+  phone: '6041234567',
+  email: 'info@splashnshine.ca'
+}
+
 export const locationsData: Record<string, LocationData> = {
   'north-vancouver': {
     name: 'North Vancouver',
-    address: '123 Lonsdale Ave, North Vancouver, BC V7M 2E9',
-    phone: '(604) 555-1234',
-    email: 'northvancouver@splashnshine.com',
-    hours: [
-      'Monday - Friday: 8am - 6pm',
-      'Saturday: 9am - 4pm',
-      'Sunday: Closed'
-    ],
     services: [
-      'concrete-coatings',
-      'pressure-washing',
-      'epoxy-flooring'
+      'full-house-cleaning',
+      'roof-cleaning',
+      'roof-painting',
+      'commercial-cleaning',
+      'window-washing',
+      'post-construction-cleanup',
+      'gutter-cleaning'
     ],
     faqItems: [
       {
@@ -48,19 +45,14 @@ export const locationsData: Record<string, LocationData> = {
   },
   'vancouver': {
     name: 'Vancouver',
-    address: '456 Granville St, Vancouver, BC V6C 1T2',
-    phone: '(604) 555-2345',
-    email: 'vancouver@splashnshine.com',
-    hours: [
-      'Monday - Friday: 8am - 6pm',
-      'Saturday: 9am - 4pm',
-      'Sunday: Closed'
-    ],
     services: [
-      'concrete-coatings',
-      'pressure-washing',
-      'epoxy-flooring',
-      'pool-deck-resurfacing'
+      'full-house-cleaning',
+      'roof-cleaning',
+      'roof-painting',
+      'commercial-cleaning',
+      'window-washing',
+      'post-construction-cleanup',
+      'gutter-cleaning'
     ],
     faqItems: [
       {
@@ -80,18 +72,14 @@ export const locationsData: Record<string, LocationData> = {
   },
   'coquitlam': {
     name: 'Coquitlam',
-    address: '789 Pinetree Way, Coquitlam, BC V3B 7Y3',
-    phone: '(604) 555-3456',
-    email: 'coquitlam@splashnshine.com',
-    hours: [
-      'Monday - Friday: 8am - 6pm',
-      'Saturday: 9am - 3pm',
-      'Sunday: Closed'
-    ],
     services: [
-      'concrete-coatings',
-      'pressure-washing',
-      'commercial-services'
+      'full-house-cleaning',
+      'roof-cleaning',
+      'roof-painting',
+      'commercial-cleaning',
+      'window-washing',
+      'post-construction-cleanup',
+      'gutter-cleaning'
     ],
     faqItems: [
       {
@@ -111,19 +99,14 @@ export const locationsData: Record<string, LocationData> = {
   },
   'burnaby': {
     name: 'Burnaby',
-    address: '101 Kingsway, Burnaby, BC V5H 2E7',
-    phone: '(604) 555-4567',
-    email: 'burnaby@splashnshine.com',
-    hours: [
-      'Monday - Friday: 8am - 6pm',
-      'Saturday: 9am - 4pm',
-      'Sunday: Closed'
-    ],
     services: [
-      'concrete-coatings',
-      'pressure-washing',
-      'epoxy-flooring',
-      'commercial-services'
+      'full-house-cleaning',
+      'roof-cleaning',
+      'roof-painting',
+      'commercial-cleaning',
+      'window-washing',
+      'post-construction-cleanup',
+      'gutter-cleaning'
     ],
     faqItems: [
       {
@@ -143,19 +126,14 @@ export const locationsData: Record<string, LocationData> = {
   },
   'richmond': {
     name: 'Richmond',
-    address: '5300 No. 3 Rd, Richmond, BC V6X 2X9',
-    phone: '(604) 555-5678',
-    email: 'richmond@splashnshine.com',
-    hours: [
-      'Monday - Friday: 8am - 6pm',
-      'Saturday: 9am - 4pm',
-      'Sunday: Closed'
-    ],
     services: [
-      'concrete-coatings',
-      'pressure-washing',
-      'commercial-services',
-      'pool-deck-resurfacing'
+      'full-house-cleaning',
+      'roof-cleaning',
+      'roof-painting',
+      'commercial-cleaning',
+      'window-washing',
+      'post-construction-cleanup',
+      'gutter-cleaning'
     ],
     faqItems: [
       {
@@ -175,18 +153,14 @@ export const locationsData: Record<string, LocationData> = {
   },
   'delta': {
     name: 'Delta',
-    phone: '(604) 555-6789',
-    address: '4500 Clarence Taylor Crescent, Delta, BC V4K 3E2',
-    email: 'delta@splashnshine.com',
-    hours: [
-      'Monday - Friday: 8am - 6pm',
-      'Saturday: 9am - 3pm',
-      'Sunday: Closed'
-    ],
     services: [
-      'concrete-coatings',
-      'pressure-washing',
-      'epoxy-flooring'
+      'full-house-cleaning',
+      'roof-cleaning',
+      'roof-painting',
+      'commercial-cleaning',
+      'window-washing',
+      'post-construction-cleanup',
+      'gutter-cleaning'
     ],
     faqItems: [
       {
@@ -206,18 +180,14 @@ export const locationsData: Record<string, LocationData> = {
   },
   'new-westminster': {
     name: 'New Westminster',
-    address: '511 Royal Ave, New Westminster, BC V3L 1H9',
-    phone: '(604) 555-7890',
-    email: 'newwest@splashnshine.com',
-    hours: [
-      'Monday - Friday: 8am - 6pm',
-      'Saturday: 9am - 4pm',
-      'Sunday: Closed'
-    ],
     services: [
-      'concrete-coatings',
-      'pressure-washing',
-      'epoxy-flooring'
+      'full-house-cleaning',
+      'roof-cleaning',
+      'roof-painting',
+      'commercial-cleaning',
+      'window-washing',
+      'post-construction-cleanup',
+      'gutter-cleaning'
     ],
     faqItems: [
       {
@@ -237,19 +207,14 @@ export const locationsData: Record<string, LocationData> = {
   },
   'surrey': {
     name: 'Surrey',
-    address: '13450 104 Ave, Surrey, BC V3T 1V8',
-    phone: '(604) 555-8901',
-    email: 'surrey@splashnshine.com',
-    hours: [
-      'Monday - Friday: 8am - 6pm',
-      'Saturday: 9am - 4pm',
-      'Sunday: Closed'
-    ],
     services: [
-      'concrete-coatings',
-      'pressure-washing',
-      'epoxy-flooring',
-      'commercial-services'
+      'full-house-cleaning',
+      'roof-cleaning',
+      'roof-painting',
+      'commercial-cleaning',
+      'window-washing',
+      'post-construction-cleanup',
+      'gutter-cleaning'
     ],
     faqItems: [
       {
@@ -269,18 +234,14 @@ export const locationsData: Record<string, LocationData> = {
   },
   'white-rock': {
     name: 'White Rock',
-    address: '15151 Russell Ave, White Rock, BC V4B 2P4',
-    phone: '(604) 555-9012',
-    email: 'whiterock@splashnshine.com',
-    hours: [
-      'Monday - Friday: 8am - 6pm',
-      'Saturday: 9am - 3pm',
-      'Sunday: Closed'
-    ],
     services: [
-      'concrete-coatings',
-      'pressure-washing',
-      'pool-deck-resurfacing'
+      'full-house-cleaning',
+      'roof-cleaning',
+      'roof-painting',
+      'commercial-cleaning',
+      'window-washing',
+      'post-construction-cleanup',
+      'gutter-cleaning'
     ],
     faqItems: [
       {
@@ -300,19 +261,14 @@ export const locationsData: Record<string, LocationData> = {
   },
   'langley': {
     name: 'Langley',
-    address: '20399 Douglas Crescent, Langley, BC V3A 4B3',
-    phone: '(604) 555-0123',
-    email: 'langley@splashnshine.com',
-    hours: [
-      'Monday - Friday: 8am - 6pm',
-      'Saturday: 9am - 4pm',
-      'Sunday: Closed'
-    ],
     services: [
-      'concrete-coatings',
-      'pressure-washing',
-      'epoxy-flooring',
-      'commercial-services'
+      'full-house-cleaning',
+      'roof-cleaning',
+      'roof-painting',
+      'commercial-cleaning',
+      'window-washing',
+      'post-construction-cleanup',
+      'gutter-cleaning'
     ],
     faqItems: [
       {
@@ -332,19 +288,14 @@ export const locationsData: Record<string, LocationData> = {
   },
   'abbotsford': {
     name: 'Abbotsford',
-    address: '32315 South Fraser Way, Abbotsford, BC V2T 1W7',
-    phone: '(604) 555-1234',
-    email: 'abbotsford@splashnshine.com',
-    hours: [
-      'Monday - Friday: 8am - 6pm',
-      'Saturday: 9am - 3pm',
-      'Sunday: Closed'
-    ],
     services: [
-      'concrete-coatings',
-      'pressure-washing',
-      'epoxy-flooring',
-      'commercial-services'
+      'full-house-cleaning',
+      'roof-cleaning',
+      'roof-painting',
+      'commercial-cleaning',
+      'window-washing',
+      'post-construction-cleanup',
+      'gutter-cleaning'
     ],
     faqItems: [
       {

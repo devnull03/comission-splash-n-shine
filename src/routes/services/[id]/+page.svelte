@@ -16,14 +16,15 @@
 
 	let carouselAPI: CarouselAPI | undefined = $state();
 	let currentSlide = $state(0);
-	let carouselCaptions = [
-		'Vibrant Colors',
-		'Infinite Creation',
-		'Easy to Install',
-		'UV Stable',
-		'2-Day Application',
-		'Can Be Polished'
-	];
+	
+	// Get benefits from service data for carousel captions if available
+	let carouselCaptions: string[] = $derived(
+		selectedServiceData && selectedServiceData.benefits 
+			? selectedServiceData.benefits 
+			: selectedServiceData && selectedServiceData.keyFeatures 
+				? selectedServiceData.keyFeatures 
+				: []
+	);
 
 	$effect(() => {
 		if (carouselAPI) {
@@ -38,6 +39,13 @@
 			goto('/?services');
 		}
 	});
+	
+	const formatServiceName = (id: string) => {
+		return id
+			.split('-')
+			.map((x) => x[0].toUpperCase() + x.slice(1))
+			.join(' ');
+	};
 </script>
 
 <main class="mt-24 *:p-10 lg:mt-16 *:lg:p-32">
@@ -46,10 +54,7 @@
 		class="flex flex-col overflow-hidden bg-black text-center text-2xl text-white lg:text-4xl"
 	>
 		<h1 class="mb-8 font-[Cantarell] lg:mb-16">
-			Why {$page.params.id
-				.split('-')
-				.map((x) => x[0].toUpperCase() + x.slice(1))
-				.join(' ')}?
+				Why {formatServiceName($page.params.id)}?
 		</h1>
 
 		<Carousel.Root
@@ -58,7 +63,7 @@
 			bind:api={carouselAPI}
 		>
 			<Carousel.Content class="ml-[14vw] max-w-[75vw] pr-1 lg:ml-[25vw] lg:max-w-[50vw]">
-				{#each Array(6) as _, idx}
+				{#each Array(Math.min(6, carouselCaptions.length || 6)) as _, idx}
 					<Carousel.Item
 						onclick={() => carouselAPI?.scrollTo(idx)}
 						class="-ml-6 cursor-pointer pl-1 first:ml-auto {currentSlide === idx ||
@@ -79,11 +84,13 @@
 			</Carousel.Content>
 		</Carousel.Root>
 
-		{#key currentSlide}
-			<h2 transition:slide={{ duration: 1000 }} class="font-[Alatsi] text-2xl font-semibold">
-				{carouselCaptions[currentSlide]}
-			</h2>
-		{/key}
+		{#if carouselCaptions.length > 0 && currentSlide < carouselCaptions.length}
+			{#key currentSlide}
+				<h2 transition:slide={{ duration: 1000 }} class="font-[Alatsi] text-2xl font-semibold">
+					{carouselCaptions[currentSlide]}
+				</h2>
+			{/key}
+		{/if}
 	</section>
 
 	<!-- Applications -->
@@ -135,20 +142,24 @@
 				<div
 					class="flex flex-row-reverse justify-center gap-0 *:-mr-[10%] lg:w-1/2 lg:justify-start"
 				>
-					{#each Array(4) as _, idx}
-						<Image 
-							url={`/assets/${$page.params.id}/pallet/${idx}.png`} 
-							description="" 
-							class="aspect-square w-1/3 first:mr-auto lg:w-1/4 first:lg:mr-0" 
-						/>
-					{/each}
+					{#if selectedServiceData.keyFeatures}
+						{#each Array(Math.min(4, selectedServiceData.keyFeatures.length)) as _, idx}
+							<Image 
+								url={`/assets/${$page.params.id}/pallet/${idx}.png`} 
+								description="" 
+								class="aspect-square w-1/3 first:mr-auto lg:w-1/4 first:lg:mr-0" 
+							/>
+						{/each}
+					{/if}
 				</div>
 
 				<div class="pl-4 font-semibold text-white lg:pl-8 lg:text-2xl">
 					<ul class="flex h-full list-inside list-disc flex-col justify-center">
-						{#each selectedServiceData.colorChartPoints as point}
-							<li>{point}</li>
-						{/each}
+						{#if selectedServiceData.keyFeatures}
+							{#each selectedServiceData.keyFeatures as point}
+								<li>{point}</li>
+							{/each}
+						{/if}
 					</ul>
 				</div>
 			</div>
@@ -163,4 +174,31 @@
 			>
 		</div>
 	</section>
+	
+	<!-- FAQ Section -->
+	{#if selectedServiceData.faqItems && selectedServiceData.faqItems.length > 0}
+		<section class="bg-gray-100 font-[Cantarell]">
+			<h3 class="mb-8 text-center text-2xl font-semibold">Frequently Asked Questions</h3>
+			<div class="grid gap-4">
+				{#each selectedServiceData.faqItems as faq}
+					<div class="rounded-lg bg-white p-4 shadow-sm">
+						<h4 class="mb-2 font-bold text-lg">{faq.question}</h4>
+						<p>{faq.answer}</p>
+					</div>
+				{/each}
+			</div>
+		</section>
+	{/if}
+
+	<!-- Available Cities -->
+	{#if selectedServiceData.cities && selectedServiceData.cities.length > 0}
+		<section class="font-[Cantarell]">
+			<h3 class="mb-8 text-center text-2xl font-semibold">Service Areas</h3>
+			<div class="flex flex-wrap justify-center gap-4">
+				{#each selectedServiceData.cities as city}
+					<div class="rounded-full bg-black px-4 py-2 text-white">{city}</div>
+				{/each}
+			</div>
+		</section>
+	{/if}
 </main>
