@@ -1,16 +1,3 @@
-<script lang="ts">
-	import { enhance } from '$app/forms';
-	import * as Form from '$lib/components/ui/form';
-	import * as Card from '$lib/components/ui/card';
-	import { Button } from '$lib/components/ui/button';
-	import { Input } from '$lib/components/ui/input';
-	import { Textarea } from '$lib/components/ui/textarea';
-	import { Alert, AlertDescription } from '$lib/components/ui/alert';
-
-	//     export let form;
-	let isSubmitting = false;
-</script>
-
 <svelte:head>
 	<title>Contact Us | Splash 'n Shine</title>
 	<meta

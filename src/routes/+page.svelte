@@ -63,9 +63,9 @@
 			</p>
 		</div>
 		<Button
-			onclick={() => goto('/locations')}
+			onclick={() => goto('/contact')}
 			aria-label="Get free quote"
-			class="absolute bottom-[20%] uppercase">Get Free Quote</Button
+			class="absolute bottom-[20%]">Get Free Quote</Button
 		>
 		<button onclick={() => {}} class="absolute bottom-10 flex flex-col items-center text-white">
 			<span class="">Scroll Down</span>
@@ -97,7 +97,7 @@
 				<div class="flex flex-col items-center gap-4 text-center">
 					<button
 						onclick={() => goto(`/services/${serviceKey}`)}
-						class="aspect-square overflow-hidden rounded-3xl object-cover"
+						class="aspect-square overflow-hidden rounded object-cover"
 						aria-label={`Learn more about ${service.title}`}
 					>
 						<Image
