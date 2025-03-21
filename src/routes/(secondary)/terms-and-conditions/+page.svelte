@@ -2,6 +2,24 @@
 	import Image from '$lib/components/Image.svelte';
 </script>
 
+<svelte:head>
+	<title>Service Agreement & Terms | Splash n' Shine Exterior Cleaning</title>
+	<meta
+		name="description"
+		content="Important information about our service agreements, booking policies, payments, and client responsibilities. Review Splash n' Shine's terms for our exterior cleaning services."
+	/>
+	<meta name="keywords" content="exterior cleaning terms, service agreement, booking policy, deposit requirements, cancellation policy, client responsibilities, payment terms, service guarantee, exterior cleaning liability, weather policy" />
+	<meta property="og:title" content="Terms & Conditions for Splash n' Shine Services" />
+	<meta
+		property="og:description"
+		content="Important information about booking, payments, and service expectations for our exterior cleaning services in Vancouver and the Lower Mainland."
+	/>
+	<meta property="og:image" content="/assets/logo.png" />
+	<meta property="og:url" content="https://www.splashnshine.ca/terms-and-conditions" />
+	<meta property="og:type" content="website" />
+	<link rel="canonical" href="https://www.splashnshine.ca/terms-and-conditions" />
+</svelte:head>
+
 <main class="mt-24 lg:mt-16">
 	<!-- landing -->
 	<section class="flex flex-col items-center justify-center gap-16 bg-black py-28 lg:flex-row">

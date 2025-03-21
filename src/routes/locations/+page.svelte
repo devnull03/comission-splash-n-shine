@@ -2,9 +2,24 @@
 	import { Button } from '$lib/components/ui/button';
 	import { contactInfo, locationsData } from '$lib/data/locations';
 	import { DrawingPin, Mobile, ArrowRight } from 'svelte-radix';
+	import { page } from '$app/state';
 
 	const locations = Object.entries(locationsData);
+	
+	const domain = $derived(`${page.url.protocol}//${page.url.host}`);
 </script>
+
+<svelte:head>
+	<title>Areas We Serve | Splash n' Shine | Metro Vancouver Cleaning Experts</title>
+	<meta name="description" content="Splash n' Shine delivers premium exterior cleaning services across Metro Vancouver, from downtown Vancouver to Surrey, Burnaby, Richmond, and beyond. Find service in your neighborhood." />
+	<meta name="keywords" content="exterior cleaning Vancouver, pressure washing Surrey, roof cleaning Burnaby, house washing Richmond, gutter cleaning Coquitlam, window washing Delta, driveway cleaning Langley, commercial cleaning White Rock, strata cleaning North Vancouver" />
+	<meta property="og:title" content="Locations Served | Splash n' Shine Cleaning Services" />
+	<meta property="og:description" content="Discover our service areas throughout Metro Vancouver. Professional exterior cleaning for residential and commercial properties in all major communities." />
+	<meta property="og:image" content="/assets/logo.png" />
+	<meta property="og:url" content="https://www.splashnshine.ca/locations" />
+	<meta property="og:type" content="website" />
+	<link rel="canonical" href="https://www.splashnshine.ca/locations" />
+</svelte:head>
 
 <main class="mt-24 p-10 lg:mt-16 lg:p-32">
 	<section class="mb-16">
@@ -37,7 +52,7 @@
 					</div>
 
 					<div class="mt-4">
-						<Button href="/locations/{id}" class="flex w-full items-center justify-center gap-2">
+						<Button href={`${domain}/locations/${id}`} class="flex w-full items-center justify-center gap-2">
 							View Details <ArrowRight size="16" />
 						</Button>
 					</div>
@@ -55,7 +70,7 @@
 				area.
 			</p>
 			<div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
-				<Button href="/contact" variant="secondary">Contact Us</Button>
+				<Button href={`${domain}/contact`} variant="secondary">Contact Us</Button>
 				<Button href="tel:+1{contactInfo.phone}" variant="secondary">
 					Call {contactInfo.phone}
 				</Button>

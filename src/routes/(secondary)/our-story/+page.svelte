@@ -3,6 +3,24 @@
 	import Image from '$lib/components/Image.svelte';
 </script>
 
+<svelte:head>
+	<title>About Splash n' Shine | Our Journey to Excellence in Exterior Cleaning</title>
+	<meta
+		name="description"
+		content="Discover how Splash n' Shine grew from a vision of quality to become Vancouver's leading exterior cleaning company. Learn about our values, expertise, and commitment to transforming properties."
+	/>
+	<meta name="keywords" content="Splash n' Shine story, exterior cleaning company history, Vancouver cleaning expertise, eco-friendly cleaning company, property restoration specialists, family-owned cleaning business, professional cleaning background, cleaning industry innovation" />
+	<meta property="og:title" content="The Splash n' Shine Story | Excellence in Exterior Cleaning" />
+	<meta
+		property="og:description"
+		content="From humble beginnings to industry leadership: learn about the passion and expertise that drives Splash n' Shine to deliver exceptional exterior cleaning services."
+	/>
+	<meta property="og:image" content="/assets/logo.png" />
+	<meta property="og:url" content="https://www.splashnshine.ca/our-story" />
+	<meta property="og:type" content="website" />
+	<link rel="canonical" href="https://www.splashnshine.ca/our-story" />
+</svelte:head>
+
 <main class="mt-24 lg:mt-16">
 	<!-- landing -->
 	<section class="flex flex-col items-center justify-center gap-16 bg-black px-10 py-28 lg:px-36">

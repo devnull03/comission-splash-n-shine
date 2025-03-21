@@ -15,6 +15,20 @@ export const contactInfo = {
   email: 'info@splashnshine.ca'
 }
 
+export const locationIds = [
+  'north-vancouver',
+  'vancouver',
+  'coquitlam',
+  'burnaby',
+  'richmond',
+  'delta',
+  'new-westminster',
+  'surrey',
+  'white-rock',
+  'langley',
+  'abbotsford'
+];
+
 export const locationsData: Record<string, LocationData> = {
   'north-vancouver': {
     name: 'North Vancouver',

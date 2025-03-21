@@ -1,35 +1,23 @@
 <script lang="ts">
 	import Instagram from '../icons/Instagram.svelte';
 	import PhoneCall from '../icons/PhoneCall.svelte';
-	import { Button, buttonVariants } from '$lib/components/ui/button';
+	import { Button } from '$lib/components/ui/button';
 	import { onMount } from 'svelte';
 	import { scrollThreshold } from '$lib/utils/animations.store';
-	import * as Dialog from '$lib/components/ui/dialog';
-	import { Slider } from './ui/slider';
-	import { Input } from './ui/input';
 	import { goto } from '$app/navigation';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import Image from '$lib/components/Image.svelte';
 	import { isMobile, quoteDialogOpen, servicesPageNavigating } from '$lib/utils/stores';
 	import { slide } from 'svelte/transition';
-	import { toast } from 'svelte-sonner';
-	import { PUBLIC_COMPANY_NAME, PUBLIC_FORM_KEY } from '$env/static/public';
+	import { PUBLIC_COMPANY_NAME } from '$env/static/public';
 	import { Cross2, HamburgerMenu } from 'svelte-radix';
-	import { services, serviceData } from '$lib/data/services';
-	import { locationsData } from '$lib/data/locations';
-	// Import our custom dropdown components
+	import { services } from '$lib/data/services';
+	import { locationIds } from '$lib/data/locations';
 	import Dropdown from '$lib/components/Dropdown.svelte';
 	import DropdownItem from '$lib/components/DropdownItem.svelte';
 
 	let initScroll = $state(0);
-	let isLandingPage = $derived($page.route.id === '/');
-
-	let quoteArea = $state([0]);
-	let quoteEpoxyType = $state<'Metalic' | 'Flake'>('Metalic');
-	let quoteTotal = $derived(() => {
-		let epoxyMultiplier = quoteEpoxyType === 'Metalic' ? 10 : 5;
-		return quoteArea[0] * epoxyMultiplier;
-	});
+	let isLandingPage = $derived(page.route.id === '/');
 
 	let mobileNavButtonWidth: number = $state(0);
 	let mobileNavOpen = $state(false);
@@ -40,11 +28,10 @@
 	});
 
 	let colorState = $derived(!$isMobile ? initScroll < $scrollThreshold && isLandingPage : false);
+	let domain = $derived(`${page.url.protocol}//${page.url.host}`);
 
 	onMount(() => {
-		// setTimeout(() => {
 		firstLoad = false;
-		// }, 10);
 	});
 </script>
 
@@ -103,6 +90,15 @@
 					title="Our Services"
 					menuClass="w-56"
 				>
+					<DropdownItem
+						onclick={() => {
+							goto('/services');
+							$servicesPageNavigating = true;
+						}}
+						class="border-b"
+					>
+						<a href="{domain}/services/" onclick={(e) => e.preventDefault()}> All Services </a>
+					</DropdownItem>
 					{#each services as service}
 						<DropdownItem
 							onclick={() => {
@@ -110,7 +106,12 @@
 								$servicesPageNavigating = true;
 							}}
 						>
-							 {service.split('-').map((word) => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
+							<a href={`${domain}/services/${service}`} onclick={(e) => e.preventDefault()}>
+								{service
+									.split('-')
+									.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+									.join(' ')}
+							</a>
 						</DropdownItem>
 					{/each}
 				</Dropdown>
@@ -128,16 +129,21 @@
 						}}
 						class="border-b"
 					>
-						All Locations
+						<a href="{domain}/locations/" onclick={(e) => e.preventDefault()}> All Locations </a>
 					</DropdownItem>
-					{#each Object.entries(locationsData) as [slug, data]}
+					{#each locationIds as slug}
 						<DropdownItem
 							onclick={() => {
 								goto(`/locations/${slug}`);
 								$servicesPageNavigating = true;
 							}}
 						>
-							{data.name}
+							<a href="{domain}/locations/{slug}" onclick={(e) => e.preventDefault()}>
+								{slug
+									.split('-')
+									.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+									.join(' ')}
+							</a>
 						</DropdownItem>
 					{/each}
 				</Dropdown>

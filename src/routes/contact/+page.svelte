@@ -3,11 +3,21 @@
 </script>
 
 <svelte:head>
-	<title>Contact Us | Splash 'n Shine</title>
+	<title>Request a Quote | Contact Splash n' Shine | Vancouver Exterior Cleaning</title>
 	<meta
 		name="description"
-		content="Get in touch with Splash 'n Shine. We'd love to hear from you!"
+		content="Reach out to Splash n' Shine for a free, no-obligation quote on our professional exterior cleaning services. Our friendly team is ready to answer your questions and provide personalized solutions."
 	/>
+	<meta name="keywords" content="exterior cleaning quote, free estimate, Vancouver power washing quote, house washing consultation, contact cleaning professionals, schedule power washing, book exterior cleaning, Surrey cleaning quote, pressure washing appointment" />
+	<meta property="og:title" content="Contact Splash n' Shine | Free Quotes & Consultations" />
+	<meta
+		property="og:description"
+		content="Get in touch for personalized exterior cleaning solutions and free estimates. Our Vancouver-based team is ready to transform your property."
+	/>
+	<meta property="og:image" content="/assets/logo.png" />
+	<meta property="og:url" content="https://www.splashnshine.ca/contact" />
+	<meta property="og:type" content="website" />
+	<link rel="canonical" href="https://www.splashnshine.ca/contact" />
 </svelte:head>
 
 <main class="mt-24 flex w-screen flex-col items-center pb-36 lg:mt-36">

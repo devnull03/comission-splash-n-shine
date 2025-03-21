@@ -23,6 +23,9 @@
 	let initScroll = $state(0);
 	let servicesSection: HTMLElement;
 
+	// Get the base URL for absolute links
+	const domain = $derived(`${page.url.protocol}//${page.url.host}`);
+
 	onMount(() => {
 		if (page.url.toString().includes('services')) {
 			servicesSection.scrollIntoView({ behavior: 'smooth' });
@@ -36,6 +39,18 @@
 		}
 	});
 </script>
+
+<svelte:head>
+	<title>Splash n' Shine | Professional Exterior Cleaning Services in Vancouver & Surrey</title>
+	<meta name="description" content="Transform your property with Splash n' Shine's premium exterior cleaning services. We specialize in power washing, soft washing, and roof cleaning throughout Vancouver, Surrey and the Lower Mainland." />
+	<meta name="keywords" content="power washing Vancouver, exterior cleaning Surrey, soft washing, roof cleaning, gutter cleaning, window washing, house washing, driveway cleaning, deck cleaning, property maintenance, Lower Mainland pressure washing" />
+	<meta property="og:title" content="Splash n' Shine | Professional Exterior Cleaning" />
+	<meta property="og:description" content="Vancouver's premier exterior cleaning service. Restore your property's beauty with our professional power washing solutions." />
+	<meta property="og:image" content="/assets/logo.png" />
+	<meta property="og:url" content="https://www.splashnshine.ca" />
+	<meta property="og:type" content="website" />
+	<link rel="canonical" href="https://www.splashnshine.ca" />
+</svelte:head>
 
 <svelte:window bind:scrollY={initScroll} />
 
@@ -65,8 +80,11 @@
 		<Button
 			onclick={() => goto('/contact')}
 			aria-label="Get free quote"
-			class="absolute bottom-[20%]">Get Free Quote</Button
-		>
+			class="absolute bottom-[20%]">
+			<a href={`${domain}/contact`} onclick={(e) => { e.preventDefault(); goto('/contact'); }}>
+				Get Free Quote
+			</a>
+		</Button>
 		<button onclick={() => {}} class="absolute bottom-10 flex flex-col items-center text-white">
 			<span class="">Scroll Down</span>
 			<CaretDown class="h-6 w-6 animate-bounce" />
@@ -100,20 +118,22 @@
 						class="aspect-square overflow-hidden rounded object-cover"
 						aria-label={`Learn more about ${service.title}`}
 					>
-						<Image
-							url={`/assets/services/${serviceKey}/1.webp`}
-							description=""
-							class="aspect-square h-auto w-full object-cover transition-all duration-500 ease-in-out hover:scale-110"
-							size={[480]}
-							width="480"
-							quality={50}
-						/>
+						<a href={`${domain}/services/${serviceKey}`} onclick={(e) => { e.preventDefault(); goto(`/services/${serviceKey}`); }}>
+							<Image
+								url={`/assets/services/${serviceKey}/1.webp`}
+								description=""
+								class="aspect-square h-auto w-full object-cover transition-all duration-500 ease-in-out hover:scale-110"
+								size={[480]}
+								width="480"
+								quality={50}
+							/>
+						</a>
 					</button>
 
 					<span class="font-[Alatsi] text-xl"> {service.title}</span>
 					<span class="font-[Cantarell] text-[#00000099]">{service.shortDescription}</span>
 					<a
-						href="/services/{services[i]}"
+						href={`${domain}/services/${services[i]}`}
 						class="border-b border-b-transparent text-xs italic transition-all duration-300 ease-in-out hover:border-b-black"
 						>Read more...</a
 					>

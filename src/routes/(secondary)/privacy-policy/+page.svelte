@@ -2,6 +2,24 @@
 	import Image from '$lib/components/Image.svelte';
 </script>
 
+<svelte:head>
+	<title>Data Protection Policy | Splash n' Shine Customer Privacy</title>
+	<meta
+		name="description"
+		content="Learn how Splash n' Shine collects, protects, and uses your personal information. Our privacy policy explains our commitment to safeguarding your data while providing excellent service."
+	/>
+	<meta name="keywords" content="customer data protection, privacy practices, information collection policy, personal data security, customer information use, data rights, cookies policy, marketing preferences, data processing consent, privacy compliance" />
+	<meta property="og:title" content="Your Privacy Matters | Splash n' Shine Data Protection" />
+	<meta
+		property="og:description"
+		content="Transparent information about how we protect your personal data while delivering exceptional exterior cleaning services across Vancouver and the Lower Mainland."
+	/>
+	<meta property="og:image" content="/assets/logo.png" />
+	<meta property="og:url" content="https://www.splashnshine.ca/privacy-policy" />
+	<meta property="og:type" content="website" />
+	<link rel="canonical" href="https://www.splashnshine.ca/privacy-policy" />
+</svelte:head>
+
 <main class="mt-24 lg:mt-16">
 	<!-- landing -->
 	<section class="flex flex-col items-center justify-center gap-16 bg-black py-28 lg:flex-row">
@@ -90,17 +108,16 @@
 
 		<h3>9. Contact Us</h3>
 		<p class="mb-4">For questions or concerns about this Privacy Policy, please contact us at:</p>
-		<p class="mb-2">Splash N Shine</p>
 		<p class="mb-2">
-			📞 Phone: <a href="tel:7788045911" class="underline hover:text-blue-600">778-804-5911</a>
+			 📞 Phone: <a href="tel:7788045911" class="underline hover:text-blue-600">778-804-5911</a>
 		</p>
 		<p class="mb-2">
-			📧 Email: <a href="mailto:info@splashnshine.ca" class="underline hover:text-blue-600"
+			 📧 Email: <a href="mailto:info@splashnshine.ca" class="underline hover:text-blue-600"
 				>info@splashnshine.ca</a
 			>
 		</p>
 		<p class="mb-6">
-			🌐 Website: <a href="https://www.splashnshine.ca" class="underline hover:text-blue-600"
+			 🌐 Website: <a href="https://www.splashnshine.ca" class="underline hover:text-blue-600"
 				>www.splashnshine.ca</a
 			>
 		</p>

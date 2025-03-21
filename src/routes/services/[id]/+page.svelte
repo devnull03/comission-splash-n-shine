@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import * as Carousel from '$lib/components/ui/carousel';
 	import * as Card from '$lib/components/ui/card';
 	import * as Dialog from '$lib/components/ui/dialog';
@@ -12,19 +12,21 @@
 	import Image from '$lib/components/Image.svelte';
 	import { serviceData } from '$lib/data/services';
 
-	let selectedServiceData = $derived(serviceData[$page.params.id]);
+	let selectedServiceData = $derived(serviceData[page.params.id]);
 
 	let carouselAPI: CarouselAPI | undefined = $state();
 	let currentSlide = $state(0);
-	
+
 	// Get benefits from service data for carousel captions if available
 	let carouselCaptions: string[] = $derived(
-		selectedServiceData && selectedServiceData.benefits 
-			? selectedServiceData.benefits 
-			: selectedServiceData && selectedServiceData.keyFeatures 
-				? selectedServiceData.keyFeatures 
+		selectedServiceData && selectedServiceData.benefits
+			? selectedServiceData.benefits
+			: selectedServiceData && selectedServiceData.keyFeatures
+				? selectedServiceData.keyFeatures
 				: []
 	);
+
+	const domain = $derived(`${page.url.protocol}//${page.url.host}`);
 
 	$effect(() => {
 		if (carouselAPI) {
@@ -39,7 +41,7 @@
 			goto('/?services');
 		}
 	});
-	
+
 	const formatServiceName = (id: string) => {
 		return id
 			.split('-')
@@ -48,13 +50,52 @@
 	};
 </script>
 
+<svelte:head>
+	<title
+		>{selectedServiceData?.title || formatServiceName(page.params.id)} Specialists | Splash n' Shine
+		| Vancouver</title
+	>
+	<meta
+		name="description"
+		content="Expert {selectedServiceData?.title ||
+			formatServiceName(
+				page.params.id
+			)} in Vancouver and the Lower Mainland. Our professional team uses eco-friendly methods and cutting-edge equipment for superior results."
+	/>
+	<meta
+		name="keywords"
+		content="{selectedServiceData?.title || formatServiceName(page.params.id)}, {page.params
+			.id} Vancouver, {page.params.id} Surrey, professional {page.params.id}, affordable {page
+			.params.id}, eco-friendly {page.params.id}, residential {page.params.id}, commercial {page
+			.params.id}, Lower Mainland"
+	/>
+	<meta
+		property="og:title"
+		content="Professional {selectedServiceData?.title ||
+			formatServiceName(page.params.id)} | Splash n' Shine"
+	/>
+	<meta
+		property="og:description"
+		content="Transform your property with our expert {selectedServiceData?.title ||
+			formatServiceName(
+				page.params.id
+			)} services. Serving Vancouver, Surrey and the entire Lower Mainland with quality and care."
+	/>
+	<meta property="og:image" content="/assets/services/{page.params.id}/1.webp" />
+	<meta property="og:url" content="https://www.splashnshine.ca/services/{page.params.id}" />
+	<meta property="og:type" content="website" />
+	<meta property="og:site_name" content="Splash n' Shine" />
+
+	<link rel="canonical" href="https://www.splashnshine.ca/services/{page.params.id}" />
+</svelte:head>
+
 <main class="mt-24 *:p-10 lg:mt-16 *:lg:p-32">
 	<!-- Carousel -->
 	<section
 		class="flex flex-col overflow-hidden bg-black text-center text-2xl text-white lg:text-4xl"
 	>
 		<h1 class="mb-8 font-[Cantarell] lg:mb-16">
-				Why {formatServiceName($page.params.id)}?
+			Why {formatServiceName(page.params.id)}?
 		</h1>
 
 		<Carousel.Root
@@ -72,10 +113,10 @@
 					>
 						<Card.Root class="overflow-hidden !border-black">
 							<Card.Content class="lg:aspect-16/9 aspect-9/16 overflow-hidden object-cover p-0">
-								<Image 
-									url={`/assets/${$page.params.id}/carousel/${idx}.jpg`} 
-									description="" 
-									class="lg:aspect-16/9 aspect-9/16 h-[50vh] max-h-[50vh] w-full scale-125 rounded-2xl object-cover object-center lg:h-auto" 
+								<Image
+									url={`/assets/${page.params.id}/carousel/${idx}.jpg`}
+									description=""
+									class="lg:aspect-16/9 aspect-9/16 h-[50vh] max-h-[50vh] w-full scale-125 rounded-2xl object-cover object-center lg:h-auto"
 								/>
 							</Card.Content>
 						</Card.Root>
@@ -99,10 +140,10 @@
 		<div class="grid w-full grid-cols-3 grid-rows-2 gap-4 lg:gap-0">
 			{#each selectedServiceData.applications as application, idx}
 				<figure class="flex aspect-square flex-col items-center justify-center gap-4">
-					<Image 
-						url={`/assets/${$page.params.id}/applications/${idx}.png`} 
-						description="" 
-						class="w-[10vw]" 
+					<Image
+						url={`/assets/${page.params.id}/applications/${idx}.png`}
+						description=""
+						class="w-[10vw]"
 					/>
 					<figcaption class="text-center text-xs">{application}</figcaption>
 				</figure>
@@ -115,66 +156,6 @@
 		{@html selectedServiceData.description}
 	</section>
 
-	<!-- Materials -->
-	<section>
-		<Dialog.Root>
-			<Dialog.Trigger>
-				<Image 
-					url={`/assets/${$page.params.id}/pallet/mats.png`} 
-					description="" 
-					class="mb-4" 
-				/>
-			</Dialog.Trigger>
-
-			<Dialog.Content>
-				<ScrollArea class="max-h-[80vh]">
-					<Image 
-						url={`/assets/${$page.params.id}/pallet/mats.png`} 
-						description="" 
-						class="" 
-					/>
-				</ScrollArea>
-			</Dialog.Content>
-		</Dialog.Root>
-
-		<div class="flex flex-col items-center gap-6 rounded-3xl bg-black p-10 lg:py-20">
-			<div class="mx-auto flex flex-col gap-6 lg:flex-row">
-				<div
-					class="flex flex-row-reverse justify-center gap-0 *:-mr-[10%] lg:w-1/2 lg:justify-start"
-				>
-					{#if selectedServiceData.keyFeatures}
-						{#each Array(Math.min(4, selectedServiceData.keyFeatures.length)) as _, idx}
-							<Image 
-								url={`/assets/${$page.params.id}/pallet/${idx}.png`} 
-								description="" 
-								class="aspect-square w-1/3 first:mr-auto lg:w-1/4 first:lg:mr-0" 
-							/>
-						{/each}
-					{/if}
-				</div>
-
-				<div class="pl-4 font-semibold text-white lg:pl-8 lg:text-2xl">
-					<ul class="flex h-full list-inside list-disc flex-col justify-center">
-						{#if selectedServiceData.keyFeatures}
-							{#each selectedServiceData.keyFeatures as point}
-								<li>{point}</li>
-							{/each}
-						{/if}
-					</ul>
-				</div>
-			</div>
-
-			<Button
-				download="{$page.params.id}_color_scheme.pdf"
-				target="_blank"
-				href="/assets/{$page.params.id}/pallet/color_scheme.pdf"
-				variant="secondary"
-				aria-label="Download color chart PDF"
-				class="w-min">Download Color Chart</Button
-			>
-		</div>
-	</section>
-	
 	<!-- FAQ Section -->
 	{#if selectedServiceData.faqItems && selectedServiceData.faqItems.length > 0}
 		<section class="bg-gray-100 font-[Cantarell]">
@@ -182,7 +163,7 @@
 			<div class="grid gap-4">
 				{#each selectedServiceData.faqItems as faq}
 					<div class="rounded-lg bg-white p-4 shadow-sm">
-						<h4 class="mb-2 font-bold text-lg">{faq.question}</h4>
+						<h4 class="mb-2 text-lg font-bold">{faq.question}</h4>
 						<p>{faq.answer}</p>
 					</div>
 				{/each}
@@ -196,7 +177,13 @@
 			<h3 class="mb-8 text-center text-2xl font-semibold">Service Areas</h3>
 			<div class="flex flex-wrap justify-center gap-4">
 				{#each selectedServiceData.cities as city}
-					<div class="rounded-full bg-black px-4 py-2 text-white">{city}</div>
+					<a
+						href="{domain}/locations/{city
+							.split(' ')
+							.map((v) => v.toLowerCase())
+							.join('-')}"
+						class="rounded-full bg-black px-4 py-2 text-white">{city}</a
+					>
 				{/each}
 			</div>
 		</section>
