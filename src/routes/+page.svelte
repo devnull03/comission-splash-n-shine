@@ -4,15 +4,15 @@
 	import { ScrollArea } from '$lib/components/ui/scroll-area';
 	import * as Card from '$lib/components/ui/card';
 	import { goto } from '$app/navigation';
-	import { page } from '$app/stores';
+	// import { page } from '$app/stores';
 	import { isMobile, servicesPageNavigating } from '$lib/utils/stores';
 	import Image from '$lib/components/Image.svelte';
-	import { whyPoints } from '$lib/data/landing';
 	import { serviceData, services } from '$lib/data/services';
 	import type { Review } from '$lib/types/reviews';
 	import type { PageData } from './$types';
 	import { PUBLIC_COMPANY_NAME } from '$env/static/public';
 	import { CaretDown, DoubleArrowDown } from 'svelte-radix';
+	import { page } from '$app/state';
 
 	let { data }: { data: PageData } = $props();
 
@@ -24,13 +24,13 @@
 	let servicesSection: HTMLElement;
 
 	onMount(() => {
-		if ($page.url.toString().includes('services')) {
+		if (page.url.toString().includes('services')) {
 			servicesSection.scrollIntoView({ behavior: 'smooth' });
 		}
 	});
 
 	$effect(() => {
-		if ($servicesPageNavigating || $page.url.toString().includes('services')) {
+		if ($servicesPageNavigating || page.url.toString().includes('services')) {
 			$servicesPageNavigating = false;
 			console.log('services page navigating');
 		}
@@ -91,10 +91,10 @@
 	>
 		<h1 class="text-center text-4xl font-semibold leading-10">Services</h1>
 
-		<div class="grid w-full gap-10 lg:grid-cols-3">
+		<div class="grid w-full gap-2 lg:grid-cols-3">
 			{#each Object.keys(serviceData) as serviceKey, i}
 				{@const service = serviceData[serviceKey]}
-				<div class="flex flex-col items-center gap-4 text-center">
+				<div class="flex flex-col items-center gap-4 text-center mb-6">
 					<button
 						onclick={() => goto(`/services/${serviceKey}`)}
 						class="aspect-square overflow-hidden rounded object-cover"
@@ -136,7 +136,7 @@
 				<div class="flex flex-row gap-8 px-[30vw] pb-4">
 					{#each reviews as review, idx (review.name)}
 						<Card.Root
-							class="min-h-[65vh] w-[80vw] rounded-sm bg-foreground md:w-[50vw] lg:w-[30vw]"
+							class="min-h-[65vh] w-[80vw] rounded-[var(--radius)] bg-foreground md:w-[50vw] lg:w-[30vw]"
 						>
 							<Card.Header class="flex flex-row items-center gap-3">
 								<div class="flex-shrink-0">
@@ -189,8 +189,9 @@
 	</section>
 </main>
 
-<style>
+<style>	
 	.text-shadow {
 		text-shadow: 2px 3px 9px rgba(0, 0, 0, 0.59);
 	}
 </style>
+

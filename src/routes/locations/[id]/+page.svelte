@@ -6,8 +6,14 @@
 	import { contactInfo, locationsData } from '$lib/data/locations';
 	import { serviceData } from '$lib/data/services';
 	import { ChevronRight, DrawingPin, Mobile, EnvelopeClosed, Clock } from 'svelte-radix';
+	import type { PageData } from './$types';
+	import ContactForm from '$lib/components/ContactForm.svelte';
 
-	let selectedLocation = $derived(locationsData[$page.params.id]);
+	// let selectedLocation = $derived(locationsData[$page.params.id]);
+
+	let { data }: { data: PageData } = $props();
+	let selectedLocation = data?.location || null;
+	let serviceId = data?.id || null;
 
 	$effect(() => {
 		if (!selectedLocation) {
@@ -76,7 +82,7 @@
 	</section>
 
 	<!-- Contact Information -->
-	<section id="contact" class="mb-16 grid grid-cols-1 gap-8 md:grid-cols-2">
+	<section id="contact" class="mb-16 grid grid-cols-1 gap-8 md:grid-cols-3">
 		<div>
 			<h2 class="mb-6 text-3xl font-bold">Contact Information</h2>
 			<div class="space-y-4">
@@ -107,68 +113,10 @@
 		</div>
 
 		<!-- Contact Form -->
-		<div class="rounded-lg bg-gray-50 p-6 shadow-md">
-			<h2 class="mb-6 text-3xl font-bold">Send us a Message</h2>
-			<form class="space-y-4">
-				<div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-					<div class="space-y-2">
-						<label for="name" class="block font-medium">Name</label>
-						<input
-							type="text"
-							id="name"
-							class="w-full rounded-md border border-gray-300 p-2 focus:border-primary focus:outline-none"
-							required
-						/>
-					</div>
-					<div class="space-y-2">
-						<label for="email" class="block font-medium">Email</label>
-						<input
-							type="email"
-							id="email"
-							class="w-full rounded-md border border-gray-300 p-2 focus:border-primary focus:outline-none"
-							required
-						/>
-					</div>
-				</div>
-				<div class="space-y-2">
-					<label for="phone" class="block font-medium">Phone</label>
-					<input
-						type="tel"
-						id="phone"
-						class="w-full rounded-md border border-gray-300 p-2 focus:border-primary focus:outline-none"
-					/>
-				</div>
-				<div class="space-y-2">
-					<label for="service" class="block font-medium">Service Interested In</label>
-					<select
-						id="service"
-						class="w-full rounded-md border border-gray-300 p-2 focus:border-primary focus:outline-none"
-					>
-						<option value="">Select a service</option>
-						{#each selectedLocation.services as serviceId}
-							{#if serviceData[serviceId]}
-								<option value={serviceId}>
-									{serviceId
-										.split('-')
-										.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-										.join(' ')}
-								</option>
-							{/if}
-						{/each}
-					</select>
-				</div>
-				<div class="space-y-2">
-					<label for="message" class="block font-medium">Message</label>
-					<textarea
-						id="message"
-						rows="4"
-						class="w-full rounded-md border border-gray-300 p-2 focus:border-primary focus:outline-none"
-						required
-					></textarea>
-				</div>
-				<Button type="submit" class="w-full">Submit</Button>
-			</form>
+		<div class="md:col-span-2">
+			<ContactForm />	
 		</div>
+
 	</section>
 
 	<!-- FAQ -->

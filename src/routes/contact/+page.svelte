@@ -1,11 +1,13 @@
+<script>
+	import ContactForm from '$lib/components/ContactForm.svelte';
+</script>
+
 <svelte:head>
 	<title>Contact Us | Splash 'n Shine</title>
 	<meta
 		name="description"
 		content="Get in touch with Splash 'n Shine. We'd love to hear from you!"
 	/>
-
-	<script src="https://link.msgsndr.com/js/form_embed.js"></script>
 </svelte:head>
 
 <main class="mt-24 flex w-screen flex-col items-center pb-36 lg:mt-36">
@@ -23,23 +25,6 @@
 	</section>
 
 	<section class="w-full">
-		<iframe
-			src="https://api.leadconnectorhq.com/widget/form/iqHTKrAbOOGjMJuQrvYW"
-			style="width:100%;height:100%;border:none;border-radius:3px"
-			id="inline-iqHTKrAbOOGjMJuQrvYW"
-			data-layout={"{'id':'INLINE'}"}
-			data-trigger-type="alwaysShow"
-			data-trigger-value=""
-			data-activation-type="alwaysActivated"
-			data-activation-value=""
-			data-deactivation-type="neverDeactivate"
-			data-deactivation-value=""
-			data-form-name="Website Form"
-			data-height="1179"
-			data-layout-iframe-id="inline-iqHTKrAbOOGjMJuQrvYW"
-			data-form-id="iqHTKrAbOOGjMJuQrvYW"
-			title="Website Form"
-		>
-		</iframe>
+		<ContactForm />
 	</section>
 </main>
