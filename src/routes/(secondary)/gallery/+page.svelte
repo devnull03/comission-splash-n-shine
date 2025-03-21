@@ -4,7 +4,7 @@
 	import * as Dialog from '$lib/components/ui/dialog';
 	import { ScrollArea } from '$lib/components/ui/scroll-area';
 	import * as Tooltip from '$lib/components/ui/tooltip/index.js';
-	import { services } from '$lib/utils/stores';
+	import { services } from '$lib/data/services';
 	import Image from '$lib/components/Image.svelte';
 
 	let dialogOpen = $state(false);
@@ -18,7 +18,7 @@
 <Dialog.Root bind:open={dialogOpen}>
 	<Dialog.Content>
 		<ScrollArea class="max-h-[80vh]">
-			<Image url={dialogImageSrc} description="" class=""/>
+			<Image url={dialogImageSrc} description="High resolution before/after comparison of our professional cleaning work" class=""/>
 		</ScrollArea>
 	</Dialog.Content>
 </Dialog.Root>
@@ -34,7 +34,7 @@
 		>
 			<Image 
 				url={`/assets/${section}/portfolio/${idx}.jpg`} 
-				description="" 
+				description={`${section.replaceAll('-', ' ')} portfolio image ${idx+1} - ${idx % 2 === 0 ? 'before' : 'after'} cleaning transformation`} 
 				class="h-full w-full object-cover transition-all duration-500 ease-in-out hover:scale-110"
 			/>
 		</Tooltip.Trigger>

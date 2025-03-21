@@ -19,6 +19,7 @@ type ServiceData = {
     title: string;
     shortDescription: string;
     description: string;
+    images: string[];
     applications: string[];
     benefits?: string[];
     keyFeatures?: string[];
@@ -32,6 +33,12 @@ export const serviceData: ServiceData = {
     title: 'Complete Home Exterior Cleaning Package for $999 | Seasonal Offer',
     shortDescription: 'Vancouver & Surrey full house cleaning – Roof, gutters, siding, windows & driveway washing!',
     description: 'Transform your home\'s exterior with our all-inclusive $999 package. Services include house washing, roof cleaning, and driveway cleaning. Book now to avail this limited-time offer.',
+    images: [
+      '/assets/services/full-house-cleaning/1.webp',
+      '/assets/services/full-house-cleaning/2.webp',
+      '/assets/services/full-house-cleaning/3.webp',
+      '/assets/services/full-house-cleaning/4.webp',
+    ],
     applications: [
       'Residential Homes',
       'Single-Family Houses',
@@ -90,6 +97,10 @@ export const serviceData: ServiceData = {
     title: 'Expert Roof Cleaning Services in Surrey | Remove Moss & Algae',
     shortDescription: 'Professional roof cleaning in Vancouver & Surrey Soft wash, pressure wash & hand cleaning available!',
     description: 'Protect your roof with our professional cleaning services. We safely remove moss, algae, and stains, extending your roof\'s lifespan and enhancing its appearance.',
+    images: [
+      '/assets/services/roof-cleaning/1.webp',
+      '/assets/services/roof-cleaning/2.webp',
+    ],
     applications: [
       'Asphalt Shingle Roofs',
       'Cedar Shake Roofs',
@@ -154,6 +165,10 @@ export const serviceData: ServiceData = {
     title: 'High-Quality Roof Painting | Restore & Protect Your Roof',
     shortDescription: 'Professional roof painting in Vancouver & Surrey – Long-lasting protection & weatherproof coating!',
     description: 'Revitalize your roof with our premium painting services. Offering durable coatings that enhance aesthetics and provide long-lasting protection against the elements.',
+    images: [
+      '/assets/services/roof-painting/1.webp',
+      '/assets/services/roof-painting/2.webp',
+    ],
     applications: [
       'Asphalt Shingle Roofs',
       'Metal Roofs',
@@ -226,6 +241,11 @@ export const serviceData: ServiceData = {
     title: 'Professional Commercial & Strata Cleaning Services in Surrey',
     shortDescription: 'Vancouver & Surrey commercial cleaning – Roof, siding, gutters & post-construction power washing!',
     description: 'Maintain a pristine appearance for your commercial property with our specialized cleaning services. We cater to businesses and strata complexes, ensuring a spotless environment.',
+    images: [
+      '/assets/services/commercial-cleaning/1.webp',
+      '/assets/services/commercial-cleaning/2.webp',
+      '/assets/services/commercial-cleaning/3.webp',
+    ],
     applications: [
       'Office Buildings',
       'Retail Stores',
@@ -296,6 +316,11 @@ export const serviceData: ServiceData = {
     title: 'Streak-Free Window Washing Services | Residential & Commercial',
     shortDescription: 'Crystal-clear window washing in Vancouver & Surrey – Residential & commercial glass cleaning experts',
     description: 'Let natural light shine through with our professional window washing services. Serving both homes and businesses for crystal-clear results.',
+    images: [
+      '/assets/services/window-washing/1.webp',
+      '/assets/services/window-washing/2.webp',
+      '/assets/services/window-washing/3.webp',
+    ],
     applications: [
       'Residential Homes',
       'Storefronts',
@@ -356,6 +381,10 @@ export const serviceData: ServiceData = {
     title: 'Comprehensive Post-Construction Cleanup Services in Surrey',
     shortDescription: 'Complete post-construction cleanup in Vancouver & Surrey – Power washing, debris removal & detailing',
     description: 'Ensure your newly constructed or renovated property is move-in ready with our thorough post-construction cleaning services. We handle debris removal, surface cleaning, and more.',
+    images: [
+      '/assets/services/post-construction-cleanup/1.webp',
+      '/assets/services/post-construction-cleanup/2.jpg',
+    ],
     applications: [
       'New Home Construction',
       'Home Renovations',
@@ -424,6 +453,10 @@ export const serviceData: ServiceData = {
     title: 'Reliable Gutter Cleaning Services | Prevent Water Damage',
     shortDescription: 'Trusted gutter cleaning in Vancouver & Surrey - Inside & outside clearing to prevent clogs',
     description: 'Keep your gutters free from debris with our expert cleaning services. Prevent clogs and water damage to protect your home\'s foundation.',
+    images: [
+      '/assets/services/gutter-cleaning/1.webp',
+      '/assets/services/gutter-cleaning/2.webp',
+    ],
     applications: [
       'Residential Homes',
       'Commercial Buildings',
