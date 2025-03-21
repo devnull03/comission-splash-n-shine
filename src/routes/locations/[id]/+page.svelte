@@ -104,7 +104,7 @@
 								.join(' ')}
 						</h3>
 						<p class="mb-4 flex-1 text-gray-600">
-							{serviceData[serviceId].description || 'Professional service tailored to your needs.'}
+							{serviceData[serviceId].shortDescription || 'Professional service tailored to your needs.'}
 						</p>
 						<Button href={`${domain}/services/${serviceId}`} variant="outline" class="w-full"
 							>Learn More</Button

@@ -13,6 +13,8 @@
 	import { PUBLIC_COMPANY_NAME } from '$env/static/public';
 	import { CaretDown, DoubleArrowDown } from 'svelte-radix';
 	import { page } from '$app/state';
+	import { contactInfo } from '$lib/data/locations';
+	import PhoneCall from '$lib/icons/PhoneCall.svelte';
 
 	let { data }: { data: PageData } = $props();
 
@@ -136,21 +138,30 @@
 				Welcome to Splash n' Shine, your premier exterior cleaning service provider in the Greater
 				Vancouver area. With years of expertise in <a
 					href="/services/pressure-washing"
-					class="text-black bg-primary/30 px-1 rounded">pressure washing</a
+					class="rounded bg-primary/30 px-1 text-black">pressure washing</a
 				>
 				and
-				<a href="/services/soft-washing" class="text-black bg-primary/30 px-1 rounded">soft washing</a> solutions,
-				we've built our reputation on delivering exceptional results for both residential and commercial
-				properties.
+				<a href="/services/soft-washing" class="rounded bg-primary/30 px-1 text-black"
+					>soft washing</a
+				> solutions, we've built our reputation on delivering exceptional results for both residential
+				and commercial properties.
 			</p>
 			<p class="text-muted-foreground">
-				Serving <a href="/locations/vancouver" class="text-black bg-primary/30 px-1 rounded">Vancouver</a>,
-				<a href="/locations/surrey" class="text-black bg-primary/30 px-1 rounded">Surrey</a>, and the entire
-				Lower Mainland, our professional team specializes in comprehensive exterior cleaning
-				services, including
-				<a href="/services/roof-cleaning" class="text-black bg-primary/30 px-1 rounded">roof cleaning</a>,
-				<a href="/services/gutter-cleaning" class="text-black bg-primary/30 px-1 rounded">gutter maintenance</a>, and
-				<a href="/services/window-cleaning" class="text-black bg-primary/30 px-1 rounded">window washing</a>.
+				Serving <a href="/locations/vancouver" class="rounded bg-primary/30 px-1 text-black"
+					>Vancouver</a
+				>,
+				<a href="/locations/surrey" class="rounded bg-primary/30 px-1 text-black">Surrey</a>, and
+				the entire Lower Mainland, our professional team specializes in comprehensive exterior
+				cleaning services, including
+				<a href="/services/roof-cleaning" class="rounded bg-primary/30 px-1 text-black"
+					>roof cleaning</a
+				>,
+				<a href="/services/gutter-cleaning" class="rounded bg-primary/30 px-1 text-black"
+					>gutter maintenance</a
+				>, and
+				<a href="/services/window-cleaning" class="rounded bg-primary/30 px-1 text-black"
+					>window washing</a
+				>.
 			</p>
 			<p class="text-muted-foreground">
 				What sets us apart is our commitment to using cutting-edge equipment and eco-friendly
@@ -215,6 +226,29 @@
 					>
 				</div>
 			{/each}
+		</div>
+	</section>
+
+	<!-- Phone CTA -->
+	<section class="relative w-full py-24 text-white h-[60vh] flex justify-center items-center">
+		<div class="absolute inset-0 z-0">
+			<Image
+				url="/assets/landing/2.jpg"
+				description="Professional exterior cleaning background"
+				class="h-full w-full object-cover"
+			/>
+			<div class="absolute inset-0 bg-secondary-foreground/65">&nbsp;</div>
+		</div>
+		<div class="container relative z-10 mx-auto my-auto text-center">
+			<h2 class="mb-4 text-4xl font-semibold">Ready to Transform Your Property?</h2>
+			<p class="mb-8 text-xl opacity-90">Call now for a free consultation and estimate</p>
+			<a
+				href="tel:778-804-5911"
+				class="group inline-flex items-center gap-4 text-[8vw] font-bold hover:opacity-90"
+			>
+				<PhoneCall class="h-auto w-[6vw] transition-transform group-hover:scale-110" color="white" />
+				{contactInfo.phone.replace(/[^0-9]/g, '').replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3')}
+			</a>
 		</div>
 	</section>
 

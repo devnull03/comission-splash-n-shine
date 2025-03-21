@@ -20,7 +20,6 @@ type ServiceData = {
     shortDescription: string;
     description: string;
     images: string[];
-    applications: string[];
     benefits?: string[];
     keyFeatures?: string[];
     cities?: string[];
@@ -32,20 +31,12 @@ export const serviceData: ServiceData = {
   'full-house-cleaning': {
     title: 'Complete Home Exterior Cleaning Package for $999 | Seasonal Offer',
     shortDescription: 'Vancouver & Surrey full house cleaning – Roof, gutters, siding, windows & driveway washing!',
-    description: 'Transform your home\'s exterior with our all-inclusive $999 package. Services include house washing, roof cleaning, and driveway cleaning. Book now to avail this limited-time offer.',
+    description: 'Transform your home\'s exterior with our all-inclusive $999 package. Our comprehensive service includes professional house washing to remove dirt and grime, thorough roof cleaning to prevent damage from moss and algae, window washing for crystal-clear views, gutter cleaning to prevent water damage, and pressure washing for driveways and walkways. This package offers exceptional value for homes up to 2500 sqft, combining our most popular services at a significant discount. Book now to take advantage of this limited-time offer and restore your home\'s curb appeal.',
     images: [
       '/assets/services/full-house-cleaning/1.webp',
       '/assets/services/full-house-cleaning/2.webp',
       '/assets/services/full-house-cleaning/3.webp',
       '/assets/services/full-house-cleaning/4.webp',
-    ],
-    applications: [
-      'Residential Homes',
-      'Single-Family Houses',
-      'Townhouses',
-      'Duplexes',
-      'Small Multi-Family Properties',
-      'Rental Properties'
     ],
     benefits: [
       'Complete exterior cleaning in one package',
@@ -96,18 +87,10 @@ export const serviceData: ServiceData = {
   'roof-cleaning': {
     title: 'Expert Roof Cleaning Services in Surrey | Remove Moss & Algae',
     shortDescription: 'Professional roof cleaning in Vancouver & Surrey Soft wash, pressure wash & hand cleaning available!',
-    description: 'Protect your roof with our professional cleaning services. We safely remove moss, algae, and stains, extending your roof\'s lifespan and enhancing its appearance.',
+    description: 'Protect your roof with our professional cleaning services. We specialize in safe and effective cleaning for all roof types including asphalt shingles, cedar shakes, tile, clay, metal, and flat roofs. Our comprehensive service removes moss, algae, black streaks, and organic growth that can damage your roofing materials. Using a combination of soft washing and hand cleaning techniques, we ensure your roof is thoroughly cleaned without risking damage to the materials. Our treatments include preventative applications that help resist future growth, extending your roof\'s lifespan and maintaining its protective capabilities.',
     images: [
       '/assets/services/roof-cleaning/1.webp',
       '/assets/services/roof-cleaning/2.webp',
-    ],
-    applications: [
-      'Asphalt Shingle Roofs',
-      'Cedar Shake Roofs',
-      'Tile & Clay Roofs',
-      'Metal Roofs',
-      'Flat Roofs',
-      'Commercial Roofing'
     ],
     benefits: [
       'Extends roof lifespan',
@@ -168,14 +151,6 @@ export const serviceData: ServiceData = {
     images: [
       '/assets/services/roof-painting/1.webp',
       '/assets/services/roof-painting/2.webp',
-    ],
-    applications: [
-      'Asphalt Shingle Roofs',
-      'Metal Roofs',
-      'Flat Roofs',
-      'Tile Roofs',
-      'Commercial Roofing',
-      'Industrial Buildings'
     ],
     benefits: [
       'Extends roof lifespan',
@@ -246,16 +221,6 @@ export const serviceData: ServiceData = {
       '/assets/services/commercial-cleaning/2.webp',
       '/assets/services/commercial-cleaning/3.webp',
     ],
-    applications: [
-      'Office Buildings',
-      'Retail Stores',
-      'Shopping Centers',
-      'Restaurants & Cafés',
-      'Medical & Dental Offices',
-      'Schools & Daycares',
-      'Warehouses',
-      'Car Dealerships'
-    ],
     benefits: [
       'Enhances professional appearance',
       'Creates positive customer impressions',
@@ -321,14 +286,6 @@ export const serviceData: ServiceData = {
       '/assets/services/window-washing/2.webp',
       '/assets/services/window-washing/3.webp',
     ],
-    applications: [
-      'Residential Homes',
-      'Storefronts',
-      'Office Buildings',
-      'High-Rise Windows',
-      'Skylights',
-      'Solar Panels'
-    ],
     benefits: [
       'Crystal clear, streak-free results',
       'Extends window lifespan',
@@ -384,14 +341,6 @@ export const serviceData: ServiceData = {
     images: [
       '/assets/services/post-construction-cleanup/1.webp',
       '/assets/services/post-construction-cleanup/2.jpg',
-    ],
-    applications: [
-      'New Home Construction',
-      'Home Renovations',
-      'Commercial Building Projects',
-      'Office Renovations',
-      'Retail Build-Outs',
-      'Industrial Construction'
     ],
     benefits: [
       'Removes hazardous construction dust',
@@ -456,14 +405,6 @@ export const serviceData: ServiceData = {
     images: [
       '/assets/services/gutter-cleaning/1.webp',
       '/assets/services/gutter-cleaning/2.webp',
-    ],
-    applications: [
-      'Residential Homes',
-      'Commercial Buildings',
-      'Apartment Complexes',
-      'Condominiums',
-      'Townhouses',
-      'High-Rise Buildings'
     ],
     benefits: [
       'Prevents water damage',
