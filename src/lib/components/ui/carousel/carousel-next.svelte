@@ -2,7 +2,7 @@
 	import ArrowRight from "svelte-radix/ArrowRight.svelte";
 	import type { VariantProps } from "tailwind-variants";
 	import { getEmblaContext } from "./context.js";
-	import { cn } from "$lib/utils/utils";
+	import { cn } from "$lib/utils.js";
 	import {
 		Button,
 		type Props,
@@ -33,7 +33,6 @@
 	disabled={!$canScrollNext}
 	on:click={scrollNext}
 	on:keydown={handleKeyDown}
-	aria-label="Next slide"
 	{...$$restProps}
 >
 	<ArrowRight class="h-4 w-4" />

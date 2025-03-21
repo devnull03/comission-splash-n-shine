@@ -2,7 +2,7 @@
 	import ArrowLeft from "svelte-radix/ArrowLeft.svelte";
 	import type { VariantProps } from "tailwind-variants";
 	import { getEmblaContext } from "./context.js";
-	import { cn } from "$lib/utils/utils";
+	import { cn } from "$lib/utils.js";
 	import {
 		Button,
 		type Props,
@@ -33,7 +33,6 @@
 	disabled={!$canScrollPrev}
 	on:click={scrollPrev}
 	on:keydown={handleKeyDown}
-	aria-label="Previous slide"
 	{...$$restProps}
 >
 	<ArrowLeft class="h-4 w-4" />
