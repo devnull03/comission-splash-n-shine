@@ -9,14 +9,20 @@
 	import Telegram from '$lib/icons/telegram.svelte';
 
 	import { Copy } from 'svelte-radix';
+	import { onMount } from 'svelte';
 
 	let currentUrl = $derived(page.url.toString());
-	let title = $derived(document.title);
+	let title = $state("Professional Exterior Cleaning Services | Transform Your Property Today! ✨🏠");
 
 	function copyToClipboard() {
 		navigator.clipboard.writeText(currentUrl);
 		alert("Link copied to clipboard!");
 	}
+
+
+	onMount(() => {
+		title = `${document.title} | Transform Your Property Today! ✨🏠`;
+	})
 </script>
 
 <div class="floating-share">
