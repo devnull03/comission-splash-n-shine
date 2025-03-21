@@ -1,9 +1,10 @@
 <script lang="ts">
     interface Props {
         color?: string;
+        class?: string;
     }
 
-    let { color = "black" }: Props = $props();
+    let { color = "black", class: className = "" }: Props = $props();
 </script>
 
 <svg
@@ -12,6 +13,7 @@
     viewBox="0 0 25 25"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    class={className}
 >
     <g id="icon/phone-call">
         <path

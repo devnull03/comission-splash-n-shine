@@ -58,7 +58,7 @@
 	<section class="relative flex h-[85vh] w-full flex-row justify-evenly gap-0 text-background">
 		<Image
 			url="/assets/landing/1.webp"
-			description="landing hero banner"
+			description="Professional exterior cleaning service in action - Splash n' Shine hero image"
 			class="w-full object-cover"
 			fetchpriority="high"
 		/>
@@ -121,7 +121,7 @@
 						<a href={`${domain}/services/${serviceKey}`} onclick={(e) => { e.preventDefault(); goto(`/services/${serviceKey}`); }}>
 							<Image
 								url={`/assets/services/${serviceKey}/1.webp`}
-								description=""
+								description={`${service.title} service highlight - professional cleaning demonstration by Splash n' Shine`}
 								class="aspect-square h-auto w-full object-cover transition-all duration-500 ease-in-out hover:scale-110"
 								size={[480]}
 								width="480"

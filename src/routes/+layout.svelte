@@ -6,6 +6,7 @@
 	import Header from '$lib/components/Header.svelte';
 	import { Toaster } from '$lib/components/ui/sonner';
 	import { CaretUp } from 'svelte-radix';
+	import FloatingShare from '$lib/components/FloatingShare.svelte';
 
 	interface Props {
 		children?: import('svelte').Snippet;
@@ -64,7 +65,8 @@
 
 <Toaster />
 
-<!-- {#key load} -->
+<FloatingShare />
+
 <div class="flex h-screen flex-col justify-between">
 	<Header />
 	<main class="">
@@ -72,7 +74,6 @@
 	</main>
 	<Footer />
 </div>
-<!-- {/key} -->
 
 {#if scrollY !== 0}
 	<button
