@@ -99,7 +99,7 @@
 <style>
 	.floating-share {
 		position: fixed;
-		right: 1rem;
+		left: 1rem;
 		top: 50%;
 		transform: translateY(-50%);
 		display: flex;
@@ -125,7 +125,7 @@
 	/* Media query for smaller screens */
 	@media (max-width: 768px) {
 		.floating-share {
-			right: 0.5rem;
+			left: 0.5rem;
 			padding: 0.35rem;
 			scale: 0.9;
 		}
