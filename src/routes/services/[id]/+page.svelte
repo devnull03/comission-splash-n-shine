@@ -87,10 +87,10 @@
 	<link rel="canonical" href="https://www.splashnshine.ca/services/{page.params.id}" />
 </svelte:head>
 
-<main class="mt-24 *:p-10 lg:mt-16 *:lg:p-32 *:lg:pb-0">
+<main class="mt-24 *:p-10 lg:mt-16 *:lg:p-32">
 	<!-- Carousel -->
 	<section
-		class="flex flex-col overflow-hidden bg-black text-center text-2xl text-white lg:text-4xl lg:!pb-32"
+		class="flex flex-col overflow-hidden bg-black text-center text-2xl text-white lg:text-4xl"
 	>
 		<h1 class="mb-8 font-[Cantarell] lg:mb-16">
 			<!-- Why {formatServiceName(page.params.id)}? -->
@@ -135,7 +135,7 @@
 
 	<!-- Available Cities -->
 	{#if selectedServiceData.cities && selectedServiceData.cities.length > 0}
-		<section class="font-[Cantarell]">
+		<section class="font-[Cantarell] lg:!pb-0">
 			<h3 class="mb-8 text-center text-2xl font-semibold">Service Areas</h3>
 			<div class="flex flex-wrap justify-center gap-4">
 				{#each selectedServiceData.cities as city}
@@ -170,7 +170,7 @@
 	
 	<!-- FAQ Section -->
 	{#if selectedServiceData.faqItems && selectedServiceData.faqItems.length > 0}
-		<section class="bg-gray-100 font-[Cantarell] lg:!pb-32">
+		<section class="bg-gray-100 font-[Cantarell]">
 			<h3 class="mb-8 text-center text-2xl font-semibold">Frequently Asked Questions</h3>
 			<div class="grid gap-4">
 				{#each selectedServiceData.faqItems as faq}

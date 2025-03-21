@@ -149,6 +149,17 @@
 				</Dropdown>
 
 				<a
+					href="{domain}/gallery"
+					onclick={(e) => {
+						e.preventDefault();
+						goto('/gallery');
+					}}
+					class="font-semibold {colorState ? 'text-white' : 'text-black'}"
+				>
+					Gallery
+				</a>
+
+				<a
 					href="https://www.instagram.com/luxuryfloors.ca/"
 					aria-label="Go to instagram page"
 					class="text-xs font-semibold uppercase"
@@ -166,6 +177,7 @@
 				<Button
 					onclick={() => goto('/contact')}
 					variant={colorState ? 'secondary' : 'default'}
+					size="lg"
 					aria-label="Open quote request form">Get Free Quote</Button
 				>
 			</div>

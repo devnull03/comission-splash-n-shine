@@ -42,10 +42,19 @@
 
 <svelte:head>
 	<title>Splash n' Shine | Professional Exterior Cleaning Services in Vancouver & Surrey</title>
-	<meta name="description" content="Transform your property with Splash n' Shine's premium exterior cleaning services. We specialize in power washing, soft washing, and roof cleaning throughout Vancouver, Surrey and the Lower Mainland." />
-	<meta name="keywords" content="power washing Vancouver, exterior cleaning Surrey, soft washing, roof cleaning, gutter cleaning, window washing, house washing, driveway cleaning, deck cleaning, property maintenance, Lower Mainland pressure washing" />
+	<meta
+		name="description"
+		content="Transform your property with Splash n' Shine's premium exterior cleaning services. We specialize in power washing, soft washing, and roof cleaning throughout Vancouver, Surrey and the Lower Mainland."
+	/>
+	<meta
+		name="keywords"
+		content="power washing Vancouver, exterior cleaning Surrey, soft washing, roof cleaning, gutter cleaning, window washing, house washing, driveway cleaning, deck cleaning, property maintenance, Lower Mainland pressure washing"
+	/>
 	<meta property="og:title" content="Splash n' Shine | Professional Exterior Cleaning" />
-	<meta property="og:description" content="Vancouver's premier exterior cleaning service. Restore your property's beauty with our professional power washing solutions." />
+	<meta
+		property="og:description"
+		content="Vancouver's premier exterior cleaning service. Restore your property's beauty with our professional power washing solutions."
+	/>
 	<meta property="og:image" content="/assets/logo.png" />
 	<meta property="og:url" content="https://www.splashnshine.ca" />
 	<meta property="og:type" content="website" />
@@ -80,8 +89,15 @@
 		<Button
 			onclick={() => goto('/contact')}
 			aria-label="Get free quote"
-			class="absolute bottom-[20%]">
-			<a href={`${domain}/contact`} onclick={(e) => { e.preventDefault(); goto('/contact'); }}>
+			class="absolute bottom-[20%]"
+		>
+			<a
+				href={`${domain}/contact`}
+				onclick={(e) => {
+					e.preventDefault();
+					goto('/contact');
+				}}
+			>
 				Get Free Quote
 			</a>
 		</Button>
@@ -91,19 +107,73 @@
 		</button>
 	</section>
 
-	<section class="flex w-full flex-col items-center gap-6 py-8 px-4">
-		<h1 class="text-center text-2xl font-semibold leading-tight md:text-5xl lg:text-4xl max-w-4xl mx-auto">
+	<section class="flex w-full flex-col items-center gap-6 px-4 py-8">
+		<h1
+			class="mx-auto max-w-4xl text-center text-2xl font-semibold leading-tight md:text-5xl lg:text-4xl"
+		>
 			Transform Your Home with Professional Cleaning
 		</h1>
-		<div class="w-24 h-1 bg-primary rounded-full my-2"></div>
-		<p class="text-center text-lg text-muted-foreground max-w-3xl mx-auto">
-			Experience the difference professional cleaning makes. Our expert team delivers exceptional results that will enhance your property's curb appeal and value.
+		<div class="my-2 h-1 w-24 rounded-full bg-primary"></div>
+		<p class="mx-auto max-w-3xl text-center text-lg text-muted-foreground">
+			Experience the difference professional cleaning makes. Our expert team delivers exceptional
+			results that will enhance your property's curb appeal and value.
 		</p>
+	</section>
+
+	<!-- About -->
+	<section class="container mx-auto flex flex-col items-center gap-8 px-4 py-12 lg:flex-row">
+		<div class="w-full lg:w-1/2">
+			<Image
+				url="/assets/landing/team.jpg"
+				description="Splash n' Shine professional cleaning team in Vancouver"
+				class="h-[60vh] w-full rounded-lg object-cover shadow-xl"
+			/>
+		</div>
+		<div class="w-full space-y-6 lg:w-1/2">
+			<h2 class="text-3xl font-semibold">Vancouver's Trusted Exterior Cleaning Experts</h2>
+			<div class="h-1 w-20 rounded-full bg-primary"></div>
+			<p class="text-muted-foreground">
+				Welcome to Splash n' Shine, your premier exterior cleaning service provider in the Greater
+				Vancouver area. With years of expertise in <a
+					href="/services/pressure-washing"
+					class="text-black bg-primary/30 px-1 rounded">pressure washing</a
+				>
+				and
+				<a href="/services/soft-washing" class="text-black bg-primary/30 px-1 rounded">soft washing</a> solutions,
+				we've built our reputation on delivering exceptional results for both residential and commercial
+				properties.
+			</p>
+			<p class="text-muted-foreground">
+				Serving <a href="/locations/vancouver" class="text-black bg-primary/30 px-1 rounded">Vancouver</a>,
+				<a href="/locations/surrey" class="text-black bg-primary/30 px-1 rounded">Surrey</a>, and the entire
+				Lower Mainland, our professional team specializes in comprehensive exterior cleaning
+				services, including
+				<a href="/services/roof-cleaning" class="text-black bg-primary/30 px-1 rounded">roof cleaning</a>,
+				<a href="/services/gutter-cleaning" class="text-black bg-primary/30 px-1 rounded">gutter maintenance</a>, and
+				<a href="/services/window-cleaning" class="text-black bg-primary/30 px-1 rounded">window washing</a>.
+			</p>
+			<p class="text-muted-foreground">
+				What sets us apart is our commitment to using cutting-edge equipment and eco-friendly
+				cleaning solutions, ensuring your property receives the care it deserves while protecting
+				the environment.
+			</p>
+			<Button onclick={() => goto('/contact')} class="mt-4">
+				<a
+					href={`${domain}/contact`}
+					onclick={(e) => {
+						e.preventDefault();
+						goto('/contact');
+					}}
+				>
+					Schedule a Free Consultation
+				</a>
+			</Button>
+		</div>
 	</section>
 
 	<!-- services -->
 	<section
-		class="flex scroll-mt-32 flex-col items-center gap-12 px-[6%] pb-16 lg:gap-16"
+		class="flex scroll-mt-32 flex-col items-center gap-12 px-4 pb-8 lg:gap-16"
 		id="services"
 		bind:this={servicesSection}
 	>
@@ -112,13 +182,19 @@
 		<div class="grid w-full gap-2 lg:grid-cols-3">
 			{#each Object.keys(serviceData) as serviceKey, i}
 				{@const service = serviceData[serviceKey]}
-				<div class="flex flex-col items-center gap-4 text-center mb-6">
+				<div class="mb-6 flex flex-col items-center gap-4 text-center">
 					<button
 						onclick={() => goto(`/services/${serviceKey}`)}
 						class="aspect-square overflow-hidden rounded object-cover"
 						aria-label={`Learn more about ${service.title}`}
 					>
-						<a href={`${domain}/services/${serviceKey}`} onclick={(e) => { e.preventDefault(); goto(`/services/${serviceKey}`); }}>
+						<a
+							href={`${domain}/services/${serviceKey}`}
+							onclick={(e) => {
+								e.preventDefault();
+								goto(`/services/${serviceKey}`);
+							}}
+						>
 							<Image
 								url={`/assets/services/${serviceKey}/1.webp`}
 								description={`${service.title} service highlight - professional cleaning demonstration by Splash n' Shine`}
@@ -209,9 +285,8 @@
 	</section>
 </main>
 
-<style>	
+<style>
 	.text-shadow {
 		text-shadow: 2px 3px 9px rgba(0, 0, 0, 0.59);
 	}
 </style>
-

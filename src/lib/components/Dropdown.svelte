@@ -97,7 +97,7 @@
 
 	button {
 		cursor: pointer;
-		padding: 0.5rem 1rem;
+		padding: 0.5rem 0.1rem;
 		border: none;
 		background: transparent;
 		transition:
