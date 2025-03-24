@@ -147,7 +147,7 @@
 		</div>
 
 		<!-- Contact Form -->
-		<div class="md:col-span-2 -mx-10 md:mx-auto">
+		<div class="md:col-span-2 -mx-10 md:mx-0">
 			<ContactForm />
 		</div>
 	</section>
