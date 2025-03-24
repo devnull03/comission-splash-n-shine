@@ -12,7 +12,7 @@
 	import { PUBLIC_COMPANY_NAME } from '$env/static/public';
 	import { Cross2, HamburgerMenu } from 'svelte-radix';
 	import { services } from '$lib/data/services';
-	import { locationIds } from '$lib/data/locations';
+	import { contactInfo, locationIds } from '$lib/data/locations';
 	import Dropdown from '$lib/components/Dropdown.svelte';
 	import DropdownItem from '$lib/components/DropdownItem.svelte';
 
@@ -40,14 +40,25 @@
 <svelte:window bind:scrollY={initScroll} />
 
 <nav class="realtive">
-	<div class="fixed left-[6%] top-2 z-[55] aspect-square h-16 w-16">
+	<div class="fixed left-[6%] top-8 z-[55] aspect-square h-16 w-16">
 		<!-- <Logo class="h-full w-full" /> -->
 		<!-- <Image url="/assets/logo.png" description="company logo header" /> -->
 		<enhanced:img sizes="64px" src={logoAddr} alt="company logo header" class="h-full w-full" />
 	</div>
 
 	<div
-		class="fixed top-0 z-50 flex h-20 w-full flex-row justify-between border-b px-[6%] {initScroll <
+		class="fixed top-0 z-[50] w-full bg-primary py-1 text-center font-[Cantarell] font-semibold text-primary-foreground md:pr-20 md:text-right lg:text-lg"
+	>
+		<a href="tel:{contactInfo.phone}">
+			Call us at {contactInfo.phone
+				.match(/(\d{3})(\d{3})(\d{4})/)
+				?.slice(1)
+				.join('-')}
+		</a>
+	</div>
+
+	<div
+		class="fixed top-8 z-50 flex h-20 w-full flex-row justify-between border-b px-[6%] {initScroll <
 			$scrollThreshold && isLandingPage
 			? 'border-transparent bg-transparent'
 			: ' bg-secondary'} border-black transition-all duration-500 ease-in-out"
@@ -61,11 +72,22 @@
 			onclick={() => goto('/')}
 			aria-label="Go to home page"
 		>
-			{PUBLIC_COMPANY_NAME}
+			<!-- {PUBLIC_COMPANY_NAME} -->
 		</button>
 
+		{#if !(initScroll < $scrollThreshold && isLandingPage)}
+			<Button
+				onclick={() => goto('/contact')}
+				variant={colorState ? 'secondary' : 'default'}
+				aria-label="Open quote request form"
+				class="absolute right-20 top-6"
+			>
+				Get Free Quote
+			</Button>
+		{/if}
+
 		<button
-			class="absolute right-4 top-0 px-8 py-10 lg:hidden {initScroll < $scrollThreshold &&
+			class="absolute right-4 top-0 px-4 py-8 lg:hidden {initScroll < $scrollThreshold &&
 			isLandingPage
 				? 'text-white'
 				: 'text-black'}"

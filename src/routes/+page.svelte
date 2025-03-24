@@ -3,6 +3,7 @@
 	import Button from '$lib/components/ui/button/button.svelte';
 	import { ScrollArea } from '$lib/components/ui/scroll-area';
 	import * as Card from '$lib/components/ui/card';
+	import * as Accordion from '$lib/components/ui/accordion';
 	import { goto } from '$app/navigation';
 	// import { page } from '$app/stores';
 	import { isMobile, servicesPageNavigating } from '$lib/utils/stores';
@@ -67,6 +68,98 @@
 
 <svelte:window bind:scrollY={initScroll} />
 
+{#snippet desktopServiceBlock(serviceKey: string, i: number)}
+	{@const service = serviceData[serviceKey]}
+	<div class="mb-6 flex flex-col gap-4 text-center">
+		<span class="font-[Alatsi] text-3xl text-primary-foreground"> {service.title}</span>
+
+		<button
+			onclick={() => goto(`/services/${serviceKey}`)}
+			class="aspect-square overflow-hidden rounded object-cover"
+			aria-label={`Learn more about ${service.title}`}
+		>
+			<a
+				href={`${domain}/services/${serviceKey}`}
+				onclick={(e) => {
+					e.preventDefault();
+					goto(`/services/${serviceKey}`);
+				}}
+			>
+				<Image
+					url={`/assets/services/${serviceKey}/1.webp`}
+					description={`${service.title} service highlight - professional cleaning demonstration by Splash n' Shine`}
+					class="aspect-square h-auto w-full object-cover transition-all duration-500 ease-in-out hover:scale-110"
+					width="480"
+					quality={50}
+				/>
+			</a>
+		</button>
+
+		<span class="font-[Cantarell] text-[#00000099]">{service.shortDescription}</span>
+		<a
+			href={`${domain}/services/${services[i]}`}
+			class="border-b border-b-transparent text-xs italic transition-all duration-300 ease-in-out hover:border-b-black"
+			>Read more...</a
+		>
+	</div>
+{/snippet}
+
+{#snippet mobileServiceBlock(serviceKey: string, i: number)}
+	{@const service = serviceData[serviceKey]}
+	<Accordion.Root class="mb-2 w-full" value={!i ? [serviceKey] : []}>
+		<Accordion.Item value={serviceKey}>
+			<Accordion.Trigger class="w-full rounded-lg bg-primary/10 px-4 py-3">
+				<span class="w-full font-[Alatsi] text-xl text-primary-foreground">
+					{@html service.title.split('|').join('<br>')}
+				</span>
+			</Accordion.Trigger>
+			<Accordion.Content class="px-1 pt-2">
+				<div class="flex flex-col gap-3">
+					<div class="aspect-video overflow-hidden rounded">
+						<Image
+							url={`/assets/services/${serviceKey}/1.webp`}
+							description={`${service.title} service highlight - professional cleaning demonstration by Splash n' Shine`}
+							class="h-auto w-full object-cover"
+							width="400"
+							quality={40}
+						/>
+					</div>
+					<p class="py-1 font-[Cantarell] text-sm text-[#00000099]">{service.shortDescription}</p>
+					<div class="mt-1 flex justify-between gap-2">
+						<Button
+							variant="outline"
+							size="sm"
+							onclick={() => goto(`/services/${serviceKey}`)}
+							class="flex-1"
+						>
+							<a
+								href={`${domain}/services/${serviceKey}`}
+								onclick={(e) => {
+									e.preventDefault();
+									goto(`/services/${serviceKey}`);
+								}}
+							>
+								Learn More
+							</a>
+						</Button>
+						<Button size="sm" onclick={() => goto('/contact')} class="flex-1">
+							<a
+								href={`${domain}/contact`}
+								onclick={(e) => {
+									e.preventDefault();
+									goto('/contact');
+								}}
+							>
+								Get Quote
+							</a>
+						</Button>
+					</div>
+				</div>
+			</Accordion.Content>
+		</Accordion.Item>
+	</Accordion.Root>
+{/snippet}
+
 <main class="flex w-screen flex-col items-center gap-16 pb-48 lg:gap-16">
 	<section
 		class="relative flex h-[85vh] w-full flex-row justify-evenly gap-0 overflow-hidden object-cover text-background"
@@ -88,10 +181,12 @@
 		<div
 			class="absolute left-1/2 top-1/2 flex w-full -translate-x-1/2 -translate-y-1/2 transform flex-col items-center"
 		>
-			<h1 class="text-shadow text-center text-[6vh] md:text-[10vw] font-semibold">
+			<h1 class="text-shadow text-center text-[6vh] font-semibold md:text-[10vw]">
 				{PUBLIC_COMPANY_NAME}
 			</h1>
-			<span class="text-center font-[Cantarell] text-lg md:text-2xl font-semibold *:bg-primary/30 flex flex-wrap justify-center *:px-1">
+			<span
+				class="flex flex-wrap justify-center text-center font-[Cantarell] text-lg font-semibold *:bg-primary/30 *:px-1 md:text-2xl"
+			>
 				<span>Professional</span> <span>Residential</span> <span>&</span> <span>Commercial</span>
 				<span>Exterior</span> <span>Cleaning</span> <span>Near</span> <span>You</span>
 			</span>
@@ -201,42 +296,15 @@
 		id="services"
 		bind:this={servicesSection}
 	>
-		<h1 class="text-center text-4xl font-semibold leading-10">Services</h1>
+		<h1 class="text-center text-5xl font-semibold leading-10">Services we offer</h1>
 
-		<div class="grid w-full gap-2 lg:grid-cols-3">
+		<div class="grid w-full items-end gap-2 lg:grid-cols-3">
 			{#each Object.keys(serviceData) as serviceKey, i}
-				{@const service = serviceData[serviceKey]}
-				<div class="mb-6 flex flex-col items-center gap-4 text-center">
-					<button
-						onclick={() => goto(`/services/${serviceKey}`)}
-						class="aspect-square overflow-hidden rounded object-cover"
-						aria-label={`Learn more about ${service.title}`}
-					>
-						<a
-							href={`${domain}/services/${serviceKey}`}
-							onclick={(e) => {
-								e.preventDefault();
-								goto(`/services/${serviceKey}`);
-							}}
-						>
-							<Image
-								url={`/assets/services/${serviceKey}/1.webp`}
-								description={`${service.title} service highlight - professional cleaning demonstration by Splash n' Shine`}
-								class="aspect-square h-auto w-full object-cover transition-all duration-500 ease-in-out hover:scale-110"
-								width="480"
-								quality={50}
-							/>
-						</a>
-					</button>
-
-					<span class="font-[Alatsi] text-xl"> {service.title}</span>
-					<span class="font-[Cantarell] text-[#00000099]">{service.shortDescription}</span>
-					<a
-						href={`${domain}/services/${services[i]}`}
-						class="border-b border-b-transparent text-xs italic transition-all duration-300 ease-in-out hover:border-b-black"
-						>Read more...</a
-					>
-				</div>
+				{#if !$isMobile}
+					{@render desktopServiceBlock(serviceKey, i)}
+				{:else}
+					{@render mobileServiceBlock(serviceKey, i)}
+				{/if}
 			{/each}
 		</div>
 	</section>
