@@ -40,10 +40,19 @@
 <svelte:window bind:scrollY={initScroll} />
 
 <nav class="realtive">
-	<div class="fixed left-[6%] top-8 z-[55] aspect-square h-16 w-16">
-		<!-- <Logo class="h-full w-full" /> -->
-		<!-- <Image url="/assets/logo.png" description="company logo header" /> -->
-		<enhanced:img sizes="64px" src={logoAddr} alt="company logo header" class="h-full w-full" />
+	<div class="fixed left-[6%] top-10 z-[55] aspect-square h-16 w-16">
+		<a
+			href={domain}
+			onclick={(e) => {
+				e.preventDefault();
+				goto('/');
+			}}
+			aria-label="Go to home page"
+		>
+			<!-- <Logo class="h-full w-full" /> -->
+			<!-- <Image url="/assets/logo.png" description="company logo header" /> -->
+			<enhanced:img sizes="64px" src={logoAddr} alt="company logo header" class="h-full w-full" />
+		</a>
 	</div>
 
 	<div
@@ -63,7 +72,7 @@
 			? 'border-transparent bg-transparent'
 			: ' bg-secondary'} border-black transition-all duration-500 ease-in-out"
 	>
-		<button
+		<!-- <button
 			class="flex items-center pl-20 font-[Cantarell] text-xl lg:text-2xl {initScroll <
 				$scrollThreshold && isLandingPage
 				? 'text-transparent'
@@ -72,8 +81,8 @@
 			onclick={() => goto('/')}
 			aria-label="Go to home page"
 		>
-			<!-- {PUBLIC_COMPANY_NAME} -->
-		</button>
+			{PUBLIC_COMPANY_NAME}
+		</button> -->
 
 		{#if !(initScroll < $scrollThreshold && isLandingPage)}
 			<Button
