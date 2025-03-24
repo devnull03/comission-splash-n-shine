@@ -86,7 +86,7 @@
 {#snippet desktopServiceBlock(serviceKey: string, i: number)}
 	{@const service = serviceData[serviceKey]}
 	<div class="mb-6 flex flex-col gap-4 text-center">
-		<span class="font-[Alatsi] text-3xl text-primary-foreground"> {service.title}</span>
+		<h3 class="font-[Alatsi] text-3xl text-primary-foreground">{service.title}</h3>
 
 		<button
 			onclick={() => goto(`/services/${serviceKey}`)}
@@ -98,13 +98,15 @@
 				onclick={(e) => {
 					e.preventDefault();
 					goto(`/services/${serviceKey}`);
-				}}
+					}}
+				class="block"
 			>
 				<Image
 					url={`/assets/services/${serviceKey}/1.webp`}
 					description={`${service.title} service highlight - professional cleaning demonstration by Splash n' Shine`}
 					class="aspect-square h-auto w-full object-cover transition-all duration-500 ease-in-out hover:scale-110"
 					width="480"
+					height="480"
 					quality={50}
 				/>
 			</a>
@@ -113,7 +115,7 @@
 		<span class="font-[Cantarell] text-[#00000099]">{service.shortDescription}</span>
 		<a
 			href={`${domain}/services/${services[i]}`}
-			class="border-b border-b-transparent text-xs italic transition-all duration-300 ease-in-out hover:border-b-black"
+			class="inline-block border-b border-b-transparent py-2 text-xs italic transition-all duration-300 ease-in-out hover:border-b-black"
 			>Read more...</a
 		>
 	</div>
@@ -124,9 +126,9 @@
 	<Accordion.Root class="mb-2 w-full" value={!i ? [serviceKey] : []}>
 		<Accordion.Item value={serviceKey}>
 			<Accordion.Trigger class="w-full rounded-lg bg-primary/10 px-4 py-3">
-				<span class="w-full font-[Alatsi] text-xl text-primary-foreground">
+				<h3 class="w-full font-[Alatsi] text-xl text-primary-foreground">
 					{@html service.title.split('|').join('<br>')}
-				</span>
+				</h3>
 			</Accordion.Trigger>
 			<Accordion.Content class="px-1 pt-2">
 				<div class="flex flex-col gap-3">
@@ -136,6 +138,7 @@
 							description={`${service.title} service highlight - professional cleaning demonstration by Splash n' Shine`}
 							class="h-auto w-full object-cover"
 							width="400"
+							height="225"
 							quality={40}
 						/>
 					</div>
@@ -145,7 +148,7 @@
 							variant="outline"
 							size="sm"
 							onclick={() => goto(`/services/${serviceKey}`)}
-							class="flex-1"
+							class="flex-1 min-h-[44px] min-w-[44px]"
 						>
 							<a
 								href={`${domain}/services/${serviceKey}`}
@@ -153,17 +156,22 @@
 									e.preventDefault();
 									goto(`/services/${serviceKey}`);
 								}}
+								class="w-full h-full flex items-center justify-center"
 							>
-								Learn More
+								Learn More about {serviceKey
+									.split('-')
+									.map((v) => v.charAt(0).toUpperCase() + v.slice(1))
+									.join(' ')}
 							</a>
 						</Button>
-						<Button size="sm" onclick={() => goto('/contact')} class="flex-1">
+						<Button size="sm" onclick={() => goto('/contact')} class="flex-1 min-h-[44px] min-w-[44px]">
 							<a
 								href={`${domain}/contact`}
 								onclick={(e) => {
 									e.preventDefault();
 									goto('/contact');
 								}}
+								class="w-full h-full flex items-center justify-center"
 							>
 								Get Quote
 							</a>
@@ -179,18 +187,21 @@
 	<section
 		class="relative flex h-[85vh] w-full flex-row justify-evenly gap-0 overflow-hidden object-cover text-background"
 	>
-		<!-- <Image
+		<Image
 			url="/assets/landing/1.webp"
 			description="Professional exterior cleaning service in action - Splash n' Shine hero image"
 			fetchpriority="high"
-		/> -->
+			class="h-full w-full object-cover"
+			width="1920"
+			height="1080"
+		/>
 
-		<enhanced:img
+		<!-- <enhanced:img
 			class="h-full object-cover"
 			src={heroAddr}
 			sizes="min(1280px, 100vw)"
 			alt="Professional exterior cleaning service in action - Splash n' Shine"
-		/>
+		/> -->
 
 		<div class="absolute h-full w-full bg-black/30">&nbsp;</div>
 		<div
@@ -252,6 +263,8 @@
 				url="/assets/landing/team.jpg"
 				description="Splash n' Shine professional cleaning team in Vancouver"
 				class="h-[60vh] w-full rounded-lg object-cover shadow-xl"
+				width="800" 
+				height="600"
 			/>
 		</div>
 		<div class="w-full space-y-6 lg:w-1/2">
@@ -291,13 +304,14 @@
 				cleaning solutions, ensuring your property receives the care it deserves while protecting
 				the environment.
 			</p>
-			<Button onclick={() => goto('/contact')} class="mt-4">
+			<Button onclick={() => goto('/contact')} class="mt-4 min-h-[44px] min-w-[44px]">
 				<a
 					href={`${domain}/contact`}
 					onclick={(e) => {
 						e.preventDefault();
 						goto('/contact');
 					}}
+					class="w-full h-full flex items-center justify-center"
 				>
 					Schedule a Free Consultation
 				</a>
@@ -331,6 +345,8 @@
 				url="/assets/landing/2.jpg"
 				description="Professional exterior cleaning background"
 				class="h-full w-full object-cover"
+				width="1920"
+				height="1080"
 			/>
 			<div class="absolute inset-0 bg-secondary-foreground/65">&nbsp;</div>
 		</div>
@@ -372,10 +388,12 @@
 					/>
 					{#each Array($isMobile ? reviews.length : Math.ceil(reviews.length / 2)) as _, i}
 						<button
-							class="h-2 w-2 rounded-full {i === currentReviewSlide ? 'bg-primary' : 'bg-gray-300'}"
+							class="h-[12px] w-[12px] flex items-center justify-center rounded-full"
 							aria-label={`Go to slide ${i + 1}`}
-							onclick={() => reviewCarouselAPI?.scrollTo(i)}>&nbsp;</button
+							onclick={() => reviewCarouselAPI?.scrollTo(i)}
 						>
+							<span class="block h-3 w-3 rounded-full {i === currentReviewSlide ? 'bg-primary' : 'bg-gray-300'}"></span>
+						</button>
 					{/each}
 					<Carousel.Next class="relative top-4 scale-[1.3] bg-primary text-primary-foreground" />
 				</div>
