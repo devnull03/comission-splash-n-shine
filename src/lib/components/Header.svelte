@@ -16,6 +16,8 @@
 	import Dropdown from '$lib/components/Dropdown.svelte';
 	import DropdownItem from '$lib/components/DropdownItem.svelte';
 
+	import logoAddr from '$lib/icons/logo.png?enhanced';
+
 	let initScroll = $state(0);
 	let isLandingPage = $derived(page.route.id === '/');
 
@@ -38,12 +40,11 @@
 <svelte:window bind:scrollY={initScroll} />
 
 <nav class="realtive">
-	<!-- {#if !isLandingPage} -->
 	<div class="fixed left-[6%] top-2 z-[55] aspect-square h-16 w-16">
 		<!-- <Logo class="h-full w-full" /> -->
-		<Image url="/assets/logo.png" description="company logo header" />
+		<!-- <Image url="/assets/logo.png" description="company logo header" /> -->
+		<enhanced:img sizes="64px" src={logoAddr} alt="company logo header" class="h-full w-full" />
 	</div>
-	<!-- {/if} -->
 
 	<div
 		class="fixed top-0 z-50 flex h-20 w-full flex-row justify-between border-b px-[6%] {initScroll <
@@ -82,7 +83,7 @@
 		{#if (!firstLoad && !$isMobile) || mobileNavOpen}
 			<div
 				in:slide
-				class="absolute top-24 -mx-[6%] flex w-screen flex-col items-center justify-evenly gap-8 border-b border-black bg-white py-4 lg:relative lg:top-0 lg:mx-0 lg:w-auto lg:flex-row lg:border-transparent lg:bg-transparent lg:py-0"
+				class="absolute top-20 -mx-[6%] flex w-screen flex-col items-center justify-evenly gap-8 border-b border-black bg-white py-4 lg:relative lg:top-0 lg:mx-0 lg:w-auto lg:flex-row lg:border-transparent lg:bg-transparent lg:py-0"
 			>
 				<Dropdown
 					label="Services"

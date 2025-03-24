@@ -16,6 +16,8 @@
 	import { contactInfo } from '$lib/data/locations';
 	import PhoneCall from '$lib/icons/PhoneCall.svelte';
 
+	import heroAddr from '$lib/icons/landingHero.webp?enhanced';
+
 	let { data }: { data: PageData } = $props();
 
 	const reviews: Review[] = data?.reviews || [];
@@ -66,24 +68,34 @@
 <svelte:window bind:scrollY={initScroll} />
 
 <main class="flex w-screen flex-col items-center gap-16 pb-48 lg:gap-16">
-	<section class="relative flex h-[85vh] w-full flex-row justify-evenly gap-0 text-background">
-		<Image
+	<section
+		class="relative flex h-[85vh] w-full flex-row justify-evenly gap-0 overflow-hidden object-cover text-background"
+	>
+		<!-- <Image
 			url="/assets/landing/1.webp"
 			description="Professional exterior cleaning service in action - Splash n' Shine hero image"
-			class="w-full object-cover"
 			fetchpriority="high"
+		/> -->
+
+		<enhanced:img
+			class="h-full object-cover"
+			src={heroAddr}
+			sizes="min(1280px, 100vw)"
+			alt="Professional exterior cleaning service in action - Splash n' Shine"
 		/>
+
 		<div class="absolute h-full w-full bg-black/30">&nbsp;</div>
 		<div
 			class="absolute left-1/2 top-1/2 flex w-full -translate-x-1/2 -translate-y-1/2 transform flex-col items-center"
 		>
-			<h1 class="text-shadow text-center text-[10vw] font-semibold">
+			<h1 class="text-shadow text-center text-[6vh] md:text-[10vw] font-semibold">
 				{PUBLIC_COMPANY_NAME}
 			</h1>
-			<p class="bg-primary/30 text-center font-[Cantarell] text-2xl font-semibold">
-				Professional Residential & Commercial Exterior Cleaning Near You
-			</p>
-			<p class="max-w-[80vw] text-center font-[Cantarell] text-2xl">
+			<span class="text-center font-[Cantarell] text-lg md:text-2xl font-semibold *:bg-primary/30 flex flex-wrap justify-center *:px-1">
+				<span>Professional</span> <span>Residential</span> <span>&</span> <span>Commercial</span>
+				<span>Exterior</span> <span>Cleaning</span> <span>Near</span> <span>You</span>
+			</span>
+			<p class="max-w-[80vw] text-center font-[Cantarell] text-lg md:text-2xl">
 				Expert Soft Wash & Pressure Washing in Vancouver & Surrey! We clean roofs, gutters, siding,
 				windows & driveways
 			</p>
@@ -91,7 +103,8 @@
 		<Button
 			onclick={() => goto('/contact')}
 			aria-label="Get free quote"
-			class="absolute bottom-[20%]"
+			class="absolute bottom-[20%] text-lg"
+			size="lg"
 		>
 			<a
 				href={`${domain}/contact`}
@@ -210,7 +223,6 @@
 								url={`/assets/services/${serviceKey}/1.webp`}
 								description={`${service.title} service highlight - professional cleaning demonstration by Splash n' Shine`}
 								class="aspect-square h-auto w-full object-cover transition-all duration-500 ease-in-out hover:scale-110"
-								size={[480]}
 								width="480"
 								quality={50}
 							/>
@@ -230,7 +242,7 @@
 	</section>
 
 	<!-- Phone CTA -->
-	<section class="relative w-full py-24 text-white h-[60vh] flex justify-center items-center">
+	<section class="relative flex h-[60vh] w-full items-center justify-center py-24 text-white">
 		<div class="absolute inset-0 z-0">
 			<Image
 				url="/assets/landing/2.jpg"
@@ -246,7 +258,10 @@
 				href="tel:778-804-5911"
 				class="group inline-flex items-center gap-4 text-[8vw] font-bold hover:opacity-90"
 			>
-				<PhoneCall class="h-auto w-[6vw] transition-transform group-hover:scale-110" color="white" />
+				<PhoneCall
+					class="h-auto w-[6vw] transition-transform group-hover:scale-110"
+					color="white"
+				/>
 				{contactInfo.phone.replace(/[^0-9]/g, '').replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3')}
 			</a>
 		</div>

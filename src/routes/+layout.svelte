@@ -1,6 +1,6 @@
 <script lang="ts">
 	import '../app.css';
-	import { fade } from 'svelte/transition';
+	import { fade, slide } from 'svelte/transition';
 	import { PUBLIC_COMPANY_NAME } from '$env/static/public';
 	import Footer from '$lib/components/Footer.svelte';
 	import Header from '$lib/components/Header.svelte';
@@ -65,7 +65,11 @@
 
 <Toaster />
 
-<FloatingShare />
+{#if scrollY}
+	<div transition:slide={{ axis: 'x', duration: 500 }}>
+		<FloatingShare />
+	</div>
+{/if}
 
 <div class="flex h-screen flex-col justify-between">
 	<Header />
@@ -84,7 +88,7 @@
 			window.scrollTo({ top: 0, behavior: 'smooth' });
 		}}
 	>
-		<CaretUp class="scale-125 transition-all duration-500 group-hover:scale-110 text-foreground" />
+		<CaretUp class="scale-125 text-foreground transition-all duration-500 group-hover:scale-110" />
 	</button>
 {/if}
 
