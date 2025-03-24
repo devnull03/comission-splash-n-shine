@@ -83,7 +83,7 @@
 		>
 			{PUBLIC_COMPANY_NAME}
 		</button> -->
-		<div class="pl-20 hidden md:block"></div>
+		<div class="hidden pl-20 md:block"></div>
 
 		{#if !(initScroll < $scrollThreshold && isLandingPage) && $isMobile}
 			<Button
@@ -192,25 +192,27 @@
 					Gallery
 				</a>
 
-				<a
-					href="https://www.instagram.com/luxuryfloors.ca/"
-					aria-label="Go to instagram page"
-					class="text-xs font-semibold uppercase"
-				>
-					<Instagram color={colorState ? 'white' : 'black'} />
-				</a>
-				<a
-					href="tel:7783085911"
-					aria-label="Call phone number"
-					class="text-xs font-semibold uppercase"
-				>
-					<PhoneCall color={colorState ? 'white' : 'black'} />
-				</a>
-
+				<div class="flex items-center gap-4 md:gap-7 md:flex-row">
+					<a
+						href="https://www.instagram.com/luxuryfloors.ca/"
+						aria-label="Go to instagram page"
+						class="text-xs font-semibold uppercase"
+					>
+						<Instagram color={colorState ? 'white' : 'black'} />
+					</a>
+					<a
+						href="tel:7783085911"
+						aria-label="Call phone number"
+						class="text-xs font-semibold uppercase"
+					>
+						<PhoneCall color={colorState ? 'white' : 'black'} />
+					</a>
+				</div>
 				<Button
 					onclick={() => goto('/contact')}
 					variant={colorState ? 'secondary' : 'default'}
 					size="lg"
+					class="hidden lg:block"
 					aria-label="Open quote request form">Get Free Quote</Button
 				>
 			</div>

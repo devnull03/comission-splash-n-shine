@@ -94,7 +94,7 @@
 <main class="mt-24 *:py-10 lg:mt-16 *:lg:p-32">
 	<!-- Carousel -->
 	<section
-		class="flex flex-col overflow-hidden bg-black text-center text-2xl text-white lg:!pb-16 lg:text-4xl"
+		class="flex flex-col overflow-hidden bg-black text-center text-2xl text-white lg:!pb-16 lg:text-4xl px-10"
 	>
 		<h1 class="mb-8 font-[Cantarell] lg:mb-16">
 			<!-- Why {formatServiceName(page.params.id)}? -->
