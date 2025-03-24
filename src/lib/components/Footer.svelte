@@ -4,7 +4,7 @@
 	import Image from '$lib/components/Image.svelte';
 
 	const menuItems = [
-		{ label: 'SERVICES', route: '/?services' },
+		{ label: 'SERVICES', route: '/services' },
 		{ label: 'OUR STORY', route: '/our-story' },
 		{ label: 'TERMS AND CONDITIONS', route: '/terms-and-conditions' },
 		{ label: 'PRIVACY POLICY', route: '/privacy-policy' },

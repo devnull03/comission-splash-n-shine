@@ -1,9 +1,10 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import Button from '$lib/components/ui/button/button.svelte';
-	import { ScrollArea } from '$lib/components/ui/scroll-area';
-	import * as Card from '$lib/components/ui/card';
 	import * as Accordion from '$lib/components/ui/accordion';
+	import * as Carousel from '$lib/components/ui/carousel';
+	import { type CarouselAPI } from '$lib/components/ui/carousel/context';
+	import Autoplay from 'embla-carousel-autoplay';
 	import { goto } from '$app/navigation';
 	// import { page } from '$app/stores';
 	import { isMobile, servicesPageNavigating } from '$lib/utils/stores';
@@ -16,10 +17,13 @@
 	import { page } from '$app/state';
 	import { contactInfo } from '$lib/data/locations';
 	import PhoneCall from '$lib/icons/PhoneCall.svelte';
+	import ReviewCard from '$lib/components/ReviewCard.svelte';
 
 	import heroAddr from '$lib/icons/landingHero.webp?enhanced';
 
 	let { data }: { data: PageData } = $props();
+
+	$inspect(data);
 
 	const reviews: Review[] = data?.reviews || [];
 	const rating: number = data?.rating || 0;
@@ -27,6 +31,9 @@
 
 	let initScroll = $state(0);
 	let servicesSection: HTMLElement;
+
+	let reviewCarouselAPI: CarouselAPI | undefined = $state();
+	let currentReviewSlide = $state(0);
 
 	// Get the base URL for absolute links
 	const domain = $derived(`${page.url.protocol}//${page.url.host}`);
@@ -41,6 +48,14 @@
 		if ($servicesPageNavigating || page.url.toString().includes('services')) {
 			$servicesPageNavigating = false;
 			console.log('services page navigating');
+		}
+	});
+
+	$effect(() => {
+		if (reviewCarouselAPI) {
+			reviewCarouselAPI.on('select', () => {
+				if (reviewCarouselAPI) currentReviewSlide = reviewCarouselAPI.selectedScrollSnap();
+			});
 		}
 	});
 </script>
@@ -336,7 +351,7 @@
 	</section>
 
 	<!-- testimonials -->
-	<section class="flex w-full flex-col gap-12 pb-16 text-center lg:gap-16">
+	<section class="flex w-full flex-col gap-12 overflow-hidden pb-16 text-center lg:gap-16">
 		<h1 class="text-center text-4xl font-semibold leading-10">Testimonials</h1>
 
 		{#if reviews.length > 0}
@@ -345,57 +360,35 @@
 				<div class="text-sm text-gray-600">Based on {userRatingCount} reviews</div>
 			</div>
 
-			<ScrollArea orientation="horizontal" class="w-full">
-				<div class="flex flex-row gap-8 px-[30vw] pb-4">
-					{#each reviews as review, idx (review.name)}
-						<Card.Root
-							class="min-h-[65vh] w-[80vw] rounded-[var(--radius)] bg-foreground md:w-[50vw] lg:w-[30vw]"
+			<Carousel.Root
+				plugins={[Autoplay({ delay: 6000 })]}
+				class="w-full select-none px-4 md:px-8 lg:px-16"
+				bind:api={reviewCarouselAPI}
+				opts={{ align: 'start', containScroll: 'trimSnaps' }}
+			>
+				<Carousel.Content class="-ml-4 flex">
+					{#each reviews as review, idx}
+						<Carousel.Item
+							class="min-w-0 basis-full pl-4 transition-all duration-300 ease-in-out md:basis-1/2 lg:basis-1/3"
+							aria-label={`Review from ${review.authorAttribution.displayName}`}
 						>
-							<Card.Header class="flex flex-row items-center gap-3">
-								<div class="flex-shrink-0">
-									{#if review.authorAttribution.photoUri}
-										<img
-											src={review.authorAttribution.photoUri}
-											alt={review.authorAttribution.displayName}
-											class="h-12 w-12 rounded-full"
-										/>
-									{:else}
-										<div
-											class="flex h-12 w-12 items-center justify-center rounded-full bg-gray-400 text-white"
-										>
-											{review.authorAttribution.displayName.charAt(0)}
-										</div>
-									{/if}
-								</div>
-								<div class="flex flex-col text-left text-white">
-									<div class="font-semibold">{review.authorAttribution.displayName}</div>
-									<div class="text-xs opacity-75">{review.relativePublishTimeDescription}</div>
-									<div class="mt-1 text-yellow-400">
-										{'★'.repeat(review.rating)}<span class="text-gray-600"
-											>{'★'.repeat(5 - review.rating)}</span
-										>
-									</div>
-								</div>
-							</Card.Header>
-							<Card.Content>
-								<div class="text-left font-medium text-[#FFFFFFCC] lg:text-xl">
-									{review.text.text}
-								</div>
-							</Card.Content>
-							<Card.Footer class="text-right">
-								<a
-									href={review.googleMapsUri}
-									target="_blank"
-									rel="noopener noreferrer"
-									class="text-sm text-blue-400 hover:underline"
-								>
-									View on Google Maps
-								</a>
-							</Card.Footer>
-						</Card.Root>
+							<ReviewCard {review} />
+						</Carousel.Item>
 					{/each}
+				</Carousel.Content>
+
+				<div class="mt-4 flex justify-center items-center gap-2 relative">
+					<Carousel.Previous class="relative top-4 bg-primary text-primary-foreground scale-[1.3]" />
+					{#each Array(Math.ceil(reviews.length / 2)) as _, i}
+						<button
+							class="h-2 w-2 rounded-full {i === currentReviewSlide ? 'bg-primary' : 'bg-gray-300'}"
+							aria-label={`Go to slide ${i + 1}`}
+							onclick={() => reviewCarouselAPI?.scrollTo(i)}>&nbsp;</button
+						>
+					{/each}
+					<Carousel.Next class="relative top-4 bg-primary text-primary-foreground scale-[1.3]" />
 				</div>
-			</ScrollArea>
+			</Carousel.Root>
 		{:else}
 			<p class="text-center text-gray-500">No reviews available at this time.</p>
 		{/if}

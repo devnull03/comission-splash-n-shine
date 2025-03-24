@@ -24,66 +24,66 @@ export const load: PageServerLoad = async (): Promise<PlaceReviewsResponse> => {
     return cache.data;
   }
 
-  if (dev) {
-    // Return mock data for development
-    return {
-      reviews: [
-      {
-        authorAttribution: {
-        displayName: 'John Doe',
-        uri: 'https://example.com/johndoe',
-        photoUri: 'https://example.com/photo1.jpg'
-        },
-        rating: 5,
-        text: {
-        text: 'Great service! My car looks brand new after the detailing. Highly recommend to everyone.',
-        languageCode: 'en'
-        },
-        name: 'reviews/1',
-        relativePublishTimeDescription: '2 weeks ago',
-        publishTime: '2023-10-15T13:45:30Z',
-        flagContentUri: '',
-        googleMapsUri: 'https://maps.google.com/maps?cid=1'
-      },
-      {
-        authorAttribution: {
-        displayName: 'Sarah Williams',
-        uri: 'https://example.com/sarah',
-        photoUri: 'https://example.com/photo2.jpg'
-        },
-        rating: 4,
-        text: {
-        text: 'Professional staff and reasonable prices. Could improve on timeliness.',
-        languageCode: 'en'
-        },
-        name: 'reviews/2',
-        relativePublishTimeDescription: '1 month ago',
-        publishTime: '2023-09-20T10:15:00Z',
-        flagContentUri: '',
-        googleMapsUri: 'https://maps.google.com/maps?cid=2'
-      },
-      {
-        authorAttribution: {
-        displayName: 'Michael Chen',
-        uri: 'https://example.com/michael',
-        photoUri: 'https://example.com/photo3.jpg'
-        },
-        rating: 5,
-        text: {
-        text: 'Best car wash in town! They pay attention to every detail.',
-        languageCode: 'en'
-        },
-        name: 'reviews/3',
-        relativePublishTimeDescription: '3 days ago',
-        publishTime: '2023-10-28T16:30:45Z',
-        flagContentUri: '',
-        googleMapsUri: 'https://maps.google.com/maps?cid=3'
-      }
-      ],
-      rating: 4.7,
-      userRatingCount: 142
-    }
-  }
+  // if (dev) {
+  //   // Return mock data for development
+  //   return {
+  //     reviews: [
+  //     {
+  //       authorAttribution: {
+  //       displayName: 'John Doe',
+  //       uri: 'https://example.com/johndoe',
+  //       photoUri: 'https://example.com/photo1.jpg'
+  //       },
+  //       rating: 5,
+  //       text: {
+  //       text: 'Great service! My car looks brand new after the detailing. Highly recommend to everyone.',
+  //       languageCode: 'en'
+  //       },
+  //       name: 'reviews/1',
+  //       relativePublishTimeDescription: '2 weeks ago',
+  //       publishTime: '2023-10-15T13:45:30Z',
+  //       flagContentUri: '',
+  //       googleMapsUri: 'https://maps.google.com/maps?cid=1'
+  //     },
+  //     {
+  //       authorAttribution: {
+  //       displayName: 'Sarah Williams',
+  //       uri: 'https://example.com/sarah',
+  //       photoUri: 'https://example.com/photo2.jpg'
+  //       },
+  //       rating: 4,
+  //       text: {
+  //       text: 'Professional staff and reasonable prices. Could improve on timeliness.',
+  //       languageCode: 'en'
+  //       },
+  //       name: 'reviews/2',
+  //       relativePublishTimeDescription: '1 month ago',
+  //       publishTime: '2023-09-20T10:15:00Z',
+  //       flagContentUri: '',
+  //       googleMapsUri: 'https://maps.google.com/maps?cid=2'
+  //     },
+  //     {
+  //       authorAttribution: {
+  //       displayName: 'Michael Chen',
+  //       uri: 'https://example.com/michael',
+  //       photoUri: 'https://example.com/photo3.jpg'
+  //       },
+  //       rating: 5,
+  //       text: {
+  //       text: 'Best car wash in town! They pay attention to every detail.',
+  //       languageCode: 'en'
+  //       },
+  //       name: 'reviews/3',
+  //       relativePublishTimeDescription: '3 days ago',
+  //       publishTime: '2023-10-28T16:30:45Z',
+  //       flagContentUri: '',
+  //       googleMapsUri: 'https://maps.google.com/maps?cid=3'
+  //     }
+  //     ],
+  //     rating: 4.7,
+  //     userRatingCount: 142
+  //   }
+  // }
   
   try {
     // Construct the URL with the required fields
@@ -92,11 +92,11 @@ export const load: PageServerLoad = async (): Promise<PlaceReviewsResponse> => {
     
     // Fetch data from the Google Places API
     const response = await fetch(url, {
-      headers: {
-        'Content-Type': 'application/json',
-        'X-Goog-Api-Key': GOOGLE_API_KEY,
-        'X-Goog-FieldMask': fields
-      }
+      // headers: {
+      //   'Content-Type': 'application/json',
+      //   'X-Goog-Api-Key': GOOGLE_API_KEY,
+      //   'X-Goog-FieldMask': fields
+      // }
     });
 
     if (!response.ok) {
