@@ -351,11 +351,11 @@
 	</section>
 
 	<!-- testimonials -->
-	<section class="flex w-full flex-col gap-12 overflow-hidden pb-16 text-center lg:gap-16">
+	<section class="flex w-full flex-col gap-8 overflow-hidden pb-16 text-center lg:gap-10">
 		<h1 class="text-center text-4xl font-semibold leading-10">Testimonials</h1>
 
 		{#if reviews.length > 0}
-			<div class="mb-4 flex flex-col items-center">
+			<div class="flex flex-col items-center">
 				<div class="text-2xl font-bold">{rating.toFixed(1)} ★</div>
 				<div class="text-sm text-gray-600">Based on {userRatingCount} reviews</div>
 			</div>
@@ -366,6 +366,20 @@
 				bind:api={reviewCarouselAPI}
 				opts={{ align: 'start', containScroll: 'trimSnaps' }}
 			>
+				<div class="relative mb-4 flex items-center justify-center gap-2">
+					<Carousel.Previous
+						class="relative top-4 scale-[1.3] bg-primary text-primary-foreground"
+					/>
+					{#each Array($isMobile ? reviews.length : Math.ceil(reviews.length / 2)) as _, i}
+						<button
+							class="h-2 w-2 rounded-full {i === currentReviewSlide ? 'bg-primary' : 'bg-gray-300'}"
+							aria-label={`Go to slide ${i + 1}`}
+							onclick={() => reviewCarouselAPI?.scrollTo(i)}>&nbsp;</button
+						>
+					{/each}
+					<Carousel.Next class="relative top-4 scale-[1.3] bg-primary text-primary-foreground" />
+				</div>
+
 				<Carousel.Content class="-ml-4 flex">
 					{#each reviews as review, idx}
 						<Carousel.Item
@@ -376,18 +390,6 @@
 						</Carousel.Item>
 					{/each}
 				</Carousel.Content>
-
-				<div class="mt-4 flex justify-center items-center gap-2 relative">
-					<Carousel.Previous class="relative top-4 bg-primary text-primary-foreground scale-[1.3]" />
-					{#each Array(Math.ceil(reviews.length / 2)) as _, i}
-						<button
-							class="h-2 w-2 rounded-full {i === currentReviewSlide ? 'bg-primary' : 'bg-gray-300'}"
-							aria-label={`Go to slide ${i + 1}`}
-							onclick={() => reviewCarouselAPI?.scrollTo(i)}>&nbsp;</button
-						>
-					{/each}
-					<Carousel.Next class="relative top-4 bg-primary text-primary-foreground scale-[1.3]" />
-				</div>
 			</Carousel.Root>
 		{:else}
 			<p class="text-center text-gray-500">No reviews available at this time.</p>
