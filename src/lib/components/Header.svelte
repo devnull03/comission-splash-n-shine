@@ -83,8 +83,9 @@
 		>
 			{PUBLIC_COMPANY_NAME}
 		</button> -->
+		<div class="pl-20 hidden md:block"></div>
 
-		{#if !(initScroll < $scrollThreshold && isLandingPage)}
+		{#if !(initScroll < $scrollThreshold && isLandingPage) && $isMobile}
 			<Button
 				onclick={() => goto('/contact')}
 				variant={colorState ? 'secondary' : 'default'}
