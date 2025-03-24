@@ -7,6 +7,7 @@
 	import { Toaster } from '$lib/components/ui/sonner';
 	import { CaretUp } from 'svelte-radix';
 	import FloatingShare from '$lib/components/FloatingShare.svelte';
+	import { isMobile } from '$lib/utils/stores';
 
 	interface Props {
 		children?: import('svelte').Snippet;
@@ -67,7 +68,7 @@
 
 {#if scrollY}
 	<div transition:slide={{ axis: 'x', duration: 500 }}>
-		<FloatingShare />
+		<FloatingShare mobile={$isMobile} />
 	</div>
 {/if}
 
@@ -82,7 +83,7 @@
 {#if scrollY !== 0}
 	<button
 		transition:fade
-		class="group fixed bottom-6 right-6 z-[999] rounded-full bg-primary/90 object-cover p-4 shadow-lg transition-all duration-500 hover:-translate-y-1"
+		class="group fixed bottom-4 right-4 z-[999] rounded-full bg-primary/90 object-cover p-4 shadow-lg transition-all duration-500 hover:-translate-y-1"
 		aria-label="Scroll to top"
 		onclick={() => {
 			window.scrollTo({ top: 0, behavior: 'smooth' });

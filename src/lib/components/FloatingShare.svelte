@@ -11,21 +11,28 @@
 	import { Copy } from 'svelte-radix';
 	import { onMount } from 'svelte';
 
+	interface Props {
+		mobile?: boolean;
+	}
+
+	let { mobile = false }: Props = $props();
+
 	let currentUrl = $derived(page.url.toString());
-	let title = $state("Professional Exterior Cleaning Services | Transform Your Property Today! ✨🏠");
+	let title = $state(
+		'Professional Exterior Cleaning Services | Transform Your Property Today! ✨🏠'
+	);
 
 	function copyToClipboard() {
 		navigator.clipboard.writeText(currentUrl);
-		alert("Link copied to clipboard!");
+		alert('Link copied to clipboard!');
 	}
-
 
 	onMount(() => {
 		title = `${document.title} | Transform Your Property Today! ✨🏠`;
-	})
+	});
 </script>
 
-<div class="floating-share">
+<div class="floating-share" class:mobile>
 	<Button
 		variant="ghost"
 		size="icon"
@@ -64,7 +71,7 @@
 	<Button
 		variant="ghost"
 		size="icon"
-		href={`https://api.whatsapp.com/send?text=${encodeURIComponent(title + " " + currentUrl)}`}
+		href={`https://api.whatsapp.com/send?text=${encodeURIComponent(title + ' ' + currentUrl)}`}
 		target="_blank"
 		rel="noopener noreferrer"
 		class="share-button"
@@ -113,6 +120,14 @@
 		backdrop-filter: blur(5px);
 	}
 
+	.floating-share.mobile {
+		flex-direction: row;
+		bottom: 1rem;
+		left: 50%;
+		top: auto;
+		transform: translateX(-50%);
+	}
+
 	.share-button {
 		border-radius: 50%;
 		transition: transform 0.2s ease;
@@ -128,6 +143,11 @@
 			left: 0.5rem;
 			padding: 0.35rem;
 			scale: 0.9;
+		}
+
+		.floating-share.mobile {
+			/* left: 50%; */
+			left: 6rem;
 		}
 	}
 

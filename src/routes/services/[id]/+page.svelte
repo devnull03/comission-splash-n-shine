@@ -91,7 +91,7 @@
 	<link rel="canonical" href="https://www.splashnshine.ca/services/{page.params.id}" />
 </svelte:head>
 
-<main class="mt-24 *:p-10 lg:mt-16 *:lg:p-32">
+<main class="mt-24 *:py-10 lg:mt-16 *:lg:p-32">
 	<!-- Carousel -->
 	<section
 		class="flex flex-col overflow-hidden bg-black text-center text-2xl text-white lg:!pb-16 lg:text-4xl"
@@ -285,7 +285,7 @@
 
 	<!-- FAQ Section -->
 	{#if selectedServiceData.faqItems && selectedServiceData.faqItems.length > 0}
-		<section class="bg-gray-100 font-[Cantarell]">
+		<section class="bg-gray-100 font-[Cantarell] px-10">
 			<h3 class="mb-8 text-center text-2xl font-semibold">Frequently Asked Questions</h3>
 			<Accordion.Root class="w-full">
 				{#each selectedServiceData.faqItems as faq}
