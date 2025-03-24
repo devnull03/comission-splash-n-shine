@@ -50,7 +50,7 @@
 			aria-label="Go to home page"
 		>
 			<!-- <Logo class="h-full w-full" /> -->
-			<Image url="/assets/logo.png" description="company logo header" />
+			<Image url="/assets/logo.png" description="company logo header" width="64px" height="64px" />
 			<!-- <enhanced:img sizes="64px" src={logoAddr} alt="company logo header" class="h-full w-full" /> -->
 		</a>
 	</div>
@@ -192,7 +192,7 @@
 					Gallery
 				</a>
 
-				<div class="flex items-center gap-4 md:gap-7 md:flex-row">
+				<div class="flex items-center gap-4 md:flex-row md:gap-7">
 					<a
 						href="https://www.instagram.com/luxuryfloors.ca/"
 						aria-label="Go to instagram page"

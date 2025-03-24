@@ -30,7 +30,7 @@
 
 	<div class="aspect-square h-[40vh] overflow-hidden">
 		 <!-- <Logo class="aspect-square h-[40vh] w-auto" /> -->
-		  <Image url="/assets/logo.png" description="company logo" />
+		  <Image url="/assets/logo.png" description="company logo" height="200px" width="200px" />
 	</div>
 
 	<div

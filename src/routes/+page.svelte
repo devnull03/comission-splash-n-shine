@@ -20,17 +20,21 @@
 	import ReviewCard from '$lib/components/ReviewCard.svelte';
 
 	import heroAddr from '$lib/icons/landingHero.webp?enhanced';
+	import { optimize } from '$lib/utils/image';
 
 	let { data }: { data: PageData } = $props();
 
 	$inspect(data);
 
-	const reviews: Review[] = data?.reviews || [];
-	const rating: number = data?.rating || 0;
-	const userRatingCount: number = data?.userRatingCount || 0;
+	let reviews: Review[] = $state([]);
+	let rating: number = $state(0);
+	let userRatingCount: number = $state(0);
+	let isLoadingReviews = $state(false);
+	let reviewsLoaded = $state(false);
 
 	let initScroll = $state(0);
 	let servicesSection: HTMLElement;
+	let reviewsSection: HTMLElement;
 
 	let reviewCarouselAPI: CarouselAPI | undefined = $state();
 	let currentReviewSlide = $state(0);
@@ -42,7 +46,50 @@
 		if (page.url.toString().includes('services')) {
 			servicesSection.scrollIntoView({ behavior: 'smooth' });
 		}
+
+		// Create intersection observer for reviews section
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting && !reviewsLoaded && !isLoadingReviews) {
+						loadReviews();
+					}
+				});
+			},
+			{ threshold: 0.1 } // Trigger when at least 10% of the element is visible
+		);
+
+		// Start observing the reviews section
+		if (reviewsSection) {
+			observer.observe(reviewsSection);
+		}
+
+		return () => {
+			// Clean up observer on component unmount
+			if (reviewsSection) {
+				observer.unobserve(reviewsSection);
+			}
+		};
 	});
+
+	async function loadReviews() {
+		isLoadingReviews = true;
+		try {
+			const response = await fetch('/api/reviews');
+			if (!response.ok) {
+				throw new Error('Failed to fetch reviews');
+			}
+			const data = await response.json();
+			reviews = data.reviews || [];
+			rating = data.rating || 0;
+			userRatingCount = data.userRatingCount || 0;
+			reviewsLoaded = true;
+		} catch (error) {
+			console.error('Error loading reviews:', error);
+		} finally {
+			isLoadingReviews = false;
+		}
+	}
 
 	$effect(() => {
 		if ($servicesPageNavigating || page.url.toString().includes('services')) {
@@ -79,6 +126,7 @@
 	<meta property="og:url" content="https://www.splashnshine.ca" />
 	<meta property="og:type" content="website" />
 	<link rel="canonical" href="https://www.splashnshine.ca" />
+	<link rel="preload" href={optimize('/assets/landing/1.webp', [640], 90)} as="image" fetchpriority="high" />
 </svelte:head>
 
 <svelte:window bind:scrollY={initScroll} />
@@ -194,6 +242,7 @@
 			class="h-full w-full object-cover"
 			width="1920"
 			height="1080"
+			size={[640]}
 		/>
 
 		<!-- <enhanced:img
@@ -367,10 +416,15 @@
 	</section>
 
 	<!-- testimonials -->
-	<section class="flex w-full flex-col gap-8 overflow-hidden pb-16 text-center lg:gap-10">
+	<section bind:this={reviewsSection} class="flex w-full flex-col gap-8 overflow-hidden pb-16 text-center lg:gap-10">
 		<h1 class="text-center text-4xl font-semibold leading-10">Testimonials</h1>
 
-		{#if reviews.length > 0}
+		{#if isLoadingReviews}
+			<div class="py-12 text-center">
+				<div class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent"></div>
+				<p class="mt-4 text-muted-foreground">Loading reviews...</p>
+			</div>
+		{:else if reviews.length > 0}
 			<div class="flex flex-col items-center">
 				<div class="text-2xl font-bold">{rating.toFixed(1)} ★</div>
 				<div class="text-sm text-gray-600">Based on {userRatingCount} reviews</div>
@@ -409,8 +463,10 @@
 					{/each}
 				</Carousel.Content>
 			</Carousel.Root>
-		{:else}
+		{:else if reviewsLoaded}
 			<p class="text-center text-gray-500">No reviews available at this time.</p>
+		{:else}
+			<p class="text-center text-gray-500">Reviews loading soon...</p>
 		{/if}
 	</section>
 </main>
