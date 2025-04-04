@@ -8,7 +8,7 @@
 	import { goto } from '$app/navigation';
 	// import { page } from '$app/stores';
 	import { isMobile, servicesPageNavigating } from '$lib/utils/stores';
-	// import Image from '$lib/components/Image.svelte';
+	import Image from '$lib/components/Image.svelte';
 	import { serviceData, services } from '$lib/data/services';
 	import type { Review } from '$lib/types/reviews';
 	import type { PageData } from './$types';
@@ -158,12 +158,20 @@
 				class="block"
 				aria-label={`${service.title} service highlight - professional cleaning demonstration by Splash n' Shine`}
 			>
+				<!-- <Image
+					url={`/assets/services/${serviceKey}/1.webp`}
+					description={`${service.title} service highlight - professional cleaning demonstration by Splash n' Shine`}
+					class="aspect-square h-auto w-full object-cover transition-all duration-500 ease-in-out hover:scale-110"
+					width="480"
+					height="480"
+					quality={50}
+				/> -->
 				<enhanced:img
 					class="aspect-square h-auto w-full object-cover transition-all duration-500 ease-in-out hover:scale-110"
 					src={serviceImagesDict[serviceKey]}
 					sizes="640px"
 					alt={`${service.title} service highlight - professional cleaning demonstration by Splash n' Shine`}
-				/>
+				/> -->
 			</a>
 		</button>
 
@@ -193,13 +201,21 @@
 			</Accordion.Trigger>
 			<Accordion.Content class="px-1 pt-2">
 				<div class="flex flex-col gap-3">
-					<div class="h-48 max-h-48 w-full overflow-hidden rounded">
-						<enhanced:img
+					<div class="aspect-video h-48 max-h-48 w-full overflow-hidden rounded">
+						<Image
+							url={`/assets/services/${serviceKey}/1.webp`}
+							description={`${service.title} service highlight - professional cleaning demonstration by Splash n' Shine`}
+							class="h-full w-full object-cover"
+							width="400"
+							height="225"
+							quality={40}
+						/>
+						<!-- <enhanced:img
 							class="h-full w-full object-cover"
 							src={serviceImagesDict[serviceKey]}
 							sizes="640px"
 							alt={`${service.title} service highlight - professional cleaning demonstration by Splash n' Shine`}
-						/>
+						/> -->
 					</div>
 					<p class="py-1 font-[Cantarell] text-sm text-[#00000099]">{service.shortDescription}</p>
 					<div class="mt-1 flex justify-between gap-2">
@@ -252,7 +268,7 @@
 	<section
 		class="relative flex h-[85vh] w-full flex-row justify-evenly gap-0 overflow-hidden object-cover text-background"
 	>
-		<!-- <Image
+		<Image
 			url="/assets/landing/1.webp"
 			description="Professional exterior cleaning service in action - Splash n' Shine hero image"
 			fetchpriority="high"
@@ -260,15 +276,15 @@
 			width="1920"
 			height="1080"
 			size={[640]}
-			quality={70}
-		/> -->
+			quality={80}
+		/>
 
-		<enhanced:img
+		<!-- <enhanced:img
 			class="h-full object-cover"
 			src={heroAddr}
 			sizes="640px"
 			alt="Professional exterior cleaning service in action - Splash n' Shine"
-		/>
+		/> -->
 
 		<div class="absolute h-full w-full bg-black/30">&nbsp;</div>
 		<div
@@ -330,19 +346,19 @@
 	<!-- About -->
 	<section class="container mx-auto flex flex-col items-center gap-8 px-4 py-12 lg:flex-row">
 		<div class="w-full lg:w-1/2">
-			<!-- <Image
+			<Image
 				url="/assets/landing/team.jpg"
 				description="Splash n' Shine professional cleaning team in Vancouver"
-				class="h-[60vh] w-full rounded-lg object-cover shadow-xl"
+				class="h-[60vh] w-full rounded-lg object-cover shadow-xl saturate-50"
 				width="800"
 				height="600"
-			/> -->
-			<enhanced:img
+			/>
+			<!-- <enhanced:img
 				src={team}
 				sizes="640px"
 				alt="Splash n' Shine professional cleaning team in Vancouver"
 				class="h-[60vh] w-full rounded-lg object-cover shadow-xl saturate-50"
-			/>
+			/> -->
 		</div>
 		<div class="w-full space-y-6 lg:w-1/2">
 			<h2 class="text-3xl font-semibold">Vancouver's Trusted Exterior Cleaning Experts</h2>
@@ -418,19 +434,19 @@
 	<!-- Phone CTA -->
 	<section class="relative flex h-[60vh] w-full items-center justify-center py-24 text-white">
 		<div class="absolute inset-0 z-0">
-			<!-- <Image
+			<Image
 				url="/assets/landing/2.jpg"
 				description="Professional exterior cleaning background"
 				class="h-full w-full object-cover"
 				width="1920"
 				height="1080"
-			/> -->
-			<enhanced:img
+			/>
+			<!-- <enhanced:img
 				src={aboutbg}
 				sizes="640px"
 				alt="Professional exterior cleaning background"
 				class="h-full w-full object-cover"
-			/>
+			/> -->
 
 			<div class="absolute inset-0 bg-secondary-foreground/65">&nbsp;</div>
 		</div>

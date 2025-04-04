@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { PUBLIC_COMPANY_NAME, PUBLIC_DOMAIN } from '$env/static/public';
 	import { quoteDialogOpen } from '$lib/utils/stores';
+	import Image from './Image.svelte';
 	// Import enhanced logo image
 	import logoAddr from '$lib/icons/logo.png?enhanced';
 
@@ -31,13 +32,13 @@
 
 	<div class="aspect-square h-[40vh] overflow-hidden">
 		 <!-- <Logo class="aspect-square h-[40vh] w-auto" /> -->
-		 <!-- <Image url="/assets/logo.png" description="company logo" height="200px" width="200px" /> -->
-		 <enhanced:img 
+		 <Image url="/assets/logo.png" description="company logo" height="200px" width="200px" />
+		 <!-- <enhanced:img 
 			src={logoAddr}
 			sizes="400px"
 			alt="company logo" 
 			class="aspect-square h-[40vh] w-auto" 
-		/>
+		/> -->
 	</div>
 
 	<div
