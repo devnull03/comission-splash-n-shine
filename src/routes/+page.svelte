@@ -22,7 +22,7 @@
 	import heroAddr from '$lib/icons/landingHero.webp?enhanced';
 	import team from '$lib/icons/team.jpg?enhanced';
 	import aboutbg from '$lib/icons/aboutbg.jpg?enhanced';
-	import { serviceImages } from '$lib/icons/services/service_images';
+	import { serviceImages, serviceImagesDict } from '$lib/icons/services/service_images';
 	// import { optimize } from '$lib/utils/image';
 
 	let { data }: { data: PageData } = $props();
@@ -156,18 +156,11 @@
 					goto(`/services/${serviceKey}`);
 				}}
 				class="block"
+				aria-label={`${service.title} service highlight - professional cleaning demonstration by Splash n' Shine`}
 			>
-				<!-- <Image
-					url={`/assets/services/${serviceKey}/1.webp`}
-					description={`${service.title} service highlight - professional cleaning demonstration by Splash n' Shine`}
-					class="aspect-square h-auto w-full object-cover transition-all duration-500 ease-in-out hover:scale-110"
-					width="480"
-					height="480"
-					quality={50}
-				/> -->
 				<enhanced:img
 					class="aspect-square h-auto w-full object-cover transition-all duration-500 ease-in-out hover:scale-110"
-					src={serviceImages[i]}
+					src={serviceImagesDict[serviceKey]}
 					sizes="640px"
 					alt={`${service.title} service highlight - professional cleaning demonstration by Splash n' Shine`}
 				/>
@@ -177,7 +170,11 @@
 		<span class="font-[Cantarell] text-[#00000099]">{service.shortDescription}</span>
 		<a
 			href={`${domain}/services/${services[i]}`}
-			class="inline-block border-b border-b-transparent py-2 text-xs italic transition-all duration-300 ease-in-out hover:border-b-black"
+			onclick={(e) => {
+				e.preventDefault();
+				goto(`/services/${serviceKey}`);
+			}}
+			class="py-2 text-xs italic hover:underline"
 			>Read more...</a
 		>
 	</div>
@@ -185,27 +182,21 @@
 
 {#snippet mobileServiceBlock(serviceKey: string, i: number)}
 	{@const service = serviceData[serviceKey]}
-	<Accordion.Root class="mb-2 w-full" value={!i ? [serviceKey] : []}>
+	<Accordion.Root class="mb-2 w-[90vw]" value={!i ? [serviceKey] : []}>
 		<Accordion.Item value={serviceKey}>
-			<Accordion.Trigger class="w-full rounded-lg bg-primary/10 px-4 py-3">
-				<h3 class="w-full font-[Alatsi] text-xl text-primary-foreground">
-					{@html service.title.split('|').join('<br>')}
-				</h3>
+			<Accordion.Trigger class="group relative w-full rounded-lg bg-primary/10 px-4 py-3 text-left">
+				<div class="flex w-full items-center justify-between">
+					<h3 class="font-[Alatsi] text-xl text-primary-foreground">
+						{@html service.title.split('|').join('<br>')}
+					</h3>
+				</div>
 			</Accordion.Trigger>
 			<Accordion.Content class="px-1 pt-2">
 				<div class="flex flex-col gap-3">
-					<div class="aspect-video overflow-hidden rounded">
-						<!-- <Image
-							url={`/assets/services/${serviceKey}/1.webp`}
-							description={`${service.title} service highlight - professional cleaning demonstration by Splash n' Shine`}
-							class="h-auto w-full object-cover"
-							width="400"
-							height="225"
-							quality={40}
-						/> -->
+					<div class="h-48 max-h-48 w-full overflow-hidden rounded">
 						<enhanced:img
-							class="h-auto w-full object-cover"
-							src={serviceImages[i]}
+							class="h-full w-full object-cover"
+							src={serviceImagesDict[serviceKey]}
 							sizes="640px"
 							alt={`${service.title} service highlight - professional cleaning demonstration by Splash n' Shine`}
 						/>
@@ -224,18 +215,20 @@
 									e.preventDefault();
 									goto(`/services/${serviceKey}`);
 								}}
-								class="flex h-full w-full items-center justify-center"
+								class="flex h-full w-full items-center justify-center text-left"
 							>
-								Learn More about {serviceKey
-									.split('-')
-									.map((v) => v.charAt(0).toUpperCase() + v.slice(1))
-									.join(' ')}
+								<span class="block truncate">
+									Learn More about {serviceKey
+										.split('-')
+										.map((v) => v.charAt(0).toUpperCase() + v.slice(1))
+										.join(' ')}
+								</span>
 							</a>
 						</Button>
 						<Button
 							size="sm"
 							onclick={() => goto('/contact')}
-							class="min-h-[44px] min-w-[44px] flex-1"
+							class="min-h-[44px] min-w-[44px] flex-none"
 						>
 							<a
 								href={`${domain}/contact`}
@@ -311,7 +304,11 @@
 				Get Free Quote
 			</a>
 		</Button>
-		<button onclick={() => {}} class="absolute bottom-10 flex flex-col items-center text-white">
+		<button
+			onclick={() => {}}
+			class="absolute bottom-10 flex flex-col items-center text-white"
+			aria-label="Scroll down to view more content"
+		>
 			<span class="">Scroll Down</span>
 			<CaretDown class="h-6 w-6 animate-bounce" />
 		</button>

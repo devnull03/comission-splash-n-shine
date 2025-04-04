@@ -23,12 +23,12 @@ export type ServiceImageObj = {
 	[key: Service]: any;
 };
 
-// export const serviceImages: ServiceImageObj = {
-// 	'commercial-cleaning': CommercialCleaning,
-// 	'full-house-cleaning': FullHouseCleaning,
-// 	'gutter-cleaning': GutterCleaning,
-// 	'post-construction-cleaning': PostConstructionCleanup,
-// 	'roof-cleaning': RoofCleaning,
-// 	'roof-painting': RoofPainting,
-// 	'window-washing': WindowWashing
-// };
+export const serviceImagesDict: ServiceImageObj = {
+	'commercial-cleaning': CommercialCleaning,
+	'full-house-cleaning': FullHouseCleaning,
+	'gutter-cleaning': GutterCleaning,
+	'post-construction-cleanup': PostConstructionCleanup,
+	'roof-cleaning': RoofCleaning,
+	'roof-painting': RoofPainting,
+	'window-washing': WindowWashing
+};
