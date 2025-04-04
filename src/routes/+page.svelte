@@ -8,7 +8,7 @@
 	import { goto } from '$app/navigation';
 	// import { page } from '$app/stores';
 	import { isMobile, servicesPageNavigating } from '$lib/utils/stores';
-	import Image from '$lib/components/Image.svelte';
+	// import Image from '$lib/components/Image.svelte';
 	import { serviceData, services } from '$lib/data/services';
 	import type { Review } from '$lib/types/reviews';
 	import type { PageData } from './$types';
@@ -20,7 +20,10 @@
 	import ReviewCard from '$lib/components/ReviewCard.svelte';
 
 	import heroAddr from '$lib/icons/landingHero.webp?enhanced';
-	import { optimize } from '$lib/utils/image';
+	import team from '$lib/icons/team.jpg?enhanced';
+	import aboutbg from '$lib/icons/aboutbg.jpg?enhanced';
+	import { serviceImages } from '$lib/icons/services/service_images';
+	// import { optimize } from '$lib/utils/image';
 
 	let { data }: { data: PageData } = $props();
 
@@ -126,7 +129,12 @@
 	<meta property="og:url" content="https://www.splashnshine.ca" />
 	<meta property="og:type" content="website" />
 	<link rel="canonical" href="https://www.splashnshine.ca" />
-	<link rel="preload" href={optimize('/assets/landing/1.webp', [640], 90)} as="image" fetchpriority="high" />
+	<!-- <link
+		rel="preload"
+		href={optimize('/assets/landing/1.webp', [640], 70)}
+		as="image"
+		media="(min-width: 481px) and (max-width: 820px)"
+	/> -->
 </svelte:head>
 
 <svelte:window bind:scrollY={initScroll} />
@@ -146,16 +154,22 @@
 				onclick={(e) => {
 					e.preventDefault();
 					goto(`/services/${serviceKey}`);
-					}}
+				}}
 				class="block"
 			>
-				<Image
+				<!-- <Image
 					url={`/assets/services/${serviceKey}/1.webp`}
 					description={`${service.title} service highlight - professional cleaning demonstration by Splash n' Shine`}
 					class="aspect-square h-auto w-full object-cover transition-all duration-500 ease-in-out hover:scale-110"
 					width="480"
 					height="480"
 					quality={50}
+				/> -->
+				<enhanced:img
+					class="aspect-square h-auto w-full object-cover transition-all duration-500 ease-in-out hover:scale-110"
+					src={serviceImages[i]}
+					sizes="640px"
+					alt={`${service.title} service highlight - professional cleaning demonstration by Splash n' Shine`}
 				/>
 			</a>
 		</button>
@@ -181,13 +195,19 @@
 			<Accordion.Content class="px-1 pt-2">
 				<div class="flex flex-col gap-3">
 					<div class="aspect-video overflow-hidden rounded">
-						<Image
+						<!-- <Image
 							url={`/assets/services/${serviceKey}/1.webp`}
 							description={`${service.title} service highlight - professional cleaning demonstration by Splash n' Shine`}
 							class="h-auto w-full object-cover"
 							width="400"
 							height="225"
 							quality={40}
+						/> -->
+						<enhanced:img
+							class="h-auto w-full object-cover"
+							src={serviceImages[i]}
+							sizes="640px"
+							alt={`${service.title} service highlight - professional cleaning demonstration by Splash n' Shine`}
 						/>
 					</div>
 					<p class="py-1 font-[Cantarell] text-sm text-[#00000099]">{service.shortDescription}</p>
@@ -196,7 +216,7 @@
 							variant="outline"
 							size="sm"
 							onclick={() => goto(`/services/${serviceKey}`)}
-							class="flex-1 min-h-[44px] min-w-[44px]"
+							class="min-h-[44px] min-w-[44px] flex-1"
 						>
 							<a
 								href={`${domain}/services/${serviceKey}`}
@@ -204,7 +224,7 @@
 									e.preventDefault();
 									goto(`/services/${serviceKey}`);
 								}}
-								class="w-full h-full flex items-center justify-center"
+								class="flex h-full w-full items-center justify-center"
 							>
 								Learn More about {serviceKey
 									.split('-')
@@ -212,14 +232,18 @@
 									.join(' ')}
 							</a>
 						</Button>
-						<Button size="sm" onclick={() => goto('/contact')} class="flex-1 min-h-[44px] min-w-[44px]">
+						<Button
+							size="sm"
+							onclick={() => goto('/contact')}
+							class="min-h-[44px] min-w-[44px] flex-1"
+						>
 							<a
 								href={`${domain}/contact`}
 								onclick={(e) => {
 									e.preventDefault();
 									goto('/contact');
 								}}
-								class="w-full h-full flex items-center justify-center"
+								class="flex h-full w-full items-center justify-center"
 							>
 								Get Quote
 							</a>
@@ -235,7 +259,7 @@
 	<section
 		class="relative flex h-[85vh] w-full flex-row justify-evenly gap-0 overflow-hidden object-cover text-background"
 	>
-		<Image
+		<!-- <Image
 			url="/assets/landing/1.webp"
 			description="Professional exterior cleaning service in action - Splash n' Shine hero image"
 			fetchpriority="high"
@@ -243,14 +267,15 @@
 			width="1920"
 			height="1080"
 			size={[640]}
-		/>
+			quality={70}
+		/> -->
 
-		<!-- <enhanced:img
+		<enhanced:img
 			class="h-full object-cover"
 			src={heroAddr}
-			sizes="min(1280px, 100vw)"
+			sizes="640px"
 			alt="Professional exterior cleaning service in action - Splash n' Shine"
-		/> -->
+		/>
 
 		<div class="absolute h-full w-full bg-black/30">&nbsp;</div>
 		<div
@@ -308,12 +333,18 @@
 	<!-- About -->
 	<section class="container mx-auto flex flex-col items-center gap-8 px-4 py-12 lg:flex-row">
 		<div class="w-full lg:w-1/2">
-			<Image
+			<!-- <Image
 				url="/assets/landing/team.jpg"
 				description="Splash n' Shine professional cleaning team in Vancouver"
 				class="h-[60vh] w-full rounded-lg object-cover shadow-xl"
-				width="800" 
+				width="800"
 				height="600"
+			/> -->
+			<enhanced:img
+				src={team}
+				sizes="640px"
+				alt="Splash n' Shine professional cleaning team in Vancouver"
+				class="h-[60vh] w-full rounded-lg object-cover shadow-xl saturate-50"
 			/>
 		</div>
 		<div class="w-full space-y-6 lg:w-1/2">
@@ -360,7 +391,7 @@
 						e.preventDefault();
 						goto('/contact');
 					}}
-					class="w-full h-full flex items-center justify-center"
+					class="flex h-full w-full items-center justify-center"
 				>
 					Schedule a Free Consultation
 				</a>
@@ -390,13 +421,20 @@
 	<!-- Phone CTA -->
 	<section class="relative flex h-[60vh] w-full items-center justify-center py-24 text-white">
 		<div class="absolute inset-0 z-0">
-			<Image
+			<!-- <Image
 				url="/assets/landing/2.jpg"
 				description="Professional exterior cleaning background"
 				class="h-full w-full object-cover"
 				width="1920"
 				height="1080"
+			/> -->
+			<enhanced:img
+				src={aboutbg}
+				sizes="640px"
+				alt="Professional exterior cleaning background"
+				class="h-full w-full object-cover"
 			/>
+
 			<div class="absolute inset-0 bg-secondary-foreground/65">&nbsp;</div>
 		</div>
 		<div class="container relative z-10 mx-auto my-auto text-center">
@@ -416,12 +454,17 @@
 	</section>
 
 	<!-- testimonials -->
-	<section bind:this={reviewsSection} class="flex w-full flex-col gap-8 overflow-hidden pb-16 text-center lg:gap-10">
+	<section
+		bind:this={reviewsSection}
+		class="flex w-full flex-col gap-8 overflow-hidden pb-16 text-center lg:gap-10"
+	>
 		<h1 class="text-center text-4xl font-semibold leading-10">Testimonials</h1>
 
 		{#if isLoadingReviews}
 			<div class="py-12 text-center">
-				<div class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent"></div>
+				<div
+					class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent"
+				></div>
 				<p class="mt-4 text-muted-foreground">Loading reviews...</p>
 			</div>
 		{:else if reviews.length > 0}
@@ -442,11 +485,15 @@
 					/>
 					{#each Array($isMobile ? reviews.length : Math.ceil(reviews.length / 2)) as _, i}
 						<button
-							class="h-[12px] w-[12px] flex items-center justify-center rounded-full"
+							class="flex h-[12px] w-[12px] items-center justify-center rounded-full"
 							aria-label={`Go to slide ${i + 1}`}
 							onclick={() => reviewCarouselAPI?.scrollTo(i)}
 						>
-							<span class="block h-3 w-3 rounded-full {i === currentReviewSlide ? 'bg-primary' : 'bg-gray-300'}"></span>
+							<span
+								class="block h-3 w-3 rounded-full {i === currentReviewSlide
+									? 'bg-primary'
+									: 'bg-gray-300'}"
+							></span>
 						</button>
 					{/each}
 					<Carousel.Next class="relative top-4 scale-[1.3] bg-primary text-primary-foreground" />

@@ -128,15 +128,6 @@
 		transform: translateX(-50%);
 	}
 
-	.share-button {
-		border-radius: 50%;
-		transition: transform 0.2s ease;
-	}
-
-	.share-button:hover {
-		transform: scale(1.1);
-	}
-
 	/* Media query for smaller screens */
 	@media (max-width: 768px) {
 		.floating-share {

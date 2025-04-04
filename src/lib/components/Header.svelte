@@ -6,7 +6,6 @@
 	import { scrollThreshold } from '$lib/utils/animations.store';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/state';
-	import Image from '$lib/components/Image.svelte';
 	import { isMobile, quoteDialogOpen, servicesPageNavigating } from '$lib/utils/stores';
 	import { slide } from 'svelte/transition';
 	import { PUBLIC_COMPANY_NAME } from '$env/static/public';
@@ -50,8 +49,8 @@
 			aria-label="Go to home page"
 		>
 			<!-- <Logo class="h-full w-full" /> -->
-			<Image url="/assets/logo.png" description="company logo header" width="64px" height="64px" />
-			<!-- <enhanced:img sizes="64px" src={logoAddr} alt="company logo header" class="h-full w-full" /> -->
+			<!-- <Image url="/assets/logo.png" description="company logo header" width="64px" height="64px" /> -->
+			<enhanced:img sizes="64px" src={logoAddr} alt="company logo header" class="h-full w-full" />
 		</a>
 	</div>
 
