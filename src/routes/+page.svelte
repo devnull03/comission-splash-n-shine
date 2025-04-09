@@ -171,7 +171,7 @@
 					src={serviceImagesDict[serviceKey]}
 					sizes="640px"
 					alt={`${service.title} service highlight - professional cleaning demonstration by Splash n' Shine`}
-				/> -->
+				/> 
 			</a>
 		</button>
 
@@ -264,7 +264,7 @@
 	</Accordion.Root>
 {/snippet}
 
-<main class="flex w-screen flex-col items-center gap-16 pb-48 lg:gap-16">
+<main class="flex w-full flex-col items-center gap-16 pb-48 lg:gap-16">
 	<section
 		class="relative flex h-[85vh] w-full flex-row justify-evenly gap-0 overflow-hidden object-cover text-background"
 	>
@@ -288,7 +288,7 @@
 
 		<div class="absolute h-full w-full bg-black/30">&nbsp;</div>
 		<div
-			class="absolute left-1/2 top-1/2 flex w-full -translate-x-1/2 -translate-y-1/2 transform flex-col items-center"
+			class="absolute left-1/2 top-1/2 flex w-full -translate-x-1/2 -translate-y-1/2 transform flex-col items-center justify-center h-full mt-12"
 		>
 			<h1 class="text-shadow text-center text-[6vh] font-semibold md:text-[10vw]">
 				{PUBLIC_COMPANY_NAME}
@@ -303,11 +303,10 @@
 				Expert Soft Wash & Pressure Washing in Vancouver & Surrey! We clean roofs, gutters, siding,
 				windows & driveways
 			</p>
-		</div>
 		<Button
 			onclick={() => goto('/contact')}
 			aria-label="Get free quote"
-			class="absolute bottom-[20%] text-lg"
+			class="mt-12 text-lg"
 			size="lg"
 		>
 			<a
@@ -322,12 +321,13 @@
 		</Button>
 		<button
 			onclick={() => {}}
-			class="absolute bottom-10 flex flex-col items-center text-white"
+			class="flex flex-col items-center text-white mt-4"
 			aria-label="Scroll down to view more content"
 		>
 			<span class="">Scroll Down</span>
 			<CaretDown class="h-6 w-6 animate-bounce" />
 		</button>
+		</div>
 	</section>
 
 	<section class="flex w-full flex-col items-center gap-6 px-4 py-8">
