@@ -11,7 +11,7 @@ export interface FaqItem {
 }
 
 export const contactInfo = {
-  phone: '6041234567',
+  phone: '7788045911',
   email: 'info@splashnshine.ca'
 }
 

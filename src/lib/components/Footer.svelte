@@ -25,7 +25,7 @@
 		<div class="flex gap-2 lg:gap-8">
 			<!-- TODO: add social links -->
 			<a href="https://www.instagram.com/splashnshine.ca/">Instagram</a>
-			<a href="https://www.tiktok.com/@splashnshine.ca?_t=ZM-8uAbspTLuI1&_r=1">TikTok</a>
+			<a href="https://www.tiktok.com/@splashnshine.ca?_t=ZM-8uAbspTLuI1&_r=1">TikTok</a>	
 			<a href="https://www.facebook.com/105341482673651">Facebook</a>
 		</div>
 	</div>

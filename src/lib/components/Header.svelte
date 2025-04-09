@@ -194,14 +194,14 @@
 
 				<div class="flex items-center gap-4 md:flex-row md:gap-7">
 					<a
-						href="https://www.instagram.com/luxuryfloors.ca/"
+						href="https://www.instagram.com/splashnshine.ca/"
 						aria-label="Go to instagram page"
 						class="text-xs font-semibold uppercase"
 					>
 						<Instagram color={colorState ? 'white' : 'black'} />
 					</a>
 					<a
-						href="tel:7783085911"
+						href="tel:{contactInfo.phone}"
 						aria-label="Call phone number"
 						class="text-xs font-semibold uppercase"
 					>
