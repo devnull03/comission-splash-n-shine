@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.splashnshine.ca/sitemap.xml
