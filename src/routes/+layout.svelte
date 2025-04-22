@@ -60,6 +60,8 @@
 	<meta name="msapplication-TileColor" content="#ffffff" />
 	<meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png" />
 	<meta name="theme-color" content="#e0b23d" />
+
+	<meta name="msvalidate.01" content="B6452AF26DC66424390A9A5C30B9741C" />
 </svelte:head>
 
 <svelte:window bind:scrollY />
