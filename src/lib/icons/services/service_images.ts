@@ -1,4 +1,3 @@
-
 import type { Service } from '$lib/data/services';
 import CommercialCleaning from './commercial-cleaning.webp?enhanced';
 import FullHouseCleaning from './full-house-cleaning.webp?enhanced';
@@ -30,5 +29,11 @@ export const serviceImagesDict: ServiceImageObj = {
 	'post-construction-cleanup': PostConstructionCleanup,
 	'roof-cleaning': RoofCleaning,
 	'roof-painting': RoofPainting,
-	'window-washing': WindowWashing
+	'window-washing': WindowWashing,
+	// New services with repurposed images
+	'pressure-washing': FullHouseCleaning,
+	'house-washing': FullHouseCleaning,
+	'driveway-pressure-wash': GutterCleaning,
+	'driveway-sealing': RoofPainting,
+	'concrete-sealing': RoofPainting
 };

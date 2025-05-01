@@ -5,7 +5,12 @@ export const services = [
   'commercial-cleaning',
   'window-washing',
   'post-construction-cleanup',
-  'gutter-cleaning'
+  'gutter-cleaning',
+  'pressure-washing',
+  'house-washing',
+  'driveway-pressure-wash',
+  'driveway-sealing',
+  'concrete-sealing'
 ];
 export type Service = typeof services[number];
 
@@ -459,6 +464,314 @@ export const serviceData: ServiceData = {
       {
         question: 'Do You Offer Gutter Repairs or Gutter Guard Installation?',
         answer: 'Yes! We can fix minor gutter issues and install gutter guards to prevent future clogging.'
+      }
+    ]
+  },
+  'pressure-washing': {
+    title: 'Professional Pressure Washing Services | Safe & Effective Cleaning',
+    shortDescription: 'Expert pressure washing in Vancouver & Surrey – Residential & commercial exterior cleaning solutions',
+    description: 'Restore your property\'s appearance with our professional pressure washing services. We use state-of-the-art equipment and eco-friendly cleaning solutions to safely remove dirt, grime, mold, and stains from various surfaces. Our experienced technicians adjust the pressure and technique according to each surface type, ensuring thorough cleaning without causing damage. From concrete and brick to wood and vinyl, we have the expertise to handle all exterior surfaces.',
+    images: [
+      '/assets/services/full-house-cleaning/1.webp',
+      '/assets/services/full-house-cleaning/2.webp',
+    ],
+    benefits: [
+      'Enhances curb appeal instantly',
+      'Prevents damage from mold and mildew',
+      'Extends the lifespan of exterior surfaces',
+      'Prepares surfaces for painting or sealing',
+      'Removes harmful contaminants',
+      'Increases property value'
+    ],
+    keyFeatures: [
+      'Variable pressure capabilities for different surfaces',
+      'Hot and cold water washing options',
+      'Eco-friendly cleaning solutions',
+      'Surface-appropriate techniques',
+      'Complete exterior cleaning',
+      'Stain and graffiti removal'
+    ],
+    cities: [
+      'Surrey',
+      'Richmond',
+      'Vancouver',
+      'Burnaby',
+      'Coquitlam',
+      'Langley',
+      'Delta',
+      'White Rock',
+      'New Westminster',
+      'North Vancouver',
+      'Abbotsford'
+    ],
+    faqItems: [
+      {
+        question: 'Is pressure washing safe for all exterior surfaces?',
+        answer: 'No, not all surfaces can handle high pressure. We adjust our equipment settings and techniques for each surface type, using lower pressure for delicate surfaces and soft washing when appropriate.'
+      },
+      {
+        question: 'How often should I have my property pressure washed?',
+        answer: 'For most properties in the Vancouver area, we recommend pressure washing once a year to prevent buildup of mold, algae, and dirt. Properties in heavily wooded areas or near water may benefit from cleaning twice a year.'
+      },
+      {
+        question: 'Will pressure washing damage my plants and landscaping?',
+        answer: 'We take special precautions to protect your landscaping, including covering sensitive plants and using eco-friendly cleaning solutions that won\'t harm your vegetation.'
+      },
+      {
+        question: 'Can pressure washing remove oil stains from my driveway?',
+        answer: 'Yes, our specialized cleaning solutions combined with appropriate pressure washing techniques can remove most oil stains from concrete and asphalt surfaces.'
+      },
+      {
+        question: 'How long does pressure washing take?',
+        answer: 'The time required depends on the size of the area and level of dirt. Most residential jobs can be completed in 2-4 hours, while larger commercial properties may take a full day.'
+      }
+    ]
+  },
+  'house-washing': {
+    title: 'Complete House Washing Services | Restore Your Home\'s Beauty',
+    shortDescription: 'Expert house washing in Vancouver & Surrey – Gentle soft washing for siding, brick & stucco',
+    description: 'Revitalize your home\'s exterior with our comprehensive house washing services. We specialize in soft washing techniques that safely remove dirt, algae, mold, and mildew without damaging your siding or paint. Our professional team uses biodegradable cleaning solutions and appropriate water pressure for each surface type, whether it\'s vinyl, fiber cement, wood, brick, or stucco. Regular house washing not only improves your home\'s appearance but also extends the life of your exterior surfaces by preventing damage from organic growth and environmental contaminants.',
+    images: [
+      '/assets/services/full-house-cleaning/3.webp',
+      '/assets/services/full-house-cleaning/4.webp',
+    ],
+    benefits: [
+      'Restores original beauty and color',
+      'Prevents costly repairs and premature aging',
+      'Removes harmful mold and mildew',
+      'Improves home health by eliminating allergens',
+      'Increases property value and curb appeal',
+      'Prepares surfaces for painting or sealing'
+    ],
+    keyFeatures: [
+      'Safe soft washing techniques',
+      'Biodegradable, eco-friendly cleaning solutions',
+      'Complete exterior wall cleaning',
+      'Trim and eaves cleaning',
+      'Mold and mildew treatment',
+      'Surface-appropriate methods for all siding types'
+    ],
+    cities: [
+      'Surrey',
+      'Richmond',
+      'Vancouver',
+      'Burnaby',
+      'Coquitlam',
+      'Langley',
+      'Delta',
+      'White Rock',
+      'New Westminster',
+      'North Vancouver',
+      'Abbotsford'
+    ],
+    faqItems: [
+      {
+        question: 'What is soft washing and how is it different from pressure washing?',
+        answer: 'Soft washing uses lower water pressure combined with specialized cleaning solutions to safely remove dirt and organic growth. Unlike high-pressure washing, soft washing won\'t damage siding, windows, or other delicate surfaces.'
+      },
+      {
+        question: 'Is house washing safe for all types of siding?',
+        answer: 'Yes, we use different techniques for different siding materials. Our team is trained to select the appropriate pressure, temperature, and cleaning solutions for vinyl, wood, fiber cement, stucco, brick, and other exterior surfaces.'
+      },
+      {
+        question: 'How often should I have my house washed?',
+        answer: 'We recommend house washing every 1-2 years for most homes in the Vancouver area. Homes in shaded areas or near trees may need more frequent cleaning to prevent mold and algae growth.'
+      },
+      {
+        question: 'Will your cleaning solutions harm my landscaping?',
+        answer: 'No, we use environmentally friendly, biodegradable cleaning solutions that won\'t harm your plants, pets, or landscaping. We also take precautions to protect sensitive plants during the cleaning process.'
+      },
+      {
+        question: 'How long does it take to wash a house?',
+        answer: 'Most residential house washing services can be completed in 3-5 hours, depending on the size of your home and the level of dirt and organic growth.'
+      }
+    ]
+  },
+  'driveway-pressure-wash': {
+    title: 'Driveway Pressure Washing | Remove Stains & Restore Appearance',
+    shortDescription: 'Professional driveway cleaning in Vancouver & Surrey – Remove oil stains, moss & discoloration',
+    description: 'Transform your driveway with our specialized pressure washing services. We effectively remove stubborn oil stains, tire marks, dirt, mold, mildew, and other unsightly blemishes that diminish your property\'s curb appeal. Our professional team uses powerful equipment with adjustable pressure settings combined with appropriate cleaning solutions to tackle even the toughest stains without damaging your concrete, asphalt, or pavers. A clean driveway not only enhances your home\'s appearance but also provides safer walking and driving surfaces by eliminating slippery moss and algae growth.',
+    images: [
+      '/assets/services/gutter-cleaning/1.webp',
+      '/assets/services/gutter-cleaning/2.webp',
+    ],
+    benefits: [
+      'Dramatically improves curb appeal',
+      'Removes slippery moss and algae for safety',
+      'Prevents concrete deterioration',
+      'Extends driveway lifespan',
+      'Eliminates oil and chemical stains',
+      'Prepares surface for sealing or coating'
+    ],
+    keyFeatures: [
+      'High-power surface cleaning equipment',
+      'Specialized stain removal techniques',
+      'Hot water cleaning for oil stains',
+      'Moss and weed elimination',
+      'Environmentally safe cleaning solutions',
+      'Complete cleaning of edges and corners'
+    ],
+    cities: [
+      'Surrey',
+      'Richmond',
+      'Vancouver',
+      'Burnaby',
+      'Coquitlam',
+      'Langley',
+      'Delta',
+      'White Rock',
+      'New Westminster',
+      'North Vancouver',
+      'Abbotsford'
+    ],
+    faqItems: [
+      {
+        question: 'Can you remove oil stains from my driveway?',
+        answer: 'Yes, we use specialized degreasers and hot water pressure washing techniques to remove even stubborn oil stains from concrete and asphalt driveways.'
+      },
+      {
+        question: 'Will pressure washing damage my stamped or decorative concrete?',
+        answer: 'No, we adjust our pressure settings based on your specific driveway material. For decorative or stamped concrete, we use appropriate pressure levels and techniques to clean effectively without causing damage.'
+      },
+      {
+        question: 'How often should I have my driveway pressure washed?',
+        answer: 'For most homes in the Vancouver area, we recommend driveway cleaning once a year. Driveways in heavily wooded areas or those with significant moss issues may benefit from cleaning twice a year.'
+      },
+      {
+        question: 'Can pressure washing remove rust stains from my concrete?',
+        answer: 'Yes, our specialized rust removal solutions combined with professional pressure washing techniques can remove most rust stains from concrete surfaces.'
+      },
+      {
+        question: 'Do you clean other hardscaped areas besides driveways?',
+        answer: 'Absolutely! We clean walkways, patios, pool decks, retaining walls, and any other concrete, stone, or paver surfaces on your property.'
+      }
+    ]
+  },
+  'driveway-sealing': {
+    title: 'Professional Driveway Sealing Services | Protect & Enhance',
+    shortDescription: 'Expert driveway sealing in Vancouver & Surrey – Long-lasting protection for concrete & asphalt',
+    description: 'Extend the life of your driveway with our professional sealing services. After thoroughly cleaning your driveway, we apply high-quality sealants that protect against water penetration, oil stains, UV damage, and freeze-thaw cycles. Our sealants enhance the color and appearance of concrete, asphalt, and paver driveways while providing a protective barrier against the harsh Pacific Northwest elements. Properly sealed driveways require less maintenance, resist staining, and maintain their attractive appearance for years longer than unsealed surfaces.',
+    images: [
+      '/assets/services/commercial-cleaning/1.webp',
+      '/assets/services/commercial-cleaning/2.webp',
+    ],
+    benefits: [
+      'Protects against water damage and cracking',
+      'Prevents oil and chemical stains',
+      'Resists UV fading and discoloration',
+      'Extends driveway lifespan significantly',
+      'Enhances color and appearance',
+      'Reduces ongoing maintenance costs'
+    ],
+    keyFeatures: [
+      'Premium-grade sealants',
+      'Complete surface preparation',
+      'Crack filling and repair options',
+      'Uniform application techniques',
+      'Slip-resistant finish options',
+      'Environmentally friendly sealant choices'
+    ],
+    cities: [
+      'Surrey',
+      'Richmond',
+      'Vancouver',
+      'Burnaby',
+      'Coquitlam',
+      'Langley',
+      'Delta',
+      'White Rock',
+      'New Westminster',
+      'North Vancouver',
+      'Abbotsford'
+    ],
+    faqItems: [
+      {
+        question: 'How long does driveway sealing last?',
+        answer: 'Our premium sealants typically last 2-5 years depending on traffic, weather exposure, and driveway material. Asphalt driveways generally need more frequent sealing than concrete.'
+      },
+      {
+        question: 'How soon can I use my driveway after sealing?',
+        answer: 'Most sealants require 24-48 hours to fully cure before vehicles can drive on the surface. We\'ll provide specific instructions based on the product used and weather conditions.'
+      },
+      {
+        question: 'Should I seal my driveway immediately after installation?',
+        answer: 'New concrete driveways should cure for at least 30 days before sealing. New asphalt driveways should cure for at least 90 days. We can help determine the right timing for your specific situation.'
+      },
+      {
+        question: 'Will sealing change the appearance of my driveway?',
+        answer: 'Yes, most sealants enhance the color of your driveway and provide a fresh, clean appearance. Concrete sealers range from natural matte finishes to wet-look glossy finishes depending on your preference.'
+      },
+      {
+        question: 'Do you repair cracks and damage before sealing?',
+        answer: 'Yes, we offer crack filling, patching, and minor repairs as part of our comprehensive driveway sealing service to ensure the best results and longevity.'
+      },
+      {
+        question: 'Is driveway sealing environmentally friendly?',
+        answer: 'We offer eco-friendly water-based sealant options that provide excellent protection with minimal environmental impact and low VOC emissions.'
+      }
+    ]
+  },
+  'concrete-sealing': {
+    title: 'Professional Concrete Sealing Services | Protect & Preserve',
+    shortDescription: 'Expert concrete sealing in Vancouver & Surrey – Weatherproof protection for patios, walkways & more',
+    description: 'Protect your concrete surfaces with our professional sealing services. We apply high-performance sealants that penetrate and bond with concrete to provide long-lasting protection against water damage, staining, freeze-thaw cycles, and UV exposure. Our concrete sealing services cover patios, walkways, pool decks, garage floors, and other concrete surfaces around your home or business. Properly sealed concrete resists cracking, spalling, and deterioration, significantly extending the life of your concrete while enhancing its appearance with either a natural look or a beautiful wet-look finish depending on your preference.',
+    images: [
+      '/assets/services/commercial-cleaning/2.webp',
+      '/assets/services/commercial-cleaning/3.webp',
+    ],
+    benefits: [
+      'Prevents water damage and cracking',
+      'Resists oil, grease, and chemical stains',
+      'Reduces efflorescence and discoloration',
+      'Extends concrete lifespan by years',
+      'Enhances surface appearance and color',
+      'Simplifies cleaning and maintenance'
+    ],
+    keyFeatures: [
+      'Premium penetrating and surface sealers',
+      'Thorough surface preparation',
+      'Crack repair and surface preparation',
+      'Professional application techniques',
+      'Non-slip finish options for safety',
+      'Decorative enhancement options'
+    ],
+    cities: [
+      'Surrey',
+      'Richmond',
+      'Vancouver',
+      'Burnaby',
+      'Coquitlam',
+      'Langley',
+      'Delta',
+      'White Rock',
+      'New Westminster',
+      'North Vancouver',
+      'Abbotsford'
+    ],
+    faqItems: [
+      {
+        question: 'What types of concrete sealers do you offer?',
+        answer: 'We offer penetrating sealers that protect without changing appearance, acrylic sealers that enhance color with a slight sheen, and high-gloss sealers for a wet look. We\'ll help you choose the right option for your needs.'
+      },
+      {
+        question: 'How often should concrete be sealed?',
+        answer: 'Most concrete surfaces in the Vancouver area should be resealed every 2-3 years, though high-traffic areas may need more frequent application. We can assess your specific situation during consultation.'
+      },
+      {
+        question: 'Can you seal stamped or decorative concrete?',
+        answer: 'Yes, we specialize in sealing decorative concrete surfaces with products specifically designed to protect and enhance the beauty of stamped, stained, or exposed aggregate concrete.'
+      },
+      {
+        question: 'Will sealer make my concrete slippery when wet?',
+        answer: 'We offer anti-slip additives for all our sealers that create a safe, textured surface that maintains excellent traction even when wet, perfect for pool decks, walkways, and steps.'
+      },
+      {
+        question: 'Can you seal my concrete patio and pool deck?',
+        answer: 'Absolutely! We seal all exterior concrete surfaces including patios, pool decks, walkways, steps, retaining walls, and decorative concrete features.'
+      },
+      {
+        question: 'How long does it take for concrete sealer to dry?',
+        answer: 'Most sealers are dry to the touch within 4-8 hours, but we recommend waiting 24-48 hours before allowing foot traffic and 72 hours before allowing vehicle traffic.'
       }
     ]
   }

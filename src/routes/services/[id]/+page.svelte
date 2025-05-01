@@ -59,10 +59,7 @@
 	>
 	<meta
 		name="description"
-		content="Expert {selectedServiceData?.title ||
-			formatServiceName(
-				page.params.id
-			)} in Vancouver and the Lower Mainland. Our professional team uses eco-friendly methods and cutting-edge equipment for superior results."
+		content="Expert {formatServiceName(page.params.id)} in {selectedServiceData?.cities?.[0] || 'Vancouver'} and the Lower Mainland. Our professional {page.params.id.replace(/-/g, ' ')} service uses eco-friendly methods and cutting-edge equipment for superior results. Get a free quote today!"
 	/>
 	<meta
 		name="keywords"
@@ -78,10 +75,7 @@
 	/>
 	<meta
 		property="og:description"
-		content="Transform your property with our expert {selectedServiceData?.title ||
-			formatServiceName(
-				page.params.id
-			)} services. Serving Vancouver, Surrey and the entire Lower Mainland with quality and care."
+		content="Transform your property with our expert {formatServiceName(page.params.id)} service. Serving {selectedServiceData?.cities?.slice(0,3).join(', ') || 'Vancouver, Surrey'} and the entire Lower Mainland with quality and care. Call us today for a free consultation!"
 	/>
 	<meta property="og:image" content="/assets/services/{page.params.id}/1.webp" />
 	<meta property="og:url" content="https://www.splashnshine.ca/services/{page.params.id}" />
