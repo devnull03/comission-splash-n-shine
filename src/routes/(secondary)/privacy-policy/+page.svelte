@@ -34,7 +34,7 @@
 			/>
 		</div>
 
-		<div class="text-center text-3xl font-semibold text-white lg:text-4xl">Privacy Policy</div>
+		<h1 class="text-center text-3xl font-semibold text-white lg:text-4xl">Privacy Policy</h1>
 	</section>
 
 	<section class="p-10 font-[Cantarell] leading-10 lg:p-28">
