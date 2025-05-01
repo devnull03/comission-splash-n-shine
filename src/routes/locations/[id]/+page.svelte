@@ -4,7 +4,7 @@
 	import { Button } from '$lib/components/ui/button';
 	import * as Accordion from '$lib/components/ui/accordion';
 	import { contactInfo, locationIds, locationsData } from '$lib/data/locations';
-	import { serviceData } from '$lib/data/services';
+	import { serviceData, services } from '$lib/data/services';
 	import { ChevronRight, DrawingPin, Mobile, EnvelopeClosed, Clock } from 'svelte-radix';
 	import type { PageData } from './$types';
 	import ContactForm from '$lib/components/ContactForm.svelte';
@@ -92,7 +92,7 @@
 	<section class="mb-16">
 		<h2 class="mb-8 text-center text-3xl font-bold">Our Services in {selectedLocation.name}</h2>
 		<div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
-			{#each selectedLocation.services as serviceId}
+			{#each services as serviceId}
 				{#if serviceData[serviceId]}
 					<div
 						class="flex flex-col rounded-lg border bg-white p-6 shadow-md transition-transform hover:scale-105"

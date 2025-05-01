@@ -372,7 +372,7 @@
 					class="rounded bg-primary/30 px-1 text-black">pressure washing</a
 				>
 				and
-				<a href="{domain}/services/soft-washing" class="rounded bg-primary/30 px-1 text-black"
+				<a href="{domain}/services/pressure-washing" class="rounded bg-primary/30 px-1 text-black"
 					>soft washing</a
 				> solutions, we've built our reputation on delivering exceptional results for both residential
 				and commercial properties.

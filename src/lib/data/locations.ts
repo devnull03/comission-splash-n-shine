@@ -1,6 +1,6 @@
 export interface LocationData {
   name: string;
-  services: string[];
+  // services: string[];
   faqItems: FaqItem[];
   mapEmbedUrl: string;
 }
@@ -26,21 +26,16 @@ export const locationIds = [
   'surrey',
   'white-rock',
   'langley',
-  'abbotsford'
+  'abbotsford',
+  'port-coquitlam',
+  'port-moody',
+  'maple-ridge',
+  'west-vancouver'
 ];
 
 export const locationsData: Record<string, LocationData> = {
   'north-vancouver': {
     name: 'North Vancouver',
-    services: [
-      'full-house-cleaning',
-      'roof-cleaning',
-      'roof-painting',
-      'commercial-cleaning',
-      'window-washing',
-      'post-construction-cleanup',
-      'gutter-cleaning'
-    ],
     faqItems: [
       {
         question: 'How long does a concrete coating installation take?',
@@ -59,15 +54,6 @@ export const locationsData: Record<string, LocationData> = {
   },
   'vancouver': {
     name: 'Vancouver',
-    services: [
-      'full-house-cleaning',
-      'roof-cleaning',
-      'roof-painting',
-      'commercial-cleaning',
-      'window-washing',
-      'post-construction-cleanup',
-      'gutter-cleaning'
-    ],
     faqItems: [
       {
         question: 'Do your services comply with Vancouver\'s environmental regulations?',
@@ -86,15 +72,6 @@ export const locationsData: Record<string, LocationData> = {
   },
   'coquitlam': {
     name: 'Coquitlam',
-    services: [
-      'full-house-cleaning',
-      'roof-cleaning',
-      'roof-painting',
-      'commercial-cleaning',
-      'window-washing',
-      'post-construction-cleanup',
-      'gutter-cleaning'
-    ],
     faqItems: [
       {
         question: 'Do you service all areas of Coquitlam?',
@@ -113,15 +90,6 @@ export const locationsData: Record<string, LocationData> = {
   },
   'burnaby': {
     name: 'Burnaby',
-    services: [
-      'full-house-cleaning',
-      'roof-cleaning',
-      'roof-painting',
-      'commercial-cleaning',
-      'window-washing',
-      'post-construction-cleanup',
-      'gutter-cleaning'
-    ],
     faqItems: [
       {
         question: 'Can you match my existing home colors for concrete coatings?',
@@ -140,15 +108,6 @@ export const locationsData: Record<string, LocationData> = {
   },
   'richmond': {
     name: 'Richmond',
-    services: [
-      'full-house-cleaning',
-      'roof-cleaning',
-      'roof-painting',
-      'commercial-cleaning',
-      'window-washing',
-      'post-construction-cleanup',
-      'gutter-cleaning'
-    ],
     faqItems: [
       {
         question: 'Are your concrete coatings suitable for Richmond\'s high water table environment?',
@@ -167,15 +126,6 @@ export const locationsData: Record<string, LocationData> = {
   },
   'delta': {
     name: 'Delta',
-    services: [
-      'full-house-cleaning',
-      'roof-cleaning',
-      'roof-painting',
-      'commercial-cleaning',
-      'window-washing',
-      'post-construction-cleanup',
-      'gutter-cleaning'
-    ],
     faqItems: [
       {
         question: 'Do you service all areas of Delta (North Delta, Ladner, Tsawwassen)?',
@@ -194,15 +144,6 @@ export const locationsData: Record<string, LocationData> = {
   },
   'new-westminster': {
     name: 'New Westminster',
-    services: [
-      'full-house-cleaning',
-      'roof-cleaning',
-      'roof-painting',
-      'commercial-cleaning',
-      'window-washing',
-      'post-construction-cleanup',
-      'gutter-cleaning'
-    ],
     faqItems: [
       {
         question: 'Do you have experience working with New Westminster\'s heritage homes?',
@@ -221,15 +162,6 @@ export const locationsData: Record<string, LocationData> = {
   },
   'surrey': {
     name: 'Surrey',
-    services: [
-      'full-house-cleaning',
-      'roof-cleaning',
-      'roof-painting',
-      'commercial-cleaning',
-      'window-washing',
-      'post-construction-cleanup',
-      'gutter-cleaning'
-    ],
     faqItems: [
       {
         question: 'Do you service all of Surrey\'s neighborhoods?',
@@ -248,15 +180,6 @@ export const locationsData: Record<string, LocationData> = {
   },
   'white-rock': {
     name: 'White Rock',
-    services: [
-      'full-house-cleaning',
-      'roof-cleaning',
-      'roof-painting',
-      'commercial-cleaning',
-      'window-washing',
-      'post-construction-cleanup',
-      'gutter-cleaning'
-    ],
     faqItems: [
       {
         question: 'Are your coatings suitable for oceanfront properties in White Rock?',
@@ -275,15 +198,6 @@ export const locationsData: Record<string, LocationData> = {
   },
   'langley': {
     name: 'Langley',
-    services: [
-      'full-house-cleaning',
-      'roof-cleaning',
-      'roof-painting',
-      'commercial-cleaning',
-      'window-washing',
-      'post-construction-cleanup',
-      'gutter-cleaning'
-    ],
     faqItems: [
       {
         question: 'Do you service both Langley City and Township?',
@@ -302,15 +216,6 @@ export const locationsData: Record<string, LocationData> = {
   },
   'abbotsford': {
     name: 'Abbotsford',
-    services: [
-      'full-house-cleaning',
-      'roof-cleaning',
-      'roof-painting',
-      'commercial-cleaning',
-      'window-washing',
-      'post-construction-cleanup',
-      'gutter-cleaning'
-    ],
     faqItems: [
       {
         question: 'Do you provide services to rural properties in Abbotsford?',
@@ -326,6 +231,78 @@ export const locationsData: Record<string, LocationData> = {
       }
     ],
     mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d167008.20753004064!2d-122.39011033663718!3d49.20161393596547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5485b89ed467c693%3A0x94053fa33354c6e5!2sAbbotsford%2C%20BC!5e0!3m2!1sen!2sca!4v1686754526543!5m2!1sen!2sca'
+  },
+  'port-coquitlam': {
+    name: 'Port Coquitlam',
+    faqItems: [
+      {
+        question: 'How long does a typical pressure washing service take in Port Coquitlam?',
+        answer: 'Most residential pressure washing jobs in Port Coquitlam can be completed in 2-4 hours, depending on the size of the property and the level of dirt and grime.'
+      },
+      {
+        question: 'Are your services available year-round in Port Coquitlam?',
+        answer: 'Yes, we provide our exterior cleaning services throughout the year in Port Coquitlam, adjusting our techniques and solutions to accommodate seasonal conditions.'
+      },
+      {
+        question: 'Do you offer special rates for multi-service bookings in Port Coquitlam?',
+        answer: 'Absolutely! We provide package discounts when you book multiple services together for your Port Coquitlam property, such as combining roof cleaning with gutter cleaning.'
+      }
+    ],
+    mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d83229.97237452826!2d-122.81204484368739!3d49.2627139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54867f13a6f5b48d%3A0xcd84b91b7ae570ed!2sPort%20Coquitlam%2C%20BC!5e0!3m2!1sen!2sca!4v1714498276303!5m2!1sen!2sca'
+  },
+  'port-moody': {
+    name: 'Port Moody',
+    faqItems: [
+      {
+        question: 'How do you handle the unique challenges of Port Moody\'s waterfront properties?',
+        answer: 'Our team has specialized experience with Port Moody\'s waterfront homes, using techniques and solutions specifically designed to address salt spray, moisture, and other oceanfront challenges.'
+      },
+      {
+        question: 'Do you offer eco-friendly options for Port Moody residents?',
+        answer: 'Yes, we use biodegradable, environmentally safe cleaning solutions that are particularly important for properties near Port Moody\'s sensitive watershed areas and Burrard Inlet.'
+      },
+      {
+        question: 'Can you work with strata councils in Port Moody?',
+        answer: 'Absolutely! We have extensive experience working with many strata buildings throughout Port Moody, providing comprehensive exterior cleaning services while adhering to strata guidelines.'
+      }
+    ],
+    mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41626.033093500815!2d-122.8786005704437!3d49.28373245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54867f2d9c0715b5%3A0x479ef558cb0e2a79!2sPort%20Moody%2C%20BC!5e0!3m2!1sen!2sca!4v1714498317709!5m2!1sen!2sca'
+  },
+  'maple-ridge': {
+    name: 'Maple Ridge',
+    faqItems: [
+      {
+        question: 'How do you address the unique moss and algae challenges in Maple Ridge properties?',
+        answer: 'Our team uses specialized treatments designed specifically for Maple Ridge\'s damp environment that effectively eliminate moss and algae while preventing regrowth for longer periods.'
+      },
+      {
+        question: 'Do you serve rural properties in Maple Ridge?',
+        answer: 'Yes, we provide our full range of exterior cleaning services to all areas of Maple Ridge, including rural and semi-rural properties in the outlying regions.'
+      },
+      {
+        question: 'How do you handle the cleaning needs of Maple Ridge\'s newer developments?',
+        answer: 'We tailor our cleaning approaches for Maple Ridge\'s newer neighborhoods, using techniques that maintain warranty requirements while providing excellent cleaning results for modern building materials.'
+      }
+    ],
+    mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d166293.7217518773!2d-122.7469716470891!3d49.23923475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54867f167fe8d517%3A0xfd3da60dd2e5aee!2sMaple%20Ridge%2C%20BC!5e0!3m2!1sen!2sca!4v1714498355098!5m2!1sen!2sca'
+  },
+  'west-vancouver': {
+    name: 'West Vancouver',
+    faqItems: [
+      {
+        question: 'How do you handle West Vancouver\'s high-end properties?',
+        answer: 'Our team has extensive experience working with luxury homes in West Vancouver, using premium techniques and products appropriate for high-value properties and specialty materials.'
+      },
+      {
+        question: 'Can you accommodate the unique topography of West Vancouver properties?',
+        answer: 'Absolutely! We have specialized equipment and safety protocols designed specifically for West Vancouver\'s steep lots and challenging access points.'
+      },
+      {
+        question: 'Do you offer services for West Vancouver\'s waterfront homes?',
+        answer: 'Yes, we provide specialized cleaning solutions for oceanfront properties in West Vancouver that address salt spray, marine air exposure, and other coastal challenges.'
+      }
+    ],
+    mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d83311.07567945656!2d-123.2413532!3d49.3690712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5486772c2a0a0625%3A0x50135152a7b0560!2sWest%20Vancouver%2C%20BC!5e0!3m2!1sen!2sca!4v1714498395364!5m2!1sen!2sca'
   }
 };
 
