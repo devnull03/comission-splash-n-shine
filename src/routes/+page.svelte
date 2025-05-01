@@ -23,6 +23,7 @@
 	import team from '$lib/icons/team.jpg?enhanced';
 	import aboutbg from '$lib/icons/aboutbg.jpg?enhanced';
 	import { serviceImages, serviceImagesDict } from '$lib/icons/services/service_images';
+	import { base } from '$app/paths';
 	// import { optimize } from '$lib/utils/image';
 
 	let { data }: { data: PageData } = $props();
@@ -129,6 +130,7 @@
 	<meta property="og:url" content="https://www.splashnshine.ca" />
 	<meta property="og:type" content="website" />
 	<link rel="canonical" href="https://www.splashnshine.ca" />
+
 	<!-- <link
 		rel="preload"
 		href={optimize('/assets/landing/1.webp', [640], 70)}
@@ -366,29 +368,29 @@
 			<p class="text-muted-foreground">
 				Welcome to Splash n' Shine, your premier exterior cleaning service provider in the Greater
 				Vancouver area. With years of expertise in <a
-					href="/services/pressure-washing"
+					href="{domain}/services/pressure-washing"
 					class="rounded bg-primary/30 px-1 text-black">pressure washing</a
 				>
 				and
-				<a href="/services/soft-washing" class="rounded bg-primary/30 px-1 text-black"
+				<a href="{domain}/services/soft-washing" class="rounded bg-primary/30 px-1 text-black"
 					>soft washing</a
 				> solutions, we've built our reputation on delivering exceptional results for both residential
 				and commercial properties.
 			</p>
 			<p class="text-muted-foreground">
-				Serving <a href="/locations/vancouver" class="rounded bg-primary/30 px-1 text-black"
+				Serving <a href="{domain}/locations/vancouver" class="rounded bg-primary/30 px-1 text-black"
 					>Vancouver</a
 				>,
-				<a href="/locations/surrey" class="rounded bg-primary/30 px-1 text-black">Surrey</a>, and
+				<a href="{domain}/locations/surrey" class="rounded bg-primary/30 px-1 text-black">Surrey</a>, and
 				the entire Lower Mainland, our professional team specializes in comprehensive exterior
 				cleaning services, including
-				<a href="/services/roof-cleaning" class="rounded bg-primary/30 px-1 text-black"
+				<a href="{domain}/services/roof-cleaning" class="rounded bg-primary/30 px-1 text-black"
 					>roof cleaning</a
 				>,
-				<a href="/services/gutter-cleaning" class="rounded bg-primary/30 px-1 text-black"
+				<a href="{domain}/services/gutter-cleaning" class="rounded bg-primary/30 px-1 text-black"
 					>gutter maintenance</a
 				>, and
-				<a href="/services/window-cleaning" class="rounded bg-primary/30 px-1 text-black"
+				<a href="{domain}/services/window-washing" class="rounded bg-primary/30 px-1 text-black"
 					>window washing</a
 				>.
 			</p>
