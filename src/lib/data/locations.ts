@@ -302,7 +302,7 @@ export const locationsData: Record<string, LocationData> = {
         answer: 'Yes, we provide specialized cleaning solutions for oceanfront properties in West Vancouver that address salt spray, marine air exposure, and other coastal challenges.'
       }
     ],
-    mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d83311.07567945656!2d-123.2413532!3d49.3690712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5486772c2a0a0625%3A0x50135152a7b0560!2sWest%20Vancouver%2C%20BC!5e0!3m2!1sen!2sca!4v1714498395364!5m2!1sen!2sca'
+    mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d166308.12521750384!2d-123.37177320673914!3d49.360391619870946!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54866e153fed7cd3%3A0x468dd2eb0790eb95!2sWest%20Vancouver%2C%20BC!5e0!3m2!1sen!2sca!4v1746068941266!5m2!1sen!2sca'
   }
 };
 
