@@ -20,6 +20,10 @@
 
 <svelte:head>
 	<title>Project Gallery | Splash n' Shine</title>
+	<meta
+		name="description"
+		content="View our stunning before-and-after transformations showcasing our exceptional pressure washing and exterior cleaning results in Vancouver."
+	/>
 </svelte:head>
 
 <Dialog.Root bind:open={dialogOpen}>

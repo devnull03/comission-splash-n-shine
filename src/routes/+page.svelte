@@ -115,7 +115,7 @@
 	<title>Splash n' Shine | Exterior Cleaning Services Vancouver</title>
 	<meta
 		name="description"
-		content="Transform your property with Splash n' Shine's premium exterior cleaning services. We specialize in power washing, soft washing, and roof cleaning throughout Vancouver, Surrey and the Lower Mainland."
+		content="Vancouver's premier exterior cleaning service. We specialize in power washing, soft washing, and roof cleaning throughout the Lower Mainland."
 	/>
 	<meta
 		name="keywords"
@@ -333,11 +333,11 @@
 	</section>
 
 	<section class="flex w-full flex-col items-center gap-6 px-4 py-8">
-		<h1
+		<h2
 			class="mx-auto max-w-4xl text-center text-2xl font-semibold leading-tight md:text-5xl lg:text-4xl"
 		>
 			Transform Your Home with Professional Cleaning
-		</h1>
+		</h2>
 		<div class="my-2 h-1 w-24 rounded-full bg-primary"></div>
 		<p class="mx-auto max-w-3xl text-center text-lg text-muted-foreground">
 			Experience the difference professional cleaning makes. Our expert team delivers exceptional
@@ -420,7 +420,7 @@
 		id="services"
 		bind:this={servicesSection}
 	>
-		<h1 class="text-center text-5xl font-semibold leading-10">Services we offer</h1>
+		<h2 class="text-center text-5xl font-semibold leading-10">Services we offer</h2>
 
 		<div class="grid w-full items-end gap-2 lg:grid-cols-3">
 			{#each Object.keys(serviceData) as serviceKey, i}
@@ -473,7 +473,7 @@
 		bind:this={reviewsSection}
 		class="flex w-full flex-col gap-8 overflow-hidden pb-16 text-center lg:gap-10"
 	>
-		<h1 class="text-center text-4xl font-semibold leading-10">Testimonials</h1>
+		<h2 class="text-center text-4xl font-semibold leading-10">Testimonials</h2>
 
 		{#if isLoadingReviews}
 			<div class="py-12 text-center">

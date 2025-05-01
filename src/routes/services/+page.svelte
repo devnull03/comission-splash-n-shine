@@ -36,7 +36,7 @@
 	<title>Exterior Cleaning Services | Splash n' Shine</title>
 	<meta
 		name="description"
-		content="Browse our complete catalog of exterior cleaning solutions including house washing, roof cleaning, gutter maintenance, window cleaning, and more. Serving Vancouver and surrounding communities."
+		content="Professional house washing, roof cleaning, gutter maintenance, window cleaning, and more. Serving Vancouver and surrounding communities."
 	/>
 	<meta
 		name="keywords"

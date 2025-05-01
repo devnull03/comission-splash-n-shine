@@ -6,7 +6,7 @@
 	<title>Privacy Policy | Splash n' Shine</title>
 	<meta
 		name="description"
-		content="Learn how Splash n' Shine collects, protects, and uses your personal information. Our privacy policy explains our commitment to safeguarding your data while providing excellent service."
+		content="Learn how we collect, protect and use your personal information while providing exceptional exterior cleaning services across Vancouver."
 	/>
 	<meta name="keywords" content="customer data protection, privacy practices, information collection policy, personal data security, customer information use, data rights, cookies policy, marketing preferences, data processing consent, privacy compliance" />
 	<meta property="og:title" content="Your Privacy Matters | Splash n' Shine Data Protection" />

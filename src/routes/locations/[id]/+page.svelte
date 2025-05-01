@@ -29,7 +29,7 @@
 	<title>{selectedLocation?.name} Services | Splash n' Shine</title>
 	<meta
 		name="description"
-		content="Splash n' Shine provides specialized exterior cleaning services in {selectedLocation?.name}. Our local team delivers exceptional power washing, soft washing, and property maintenance for homes and businesses."
+		content="Professional exterior cleaning in {selectedLocation?.name}. Expert power washing, soft washing, and property maintenance for residential and commercial properties."
 	/>
 	<meta
 		name="keywords"

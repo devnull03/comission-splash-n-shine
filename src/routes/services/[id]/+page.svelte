@@ -58,7 +58,7 @@
 	>
 	<meta
 		name="description"
-		content="Expert {formatServiceName(page.params.id)} in {selectedServiceData?.cities?.[0] || 'Vancouver'} and the Lower Mainland. Our professional {page.params.id.replace(/-/g, ' ')} service uses eco-friendly methods and cutting-edge equipment for superior results. Get a free quote today!"
+		content="Expert {formatServiceName(page.params.id)} in Vancouver and the Lower Mainland. Eco-friendly methods and professional equipment deliver superior results. Get a free quote today!"
 	/>
 	<meta
 		name="keywords"

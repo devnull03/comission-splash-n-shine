@@ -7,7 +7,7 @@
 	<title>About Us | Splash n' Shine Exterior Cleaning</title>
 	<meta
 		name="description"
-		content="Discover how Splash n' Shine grew from a vision of quality to become Vancouver's leading exterior cleaning company. Learn about our values, expertise, and commitment to transforming properties."
+		content="Discover how Splash n' Shine became Vancouver's leading exterior cleaning company through quality service, expertise and commitment to excellence."
 	/>
 	<meta name="keywords" content="Splash n' Shine story, exterior cleaning company history, Vancouver cleaning expertise, eco-friendly cleaning company, property restoration specialists, family-owned cleaning business, professional cleaning background, cleaning industry innovation" />
 	<meta property="og:title" content="The Splash n' Shine Story | Excellence in Exterior Cleaning" />

@@ -6,7 +6,7 @@
 	<title>Terms & Conditions | Splash n' Shine</title>
 	<meta
 		name="description"
-		content="Important information about our service agreements, booking policies, payments, and client responsibilities. Review Splash n' Shine's terms for our exterior cleaning services."
+		content="Important details about our service agreements, booking policies, payments, and client responsibilities for our exterior cleaning services."
 	/>
 	<meta name="keywords" content="exterior cleaning terms, service agreement, booking policy, deposit requirements, cancellation policy, client responsibilities, payment terms, service guarantee, exterior cleaning liability, weather policy" />
 	<meta property="og:title" content="Terms & Conditions for Splash n' Shine Services" />

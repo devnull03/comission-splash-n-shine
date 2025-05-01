@@ -6,7 +6,7 @@
 	<title>Contact Us | Splash n' Shine | Free Quotes</title>
 	<meta
 		name="description"
-		content="Reach out to Splash n' Shine for a free, no-obligation quote on our professional exterior cleaning services. Our friendly team is ready to answer your questions and provide personalized solutions."
+		content="Get a free quote for our professional exterior cleaning services. Our Vancouver team is ready to answer questions and provide personalized solutions."
 	/>
 	<meta name="keywords" content="exterior cleaning quote, free estimate, Vancouver power washing quote, house washing consultation, contact cleaning professionals, schedule power washing, book exterior cleaning, Surrey cleaning quote, pressure washing appointment" />
 	<meta property="og:title" content="Contact Splash n' Shine | Free Quotes & Consultations" />
