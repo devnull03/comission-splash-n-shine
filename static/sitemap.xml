@@ -93,6 +93,23 @@
     <loc>https://www.splashnshine.ca/locations/north-vancouver</loc>
     <lastmod>2024-04-30</lastmod>
   </url>
+  <!-- New location pages -->
+  <url>
+    <loc>https://www.splashnshine.ca/locations/port-coquitlam</loc>
+    <lastmod>2024-04-30</lastmod>
+  </url>
+  <url>
+    <loc>https://www.splashnshine.ca/locations/port-moody</loc>
+    <lastmod>2024-04-30</lastmod>
+  </url>
+  <url>
+    <loc>https://www.splashnshine.ca/locations/maple-ridge</loc>
+    <lastmod>2024-04-30</lastmod>
+  </url>
+  <url>
+    <loc>https://www.splashnshine.ca/locations/west-vancouver</loc>
+    <lastmod>2024-04-30</lastmod>
+  </url>
   
   <!-- Secondary Pages -->
   <url>
