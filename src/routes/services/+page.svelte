@@ -3,9 +3,16 @@
 	import { onMount } from 'svelte';
 	import { services, serviceData } from '$lib/data/services';
 	import { Button } from '$lib/components/ui/button';
-	import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '$lib/components/ui/card';
+	import {
+		Card,
+		CardContent,
+		CardHeader,
+		CardTitle,
+		CardDescription
+	} from '$lib/components/ui/card';
 	import Image from '$lib/components/Image.svelte';
 	import { page } from '$app/state';
+	import { serviceImagesDict } from '$lib/icons/services/service_images';
 
 	onMount(() => {
 		// Check if we're on the base services page without a specific service
@@ -27,10 +34,19 @@
 
 <svelte:head>
 	<title>Exterior Cleaning Services | Splash n' Shine | Vancouver Metro Area</title>
-	<meta name="description" content="Browse our complete catalog of exterior cleaning solutions including house washing, roof cleaning, gutter maintenance, window cleaning, and more. Serving Vancouver and surrounding communities." />
-	<meta name="keywords" content="exterior cleaning services, house washing Vancouver, roof cleaning Surrey, gutter maintenance, window cleaning services, driveway power washing, deck restoration, commercial cleaning, strata cleaning, environmental cleaning solutions" />
+	<meta
+		name="description"
+		content="Browse our complete catalog of exterior cleaning solutions including house washing, roof cleaning, gutter maintenance, window cleaning, and more. Serving Vancouver and surrounding communities."
+	/>
+	<meta
+		name="keywords"
+		content="exterior cleaning services, house washing Vancouver, roof cleaning Surrey, gutter maintenance, window cleaning services, driveway power washing, deck restoration, commercial cleaning, strata cleaning, environmental cleaning solutions"
+	/>
 	<meta property="og:title" content="Complete Exterior Cleaning Services | Splash n' Shine" />
-	<meta property="og:description" content="Explore our full range of professional power washing and exterior cleaning services. Exceptional results for homes and businesses across the Lower Mainland." />
+	<meta
+		property="og:description"
+		content="Explore our full range of professional power washing and exterior cleaning services. Exceptional results for homes and businesses across the Lower Mainland."
+	/>
 	<meta property="og:image" content="/assets/logo.png" />
 	<meta property="og:url" content="https://www.splashnshine.ca/services" />
 	<meta property="og:type" content="website" />
@@ -41,33 +57,50 @@
 	<section class="mb-16">
 		<h1 class="mb-8 text-center text-4xl font-bold">Our Services</h1>
 		<p class="mx-auto mb-12 max-w-3xl text-center text-lg">
-			Splash n' Shine offers professional powerwashing and exterior cleaning services in Vancouver, Surrey, 
-			and surrounding areas. Our expert team delivers exceptional results for residential and commercial properties.
+			Splash n' Shine offers professional powerwashing and exterior cleaning services in Vancouver,
+			Surrey, and surrounding areas. Our expert team delivers exceptional results for residential
+			and commercial properties.
 		</p>
-		
+
 		<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
 			{#each services as serviceId}
 				{#if serviceData[serviceId]}
 					<div class="flex flex-col items-center gap-4 text-center">
 						<div class="aspect-square w-full overflow-hidden rounded">
-							<Image
+							<!-- <Image
 								url={`/assets/services/${serviceId}/1.webp`}
 								description={serviceData[serviceId].title || formatServiceName(serviceId)}
 								class="aspect-square h-auto w-full object-cover transition-all duration-500 ease-in-out hover:scale-105"
 								size={[480]}
 								width="480"
 								quality={75}
+							/> -->
+							<enhanced:img
+								class="aspect-square h-auto w-full object-cover transition-all duration-500 ease-in-out hover:scale-105"
+								src={serviceImagesDict[serviceId]}
+								sizes="640px"
+								alt={`${serviceData[serviceId].title} service highlight - professional cleaning demonstration by Splash n' Shine`}
 							/>
 						</div>
 
-						<span class="font-[Alatsi] text-xl">{serviceData[serviceId].title || formatServiceName(serviceId)}</span>
-						<span class="font-[Cantarell] text-[#00000099]">{serviceData[serviceId].shortDescription}</span>
+						<span class="font-[Alatsi] text-xl"
+							>{serviceData[serviceId].title || formatServiceName(serviceId)}</span
+						>
+						<span class="font-[Cantarell] text-[#00000099]"
+							>{serviceData[serviceId].shortDescription}</span
+						>
 						<div class="mt-2">
-							<p class="line-clamp-3 text-sm text-muted-foreground mb-4">
+							<p class="mb-4 line-clamp-3 text-sm text-muted-foreground">
 								{serviceData[serviceId].description.substring(0, 100).replace(/<[^>]*>/g, '')}...
 							</p>
 							<Button on:click={() => goto(`/services/${serviceId}`)} variant="default">
-								<a href={`${domain}/services/${serviceId}`} onclick={(e) => { e.preventDefault(); goto(`/services/${serviceId}`); }}>
+								<a
+									href={`${domain}/services/${serviceId}`}
+									onclick={(e) => {
+										e.preventDefault();
+										goto(`/services/${serviceId}`);
+									}}
+								>
 									Learn More
 								</a>
 							</Button>
