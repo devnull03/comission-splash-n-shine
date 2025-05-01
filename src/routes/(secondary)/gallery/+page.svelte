@@ -19,7 +19,7 @@
 </script>
 
 <svelte:head>
-	<title>Gallery | {PUBLIC_COMPANY_NAME}</title>
+	<title>Project Gallery | Splash n' Shine</title>
 </svelte:head>
 
 <Dialog.Root bind:open={dialogOpen}>

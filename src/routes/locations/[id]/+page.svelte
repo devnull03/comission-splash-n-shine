@@ -26,7 +26,7 @@
 </script>
 
 <svelte:head>
-	<title>{selectedLocation?.name} Exterior Cleaning | Splash n' Shine | Local Experts</title>
+	<title>{selectedLocation?.name} Services | Splash n' Shine</title>
 	<meta
 		name="description"
 		content="Splash n' Shine provides specialized exterior cleaning services in {selectedLocation?.name}. Our local team delivers exceptional power washing, soft washing, and property maintenance for homes and businesses."

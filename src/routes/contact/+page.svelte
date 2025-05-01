@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>Request a Quote | Contact Splash n' Shine | Vancouver Exterior Cleaning</title>
+	<title>Contact Us | Splash n' Shine | Free Quotes</title>
 	<meta
 		name="description"
 		content="Reach out to Splash n' Shine for a free, no-obligation quote on our professional exterior cleaning services. Our friendly team is ready to answer your questions and provide personalized solutions."

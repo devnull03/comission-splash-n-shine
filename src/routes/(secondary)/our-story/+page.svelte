@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-	<title>About Splash n' Shine | Our Journey to Excellence in Exterior Cleaning</title>
+	<title>About Us | Splash n' Shine Exterior Cleaning</title>
 	<meta
 		name="description"
 		content="Discover how Splash n' Shine grew from a vision of quality to become Vancouver's leading exterior cleaning company. Learn about our values, expertise, and commitment to transforming properties."

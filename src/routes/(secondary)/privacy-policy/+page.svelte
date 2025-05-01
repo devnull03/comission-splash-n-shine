@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>Data Protection Policy | Splash n' Shine Customer Privacy</title>
+	<title>Privacy Policy | Splash n' Shine</title>
 	<meta
 		name="description"
 		content="Learn how Splash n' Shine collects, protects, and uses your personal information. Our privacy policy explains our commitment to safeguarding your data while providing excellent service."

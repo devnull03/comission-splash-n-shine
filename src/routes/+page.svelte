@@ -112,7 +112,7 @@
 </script>
 
 <svelte:head>
-	<title>Splash n' Shine | Professional Exterior Cleaning Services in Vancouver & Surrey</title>
+	<title>Splash n' Shine | Exterior Cleaning Services Vancouver</title>
 	<meta
 		name="description"
 		content="Transform your property with Splash n' Shine's premium exterior cleaning services. We specialize in power washing, soft washing, and roof cleaning throughout Vancouver, Surrey and the Lower Mainland."

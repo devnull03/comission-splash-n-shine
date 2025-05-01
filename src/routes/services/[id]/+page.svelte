@@ -54,8 +54,7 @@
 
 <svelte:head>
 	<title
-		>{selectedServiceData?.title || formatServiceName(page.params.id)} Specialists | Splash n' Shine
-		| Vancouver</title
+		>{selectedServiceData?.title || formatServiceName(page.params.id)} | Splash n' Shine</title
 	>
 	<meta
 		name="description"

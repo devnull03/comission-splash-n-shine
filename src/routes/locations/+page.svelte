@@ -10,7 +10,7 @@
 </script>
 
 <svelte:head>
-	<title>Areas We Serve | Splash n' Shine | Metro Vancouver Cleaning Experts</title>
+	<title>Service Locations | Splash n' Shine Vancouver</title>
 	<meta name="description" content="Splash n' Shine delivers premium exterior cleaning services across Metro Vancouver, from downtown Vancouver to Surrey, Burnaby, Richmond, and beyond. Find service in your neighborhood." />
 	<meta name="keywords" content="exterior cleaning Vancouver, pressure washing Surrey, roof cleaning Burnaby, house washing Richmond, gutter cleaning Coquitlam, window washing Delta, driveway cleaning Langley, commercial cleaning White Rock, strata cleaning North Vancouver" />
 	<meta property="og:title" content="Locations Served | Splash n' Shine Cleaning Services" />

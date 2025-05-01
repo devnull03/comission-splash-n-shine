@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>Service Agreement & Terms | Splash n' Shine Exterior Cleaning</title>
+	<title>Terms & Conditions | Splash n' Shine</title>
 	<meta
 		name="description"
 		content="Important information about our service agreements, booking policies, payments, and client responsibilities. Review Splash n' Shine's terms for our exterior cleaning services."

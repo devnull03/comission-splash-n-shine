@@ -64,6 +64,11 @@
 
 	<meta name="msvalidate.01" content="B6452AF26DC66424390A9A5C30B9741C" />
 	<meta name="google-site-verification" content="DXvftpzIopYp2VylaucB6Z-fTwgSBnj2isOeYsu29Yo" />
+
+	<meta http-equiv="content-security-policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://fonts.googleapis.com https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'self' https://www.google.com/maps/; object-src 'none'">
+	<meta name="referrer" content="strict-origin-when-cross-origin">
+	{@html `<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">`}
+	{@html `<meta http-equiv="X-Content-Type-Options" content="nosniff">`}
 </svelte:head>
 
 <svelte:window bind:scrollY />
