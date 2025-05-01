@@ -25,10 +25,11 @@ const redirectMap: Record<string, string> = {
   '/residential': '/services',
   '/commercial': '/services/commercial-cleaning',
   '/999-deal': '/services/full-house-cleaning',
-  '/maple-ridge': '/locations/maple-ridge', // Updated to point to new location page
-  '/contact': '/contact',
-  '/port-coquitlam': '/locations/port-coquitlam', // Updated to point to new location page
+  '/maple-ridge': '/locations/maple-ridge',
+  '/contact-form': '/contact',
+  '/port-coquitlam': '/locations/port-coquitlam',
   '/%24999-|-full-house-deal-2': '/services/full-house-cleaning',
+  '/full-house-cleaning-deal': '/services/full-house-cleaning',
   '/pressure-washing': '/services/pressure-washing',
   '/commercial-1': '/services/commercial-cleaning'
 };
