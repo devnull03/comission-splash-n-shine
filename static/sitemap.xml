@@ -3,146 +3,112 @@
   <!-- Primary Pages -->
   <url>
     <loc>https://www.splashnshine.ca/</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2024-04-30</lastmod>
   </url>
   <url>
     <loc>https://www.splashnshine.ca/contact</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2024-04-30</lastmod>
   </url>
   
   <!-- Services Pages -->
   <url>
     <loc>https://www.splashnshine.ca/services</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2024-04-30</lastmod>
   </url>
   <url>
     <loc>https://www.splashnshine.ca/services/pressure-washing</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.splashnshine.ca/services/soft-washing</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2024-04-30</lastmod>
   </url>
   <url>
     <loc>https://www.splashnshine.ca/services/roof-cleaning</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2024-04-30</lastmod>
+  </url>
+  <url>
+    <loc>https://www.splashnshine.ca/services/roof-painting</loc>
+    <lastmod>2024-04-30</lastmod>
   </url>
   <url>
     <loc>https://www.splashnshine.ca/services/gutter-cleaning</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2024-04-30</lastmod>
   </url>
   <url>
-    <loc>https://www.splashnshine.ca/services/window-cleaning</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://www.splashnshine.ca/services/window-washing</loc>
+    <lastmod>2024-04-30</lastmod>
   </url>
   <url>
     <loc>https://www.splashnshine.ca/services/house-washing</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2024-04-30</lastmod>
   </url>
   <url>
-    <loc>https://www.splashnshine.ca/services/driveway-cleaning</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <loc>https://www.splashnshine.ca/services/post-construction-cleanup</loc>
+    <lastmod>2024-04-30</lastmod>
+  </url>
+  <url>
+    <loc>https://www.splashnshine.ca/services/driveway-pressure-wash</loc>
+    <lastmod>2024-04-30</lastmod>
+  </url>
+  <url>
+    <loc>https://www.splashnshine.ca/services/driveway-sealing</loc>
+    <lastmod>2024-04-30</lastmod>
+  </url>
+  <url>
+    <loc>https://www.splashnshine.ca/services/concrete-sealing</loc>
+    <lastmod>2024-04-30</lastmod>
   </url>
   <url>
     <loc>https://www.splashnshine.ca/services/commercial-cleaning</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2024-04-30</lastmod>
+  </url>
+  <url>
+    <loc>https://www.splashnshine.ca/services/full-house-cleaning</loc>
+    <lastmod>2024-04-30</lastmod>
   </url>
   
   <!-- Locations Pages -->
   <url>
     <loc>https://www.splashnshine.ca/locations</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2024-04-30</lastmod>
   </url>
   <url>
     <loc>https://www.splashnshine.ca/locations/vancouver</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2024-04-30</lastmod>
   </url>
   <url>
     <loc>https://www.splashnshine.ca/locations/surrey</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2024-04-30</lastmod>
   </url>
   <url>
     <loc>https://www.splashnshine.ca/locations/burnaby</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2024-04-30</lastmod>
   </url>
   <url>
     <loc>https://www.splashnshine.ca/locations/richmond</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2024-04-30</lastmod>
   </url>
   <url>
     <loc>https://www.splashnshine.ca/locations/coquitlam</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2024-04-30</lastmod>
   </url>
   <url>
     <loc>https://www.splashnshine.ca/locations/north-vancouver</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.splashnshine.ca/locations/west-vancouver</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2024-04-30</lastmod>
   </url>
   
   <!-- Secondary Pages -->
   <url>
     <loc>https://www.splashnshine.ca/gallery</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2024-04-30</lastmod>
   </url>
   <url>
     <loc>https://www.splashnshine.ca/our-story</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2024-04-30</lastmod>
   </url>
   <url>
     <loc>https://www.splashnshine.ca/privacy-policy</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
+    <lastmod>2024-04-30</lastmod>
   </url>
   <url>
     <loc>https://www.splashnshine.ca/terms-and-conditions</loc>
-    <lastmod>2023-11-01</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
+    <lastmod>2024-04-30</lastmod>
   </url>
 </urlset>

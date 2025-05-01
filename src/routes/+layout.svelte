@@ -63,6 +63,7 @@
 	<meta name="theme-color" content="#e0b23d" />
 
 	<meta name="msvalidate.01" content="B6452AF26DC66424390A9A5C30B9741C" />
+	<meta name="google-site-verification" content="DXvftpzIopYp2VylaucB6Z-fTwgSBnj2isOeYsu29Yo" />
 </svelte:head>
 
 <svelte:window bind:scrollY />
