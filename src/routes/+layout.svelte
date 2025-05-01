@@ -27,9 +27,10 @@
 </script>
 
 <svelte:head>
-	<title>{PUBLIC_COMPANY_NAME}</title>
 
+	<!-- <title>{PUBLIC_COMPANY_NAME}</title>
 	<meta name="description" content={metadata.description} />
+
 	<meta name="keywords" content={metadata.keywords} />
 	<meta property="og:title" content={metadata.title} />
 	<meta property="og:description" content={metadata.description} />
@@ -41,7 +42,7 @@
 	<meta name="twitter:image" content="/favicon/favicon-96x96.png" />
 	<meta name="author" content="Splash n Shine Inc." />
 	<meta name="geo.placename" content="British Columbia, Canada" />
-	<meta name="geo.region" content="CA-BC" />
+	<meta name="geo.region" content="CA-BC" /> -->
 
 	<link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png" />
 	<link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png" />
