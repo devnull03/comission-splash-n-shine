@@ -68,5 +68,8 @@
 		<p>
 			Copyright © 2024 - 2028 {PUBLIC_COMPANY_NAME}. All rights reserved.
 		</p>
+		<p>
+			Website & online presence by <a href="https://rightmarketing.ca" target="_blank" rel="noopener noreferrer" class="underline hover:text-white transition-colors">rightmarketing.ca</a>
+		</p>
 	</div>
 </footer>
