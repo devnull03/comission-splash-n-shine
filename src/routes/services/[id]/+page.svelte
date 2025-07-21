@@ -14,6 +14,7 @@
 	import { contactInfo } from '$lib/data/locations';
 	import PhoneCall from '$lib/icons/PhoneCall.svelte';
 	import { ArrowRight } from 'svelte-radix';
+	import { fadeIn } from '$lib/utils/anims';
 
 	let selectedServiceData = $derived(serviceData[page.params.id]);
 
@@ -84,7 +85,7 @@
 	<link rel="canonical" href="https://www.splashnshine.ca/services/{page.params.id}" />
 </svelte:head>
 
-<main class="mt-24 *:py-10 lg:mt-16 *:lg:p-32">
+<main use:fadeIn class="mt-24 *:py-10 lg:mt-16 *:lg:p-32">
 	<!-- Carousel -->
 	<section
 		class="flex flex-col overflow-hidden bg-black text-center text-2xl text-white lg:!pb-16 lg:text-4xl px-10"

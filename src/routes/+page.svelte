@@ -24,6 +24,7 @@
 	import aboutbg from '$lib/icons/aboutbg.jpg?enhanced';
 	import { serviceImages, serviceImagesDict } from '$lib/icons/services/service_images';
 	import { base } from '$app/paths';
+	import { fadeIn } from '$lib/utils/anims.js';
 	// import { optimize } from '$lib/utils/image';
 
 	let { data }: { data: PageData } = $props();
@@ -268,6 +269,7 @@
 
 <main class="flex w-full flex-col items-center gap-16 pb-48 lg:gap-16">
 	<section
+		use:fadeIn
 		class="relative flex h-[85vh] w-full flex-row justify-evenly gap-0 overflow-hidden object-cover text-background"
 	>
 		<Image

@@ -3,6 +3,7 @@
 	import { contactInfo, locationsData } from '$lib/data/locations';
 	import { DrawingPin, Mobile, ArrowRight } from 'svelte-radix';
 	import { page } from '$app/state';
+	import { fadeIn } from '$lib/utils/anims';
 
 	const locations = Object.entries(locationsData);
 	
@@ -24,7 +25,7 @@
 	<link rel="canonical" href="https://www.splashnshine.ca/locations" />
 </svelte:head>
 
-<main class="mt-24 p-10 lg:mt-16 lg:p-32">
+<main use:fadeIn class="mt-24 p-10 lg:mt-16 lg:p-32">
 	<section class="mb-16">
 		<h1 class="mb-8 text-center text-4xl font-bold">Our Locations</h1>
 		<p class="mx-auto mb-12 max-w-3xl text-center text-lg">

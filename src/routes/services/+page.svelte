@@ -13,6 +13,7 @@
 	import Image from '$lib/components/Image.svelte';
 	import { page } from '$app/state';
 	import { serviceImagesDict } from '$lib/icons/services/service_images';
+	import { fadeIn } from '$lib/utils/anims';
 
 	onMount(() => {
 		// Check if we're on the base services page without a specific service
@@ -53,7 +54,7 @@
 	<link rel="canonical" href="https://www.splashnshine.ca/services" />
 </svelte:head>
 
-<main class="mt-24 p-10 lg:mt-16 lg:p-32">
+<main use:fadeIn class="mt-24 p-10 lg:mt-16 lg:p-32">
 	<section class="mb-16">
 		<h1 class="mb-8 text-center text-4xl font-bold">Our Services</h1>
 		<p class="mx-auto mb-12 max-w-3xl text-center text-lg">

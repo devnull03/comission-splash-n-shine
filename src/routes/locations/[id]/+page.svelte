@@ -8,6 +8,7 @@
 	import { ChevronRight, DrawingPin, Mobile, EnvelopeClosed, Clock } from 'svelte-radix';
 	import type { PageData } from './$types';
 	import ContactForm from '$lib/components/ContactForm.svelte';
+	import { fadeIn } from '$lib/utils/anims';
 
 	// let selectedLocation = $derived(locationsData[$page.params.id]);
 
@@ -51,7 +52,7 @@
 	<link rel="canonical" href="https://www.splashnshine.ca/locations/{locationId}" />
 </svelte:head>
 
-<main class="mt-24 bg-background p-10 lg:mt-16 lg:p-32">
+<main use:fadeIn class="mt-24 bg-background p-10 lg:mt-16 lg:p-32">
 	<!-- Location Header -->
 	<section class="mb-16">
 		<h1 class="mb-4 text-center text-4xl font-bold">Splash n' Shine - {selectedLocation.name}</h1>

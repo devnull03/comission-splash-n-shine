@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Image from '$lib/components/Image.svelte';
+	import { fadeIn } from '$lib/utils/anims';
 </script>
 
 <svelte:head>
@@ -20,7 +21,7 @@
 	<link rel="canonical" href="https://www.splashnshine.ca/privacy-policy" />
 </svelte:head>
 
-<main class="mt-24 lg:mt-16">
+<main use:fadeIn class="mt-24 lg:mt-16">
 	<!-- landing -->
 	<section class="flex flex-col items-center justify-center gap-16 bg-black py-28 lg:flex-row">
 		<div class="foot-logo aspect-square h-[25vh]">

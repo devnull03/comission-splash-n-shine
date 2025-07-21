@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { PUBLIC_COMPANY_NAME } from '$env/static/public';
 	import Image from '$lib/components/Image.svelte';
+	import { fadeIn } from '$lib/utils/anims';
 </script>
 
 <svelte:head>
@@ -21,7 +22,7 @@
 	<link rel="canonical" href="https://www.splashnshine.ca/our-story" />
 </svelte:head>
 
-<main class="mt-24 lg:mt-16">
+<main use:fadeIn class="mt-24 lg:mt-16">
 	<!-- landing -->
 	<section class="flex flex-col items-center justify-center gap-16 bg-black px-10 py-28 lg:px-36">
 		<div class="text-center font-[Cantarell] text-white">

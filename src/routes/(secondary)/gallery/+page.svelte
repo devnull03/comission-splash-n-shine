@@ -8,6 +8,7 @@
 	import Image from '$lib/components/Image.svelte';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/state';
+	import { fadeIn } from '$lib/utils/anims';
 
 	let dialogOpen = $state(false);
 	let dialogImageSrc = $state('');
@@ -60,7 +61,10 @@
 	</Tooltip.Root>
 {/snippet}
 
-<main class="mt-28 flex h-full flex-col gap-12 p-[6vw] px-4 font-[Cantarell] lg:mt-16 lg:gap-16">
+<main
+	use:fadeIn
+	class="mt-28 flex h-full flex-col gap-12 p-[6vw] px-4 font-[Cantarell] lg:mt-16 lg:gap-16"
+>
 	<section class="flex w-full flex-col items-center gap-6 px-4 py-8">
 		<h1
 			class="mx-auto max-w-4xl text-center text-2xl font-semibold leading-tight md:text-5xl lg:text-4xl"
