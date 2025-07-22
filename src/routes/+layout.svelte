@@ -27,23 +27,6 @@
 </script>
 
 <svelte:head>
-
-	<!-- <title>{PUBLIC_COMPANY_NAME}</title>
-	<meta name="description" content={metadata.description} />
-
-	<meta name="keywords" content={metadata.keywords} />
-	<meta property="og:title" content={metadata.title} />
-	<meta property="og:description" content={metadata.description} />
-	<meta property="og:image" content="/favicon/favicon-96x96.png" />
-	<meta property="og:url" content={metadata.url} />
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content={metadata.title} />
-	<meta name="twitter:description" content={metadata.description} />
-	<meta name="twitter:image" content="/favicon/favicon-96x96.png" />
-	<meta name="author" content="Splash n Shine Inc." />
-	<meta name="geo.placename" content="British Columbia, Canada" />
-	<meta name="geo.region" content="CA-BC" /> -->
-
 	<link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png" />
 	<link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png" />
 	<link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png" />
@@ -65,10 +48,34 @@
 	<meta name="msvalidate.01" content="B6452AF26DC66424390A9A5C30B9741C" />
 	<meta name="google-site-verification" content="DXvftpzIopYp2VylaucB6Z-fTwgSBnj2isOeYsu29Yo" />
 
-	<!-- <meta http-equiv="content-security-policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://fonts.googleapis.com https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src 'self' https://www.google.com/maps/; object-src 'none'">
-	<meta name="referrer" content="strict-origin-when-cross-origin">
-	{@html `<meta http-equiv="X-Frame-Options" content="SAMEORIGIN">`}
-	{@html `<meta http-equiv="X-Content-Type-Options" content="nosniff">`} -->
+	<!-- microsoft clarity -->
+	<script type="text/javascript">
+		(function (c, l, a, r, i, t, y) {
+			c[a] =
+				c[a] ||
+				function () {
+					(c[a].q = c[a].q || []).push(arguments);
+				};
+			t = l.createElement(r);
+			t.async = 1;
+			t.src = 'https://www.clarity.ms/tag/' + i;
+			y = l.getElementsByTagName(r)[0];
+			y.parentNode.insertBefore(t, y);
+		})(window, document, 'clarity', 'script', 'sizv7mjncs');
+	</script>
+
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-S6214ND4P9"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'G-S6214ND4P9');
+	</script>
+
 </svelte:head>
 
 <svelte:window bind:scrollY />
