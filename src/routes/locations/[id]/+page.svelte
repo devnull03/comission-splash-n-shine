@@ -52,6 +52,51 @@
 	<link rel="canonical" href="https://www.splashnshine.ca/locations/{locationId}" />
 </svelte:head>
 
+<!-- Structured Data for Individual Location Page -->
+{#if selectedLocation}
+{@html `
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "LocalBusiness",
+			"name": "Splash n' Shine - ${selectedLocation.name}",
+			"description": "Professional exterior cleaning in ${selectedLocation.name}. Expert power washing, soft washing, and property maintenance for residential and commercial properties.",
+			"url": "${domain}/locations/${locationId}",
+			"address": {
+				"@type": "PostalAddress",
+				"addressLocality": "${selectedLocation.name}",
+				"addressRegion": "BC",
+				"addressCountry": "CA"
+			},
+			"contactPoint": {
+				"@type": "ContactPoint",
+				"telephone": "${contactInfo.phone}",
+				"contactType": "customer service",
+				"availableLanguage": "English"
+			},
+			"serviceArea": {
+				"@type": "City",
+				"name": "${selectedLocation.name}"
+			},
+			"services": [
+				"Power Washing",
+				"House Washing", 
+				"Roof Cleaning",
+				"Gutter Cleaning",
+				"Window Washing",
+				"Driveway Cleaning"
+			],
+			"aggregateRating": {
+				"@type": "AggregateRating",
+				"ratingValue": "5.0",
+				"reviewCount": "50"
+			},
+			"priceRange": "$$"
+		}
+	</script>
+`}
+{/if}
+
 <main use:fadeIn class="mt-24 bg-background p-10 lg:mt-16 lg:p-32">
 	<!-- Location Header -->
 	<section class="mb-16">

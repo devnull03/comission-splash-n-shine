@@ -21,6 +21,29 @@
 	<link rel="canonical" href="https://www.splashnshine.ca/terms-and-conditions" />
 </svelte:head>
 
+<!-- Structured Data for Terms & Conditions Page -->
+{@html `
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "WebPage",
+			"name": "Terms & Conditions | Splash n' Shine",
+			"description": "Important details about our service agreements, booking policies, payments, and client responsibilities for our exterior cleaning services.",
+			"url": "https://www.splashnshine.ca/terms-and-conditions",
+			"provider": {
+				"@type": "Organization",
+				"name": "Splash n' Shine",
+				"url": "https://www.splashnshine.ca"
+			},
+			"genre": "Legal Document",
+			"audience": {
+				"@type": "Audience",
+				"audienceType": "Service Customers"
+			}
+		}
+	</script>
+`}
+
 <main use:fadeIn class="mt-24 lg:mt-16">
 	<!-- landing -->
 	<section class="flex flex-col items-center justify-center gap-16 bg-black py-28 lg:flex-row">

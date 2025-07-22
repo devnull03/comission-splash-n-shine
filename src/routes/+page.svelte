@@ -140,6 +140,63 @@
 	/> -->
 </svelte:head>
 
+<!-- Structured Data for Homepage -->
+{@html `
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": ["Organization", "LocalBusiness"],
+			"name": "${PUBLIC_COMPANY_NAME}",
+			"url": "${domain}",
+			"logo": {
+				"@type": "ImageObject",
+				"url": "${domain}/assets/logo.png"
+			},
+			"description": "Vancouver's premier exterior cleaning service. We specialize in power washing, soft washing, and roof cleaning throughout the Lower Mainland.",
+			"address": {
+				"@type": "PostalAddress",
+				"addressLocality": "Vancouver",
+				"addressRegion": "BC",
+				"addressCountry": "CA"
+			},
+			"contactPoint": {
+				"@type": "ContactPoint",
+				"telephone": "${contactInfo.phone}",
+				"contactType": "customer service",
+				"availableLanguage": "English"
+			},
+			"serviceArea": {
+				"@type": "GeoCircle",
+				"geoMidpoint": {
+					"@type": "GeoCoordinates",
+					"latitude": 49.2827,
+					"longitude": -123.1207
+				},
+				"geoRadius": "50000"
+			},
+			"services": [
+				"Power Washing",
+				"House Washing",
+				"Roof Cleaning", 
+				"Gutter Cleaning",
+				"Window Washing",
+				"Driveway Cleaning",
+				"Deck Cleaning"
+			],
+			"aggregateRating": {
+				"@type": "AggregateRating",
+				"ratingValue": "${rating || 5.0}",
+				"reviewCount": "${userRatingCount || 50}"
+			},
+			"priceRange": "$$",
+			"sameAs": [
+				"https://www.facebook.com/splashnshine",
+				"https://www.instagram.com/splashnshine"
+			]
+		}
+	</script>
+`}
+
 <svelte:window bind:scrollY={initScroll} />
 
 {#snippet desktopServiceBlock(serviceKey: string, i: number)}

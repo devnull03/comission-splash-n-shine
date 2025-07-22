@@ -54,6 +54,46 @@
 	<link rel="canonical" href="https://www.splashnshine.ca/services" />
 </svelte:head>
 
+<!-- Structured Data for Services Collection Page -->
+{@html `
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "CollectionPage",
+			"name": "Complete Exterior Cleaning Services | Splash n' Shine",
+			"description": "Professional house washing, roof cleaning, gutter maintenance, window cleaning, and more. Serving Vancouver and surrounding communities.",
+			"url": "${domain}/services",
+			"provider": {
+				"@type": "LocalBusiness",
+				"name": "Splash n' Shine",
+				"url": "${domain}"
+			},
+			"mainEntity": {
+				"@type": "ItemList",
+				"name": "Exterior Cleaning Services",
+				"numberOfItems": ${services.length},
+				"itemListElement": [
+					${services.map((service, index) => `
+						{
+							"@type": "ListItem",
+							"position": ${index + 1},
+							"item": {
+								"@type": "Service",
+								"name": "${formatServiceName(service)}",
+								"url": "${domain}/services/${service}",
+								"provider": {
+									"@type": "LocalBusiness", 
+									"name": "Splash n' Shine"
+								}
+							}
+						}`
+					).join(',')}
+				]
+			}
+		}
+	</script>
+`}
+
 <main use:fadeIn class="mt-24 p-10 lg:mt-16 lg:p-32">
 	<section class="mb-16">
 		<h1 class="mb-8 text-center text-4xl font-bold">Our Services</h1>
