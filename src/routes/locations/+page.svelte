@@ -25,6 +25,42 @@
 	<link rel="canonical" href="https://www.splashnshine.ca/locations" />
 </svelte:head>
 
+<!-- Structured Data for Locations Page -->
+{@html `
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "CollectionPage",
+			"name": "Service Locations | Splash n' Shine Vancouver",
+			"description": "Find premium exterior cleaning services across Metro Vancouver. From Vancouver to Surrey, Burnaby, Richmond, and beyond, we serve your neighborhood.",
+			"url": "${domain}/locations",
+			"provider": {
+				"@type": "LocalBusiness",
+				"name": "Splash n' Shine",
+				"url": "${domain}"
+			},
+			"mainEntity": {
+				"@type": "ItemList",
+				"name": "Service Areas",
+				"numberOfItems": ${locations.length},
+				"itemListElement": [
+					${locations.map((location, index) => `
+						{
+							"@type": "ListItem",
+							"position": ${index + 1},
+							"item": {
+								"@type": "Place",
+								"name": "${location[1].name}",
+								"url": "${domain}/locations/${location[0]}"
+							}
+						}`
+					).join(',')}
+				]
+			}
+		}
+	</script>
+`}
+
 <main use:fadeIn class="mt-24 p-10 lg:mt-16 lg:p-32">
 	<section class="mb-16">
 		<h1 class="mb-8 text-center text-4xl font-bold">Our Locations</h1>

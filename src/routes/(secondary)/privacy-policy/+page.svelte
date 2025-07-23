@@ -21,6 +21,29 @@
 	<link rel="canonical" href="https://www.splashnshine.ca/privacy-policy" />
 </svelte:head>
 
+<!-- Structured Data for Privacy Policy Page -->
+{@html `
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "WebPage",
+			"name": "Privacy Policy | Splash n' Shine",
+			"description": "Learn how we collect, protect and use your personal information while providing exceptional exterior cleaning services across Vancouver.",
+			"url": "https://www.splashnshine.ca/privacy-policy",
+			"provider": {
+				"@type": "Organization",
+				"name": "Splash n' Shine",
+				"url": "https://www.splashnshine.ca"
+			},
+			"genre": "Legal Document",
+			"audience": {
+				"@type": "Audience",
+				"audienceType": "Customers and Website Visitors"
+			}
+		}
+	</script>
+`}
+
 <main use:fadeIn class="mt-24 lg:mt-16">
 	<!-- landing -->
 	<section class="flex flex-col items-center justify-center gap-16 bg-black py-28 lg:flex-row">

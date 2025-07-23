@@ -34,9 +34,9 @@ type ServiceData = {
 
 export const serviceData: ServiceData = {
   'full-house-cleaning': {
-    title: 'Complete Home Exterior Cleaning Package for $999 | Seasonal Offer',
-    shortDescription: 'Vancouver & Surrey full house cleaning – Roof, gutters, siding, windows & driveway washing!',
-    description: 'Transform your home\'s exterior with our all-inclusive $999 package. Our comprehensive service includes professional house washing to remove dirt and grime, thorough roof cleaning to prevent damage from moss and algae, window washing for crystal-clear views, gutter cleaning to prevent water damage, and pressure washing for driveways and walkways. This package offers exceptional value for homes up to 2500 sqft, combining our most popular services at a significant discount. Book now to take advantage of this limited-time offer and restore your home\'s curb appeal.',
+    title: 'Complete Residential Exterior Cleaning Services for $999 | Vancouver Package',
+    shortDescription: 'Professional residential cleaning services in Vancouver & Surrey – Full house exterior cleaning package!',
+    description: 'Transform your home\'s exterior with our comprehensive residential cleaning services package for just $999. Our professional cleaning services include house washing to remove dirt and grime, thorough roof cleaning to prevent damage from moss and algae, crystal-clear window washing, complete gutter cleaning to prevent water damage, and powerful pressure washing for driveways and walkways. This residential exterior cleaning package offers exceptional value for homes up to 2500 sqft, combining our most popular cleaning services at a significant discount. As Vancouver\'s trusted cleaning professionals, we provide eco-friendly exterior cleaning services that restore your home\'s curb appeal while protecting your investment.',
     images: [
       '/assets/services/full-house-cleaning/1.webp',
       '/assets/services/full-house-cleaning/2.webp',
@@ -90,9 +90,9 @@ export const serviceData: ServiceData = {
     ]
   },
   'roof-cleaning': {
-    title: 'Expert Roof Cleaning Services in Surrey | Remove Moss & Algae',
-    shortDescription: 'Professional roof cleaning in Vancouver & Surrey Soft wash, pressure wash & hand cleaning available!',
-    description: 'Protect your roof with our professional cleaning services. We specialize in safe and effective cleaning for all roof types including asphalt shingles, cedar shakes, tile, clay, metal, and flat roofs. Our comprehensive service removes moss, algae, black streaks, and organic growth that can damage your roofing materials. Using a combination of soft washing and hand cleaning techniques, we ensure your roof is thoroughly cleaned without risking damage to the materials. Our treatments include preventative applications that help resist future growth, extending your roof\'s lifespan and maintaining its protective capabilities.',
+    title: 'Professional Roof Cleaning Services in Vancouver | Remove Moss & Algae',
+    shortDescription: 'Expert roof cleaning services in Vancouver & Surrey – Soft wash & pressure cleaning specialists!',
+    description: 'Protect your roof with our professional roof cleaning services in Vancouver and Surrey. We specialize in safe and effective cleaning services for all roof types including asphalt shingles, cedar shakes, tile, clay, metal, and flat roofs. Our comprehensive roof cleaning services remove moss, algae, black streaks, and organic growth that can damage your roofing materials. Using a combination of soft washing and professional cleaning techniques, we ensure your roof is thoroughly cleaned without risking damage. Our residential and commercial roof cleaning services include preventative treatments that help resist future growth, extending your roof\'s lifespan and maintaining its protective capabilities.',
     images: [
       '/assets/services/roof-cleaning/1.webp',
       '/assets/services/roof-cleaning/2.webp',
@@ -150,9 +150,9 @@ export const serviceData: ServiceData = {
     ]
   },
   'roof-painting': {
-    title: 'High-Quality Roof Painting | Restore & Protect Your Roof',
-    shortDescription: 'Professional roof painting in Vancouver & Surrey – Long-lasting protection & weatherproof coating!',
-    description: 'Revitalize your roof with our premium painting services. Offering durable coatings that enhance aesthetics and provide long-lasting protection against the elements.',
+    title: 'Professional Roof Painting Services | Weatherproof Coating & Protection',
+    shortDescription: 'Expert roof painting services in Vancouver & Surrey – Long-lasting protection & weatherproof coatings!',
+    description: 'Revitalize your roof with our premium roof painting services in Vancouver and Surrey. Our professional cleaning and painting services offer durable coatings that enhance aesthetics and provide long-lasting protection against the Pacific Northwest elements. As experienced residential and commercial cleaning specialists, we provide comprehensive roof restoration services that combine thorough cleaning with high-quality protective coatings.',
     images: [
       '/assets/services/roof-painting/1.webp',
       '/assets/services/roof-painting/2.webp',
@@ -218,9 +218,9 @@ export const serviceData: ServiceData = {
     ]
   },
   'commercial-cleaning': {
-    title: 'Professional Commercial & Strata Cleaning Services in Surrey',
-    shortDescription: 'Vancouver & Surrey commercial cleaning – Roof, siding, gutters & post-construction power washing!',
-    description: 'Maintain a pristine appearance for your commercial property with our specialized cleaning services. We cater to businesses and strata complexes, ensuring a spotless environment.',
+    title: 'Professional Commercial Cleaning Services Vancouver | Strata & Business',
+    shortDescription: 'Commercial cleaning services in Vancouver & Surrey – Strata, office & business exterior cleaning!',
+    description: 'Maintain a pristine appearance for your commercial property with our specialized commercial cleaning services in Vancouver and Surrey. We provide professional cleaning services for businesses, strata complexes, and commercial facilities, ensuring a spotless environment that enhances your professional image. Our commercial exterior cleaning services include building washing, pressure washing, and comprehensive maintenance programs tailored to your business needs.',
     images: [
       '/assets/services/commercial-cleaning/1.webp',
       '/assets/services/commercial-cleaning/2.webp',
@@ -283,9 +283,9 @@ export const serviceData: ServiceData = {
     ]
   },
   'window-washing': {
-    title: 'Streak-Free Window Washing Services | Residential & Commercial',
-    shortDescription: 'Crystal-clear window washing in Vancouver & Surrey – Residential & commercial glass cleaning experts',
-    description: 'Let natural light shine through with our professional window washing services. Serving both homes and businesses for crystal-clear results.',
+    title: 'Professional Window Washing Services | Residential & Commercial Vancouver',
+    shortDescription: 'Streak-free window washing services in Vancouver & Surrey – Professional residential & commercial glass cleaning!',
+    description: 'Let natural light shine through with our professional window washing services in Vancouver and Surrey. Our residential and commercial window cleaning services deliver crystal-clear results for homes and businesses throughout the Lower Mainland. As experienced cleaning professionals, we provide comprehensive window washing services that enhance your property\'s appearance and extend the life of your windows.',
     images: [
       '/assets/services/window-washing/1.webp',
       '/assets/services/window-washing/2.webp',
@@ -340,8 +340,8 @@ export const serviceData: ServiceData = {
     ]
   },
   'post-construction-cleanup': {
-    title: 'Comprehensive Post-Construction Cleanup Services in Surrey',
-    shortDescription: 'Complete post-construction cleanup in Vancouver & Surrey – Power washing, debris removal & detailing',
+    title: 'Professional Post-Construction Cleanup Services Vancouver | Complete Cleaning',
+    shortDescription: 'Post-construction cleanup services in Vancouver & Surrey – Professional deep cleaning & debris removal!',
     description: 'Ensure your newly constructed or renovated property is move-in ready with our thorough post-construction cleaning services. We handle debris removal, surface cleaning, and more.',
     images: [
       '/assets/services/post-construction-cleanup/1.webp',
@@ -404,8 +404,8 @@ export const serviceData: ServiceData = {
     ]
   },
   'gutter-cleaning': {
-    title: 'Reliable Gutter Cleaning Services | Prevent Water Damage',
-    shortDescription: 'Trusted gutter cleaning in Vancouver & Surrey - Inside & outside clearing to prevent clogs',
+    title: 'Professional Gutter Cleaning Services Vancouver | Prevent Water Damage',
+    shortDescription: 'Reliable gutter cleaning services in Vancouver & Surrey – Inside & outside clearing specialists',
     description: 'Keep your gutters free from debris with our expert cleaning services. Prevent clogs and water damage to protect your home\'s foundation.',
     images: [
       '/assets/services/gutter-cleaning/1.webp',
@@ -468,8 +468,8 @@ export const serviceData: ServiceData = {
     ]
   },
   'pressure-washing': {
-    title: 'Professional Pressure Washing Services | Safe & Effective Cleaning',
-    shortDescription: 'Expert pressure washing in Vancouver & Surrey – Residential & commercial exterior cleaning solutions',
+    title: 'Professional Pressure Washing Services Vancouver | Residential & Commercial',
+    shortDescription: 'Expert pressure washing services in Vancouver & Surrey – Professional residential & commercial cleaning solutions!',
     description: 'Restore your property\'s appearance with our professional pressure washing services. We use state-of-the-art equipment and eco-friendly cleaning solutions to safely remove dirt, grime, mold, and stains from various surfaces. Our experienced technicians adjust the pressure and technique according to each surface type, ensuring thorough cleaning without causing damage. From concrete and brick to wood and vinyl, we have the expertise to handle all exterior surfaces.',
     images: [
       '/assets/services/full-house-cleaning/1.webp',
@@ -528,9 +528,9 @@ export const serviceData: ServiceData = {
     ]
   },
   'house-washing': {
-    title: 'Complete House Washing Services | Restore Your Home\'s Beauty',
-    shortDescription: 'Expert house washing in Vancouver & Surrey – Gentle soft washing for siding, brick & stucco',
-    description: 'Revitalize your home\'s exterior with our comprehensive house washing services. We specialize in soft washing techniques that safely remove dirt, algae, mold, and mildew without damaging your siding or paint. Our professional team uses biodegradable cleaning solutions and appropriate water pressure for each surface type, whether it\'s vinyl, fiber cement, wood, brick, or stucco. Regular house washing not only improves your home\'s appearance but also extends the life of your exterior surfaces by preventing damage from organic growth and environmental contaminants.',
+    title: 'Professional Residential House Washing Services Vancouver | Soft Washing',
+    shortDescription: 'Expert residential house washing services in Vancouver & Surrey – Gentle soft washing specialists!',
+    description: 'Revitalize your home\'s exterior with our comprehensive residential house washing services in Vancouver and Surrey. We specialize in professional soft washing techniques that safely remove dirt, algae, mold, and mildew without damaging your siding or paint. Our experienced residential cleaning team uses biodegradable cleaning solutions and appropriate pressure for each surface type, whether it\'s vinyl, fiber cement, wood, brick, or stucco. Regular professional house washing services not only improve your home\'s appearance but also extend the life of your exterior surfaces by preventing damage from organic growth and environmental contaminants.',
     images: [
       '/assets/services/full-house-cleaning/3.webp',
       '/assets/services/full-house-cleaning/4.webp',
@@ -588,8 +588,8 @@ export const serviceData: ServiceData = {
     ]
   },
   'driveway-pressure-wash': {
-    title: 'Driveway Pressure Washing | Remove Stains & Restore Appearance',
-    shortDescription: 'Professional driveway cleaning in Vancouver & Surrey – Remove oil stains, moss & discoloration',
+    title: 'Professional Driveway Pressure Washing Services | Remove Stains & Restore',
+    shortDescription: 'Professional driveway pressure washing in Vancouver & Surrey – Remove oil stains, moss & discoloration!',
     description: 'Transform your driveway with our specialized pressure washing services. We effectively remove stubborn oil stains, tire marks, dirt, mold, mildew, and other unsightly blemishes that diminish your property\'s curb appeal. Our professional team uses powerful equipment with adjustable pressure settings combined with appropriate cleaning solutions to tackle even the toughest stains without damaging your concrete, asphalt, or pavers. A clean driveway not only enhances your home\'s appearance but also provides safer walking and driving surfaces by eliminating slippery moss and algae growth.',
     images: [
       '/assets/services/gutter-cleaning/1.webp',
@@ -648,8 +648,8 @@ export const serviceData: ServiceData = {
     ]
   },
   'driveway-sealing': {
-    title: 'Professional Driveway Sealing Services | Protect & Enhance',
-    shortDescription: 'Expert driveway sealing in Vancouver & Surrey – Long-lasting protection for concrete & asphalt',
+    title: 'Professional Driveway Sealing Services Vancouver | Long-lasting Protection',
+    shortDescription: 'Expert driveway sealing services in Vancouver & Surrey – Long-lasting protection for concrete & asphalt!',
     description: 'Extend the life of your driveway with our professional sealing services. After thoroughly cleaning your driveway, we apply high-quality sealants that protect against water penetration, oil stains, UV damage, and freeze-thaw cycles. Our sealants enhance the color and appearance of concrete, asphalt, and paver driveways while providing a protective barrier against the harsh Pacific Northwest elements. Properly sealed driveways require less maintenance, resist staining, and maintain their attractive appearance for years longer than unsealed surfaces.',
     images: [
       '/assets/services/commercial-cleaning/1.webp',
@@ -712,8 +712,8 @@ export const serviceData: ServiceData = {
     ]
   },
   'concrete-sealing': {
-    title: 'Professional Concrete Sealing Services | Protect & Preserve',
-    shortDescription: 'Expert concrete sealing in Vancouver & Surrey – Weatherproof protection for patios, walkways & more',
+    title: 'Professional Concrete Sealing Services Vancouver | Weatherproof Protection',
+    shortDescription: 'Expert concrete sealing services in Vancouver & Surrey – Weatherproof protection for patios, walkways & more!',
     description: 'Protect your concrete surfaces with our professional sealing services. We apply high-performance sealants that penetrate and bond with concrete to provide long-lasting protection against water damage, staining, freeze-thaw cycles, and UV exposure. Our concrete sealing services cover patios, walkways, pool decks, garage floors, and other concrete surfaces around your home or business. Properly sealed concrete resists cracking, spalling, and deterioration, significantly extending the life of your concrete while enhancing its appearance with either a natural look or a beautiful wet-look finish depending on your preference.',
     images: [
       '/assets/services/commercial-cleaning/2.webp',

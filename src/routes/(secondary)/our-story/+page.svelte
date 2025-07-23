@@ -22,6 +22,33 @@
 	<link rel="canonical" href="https://www.splashnshine.ca/our-story" />
 </svelte:head>
 
+<!-- Structured Data for Our Story Page -->
+{@html `
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "WebPage",
+			"name": "About Us | Splash n' Shine Exterior Cleaning",
+			"description": "Discover how Splash n' Shine became Vancouver's leading exterior cleaning company through quality service, expertise and commitment to excellence.",
+			"url": "https://www.splashnshine.ca/our-story",
+			"provider": {
+				"@type": "Organization",
+				"name": "Splash n' Shine",
+				"url": "https://www.splashnshine.ca",
+				"logo": {
+					"@type": "ImageObject",
+					"url": "https://www.splashnshine.ca/assets/logo.png"
+				}
+			},
+			"about": {
+				"@type": "Organization",
+				"name": "Splash n' Shine",
+				"description": "Vancouver's leading exterior cleaning company specializing in power washing, soft washing, and property maintenance."
+			}
+		}
+	</script>
+`}
+
 <main use:fadeIn class="mt-24 lg:mt-16">
 	<!-- landing -->
 	<section class="flex flex-col items-center justify-center gap-16 bg-black px-10 py-28 lg:px-36">

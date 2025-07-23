@@ -85,6 +85,46 @@
 	<link rel="canonical" href="https://www.splashnshine.ca/services/{page.params.id}" />
 </svelte:head>
 
+<!-- Structured Data for Individual Service Page -->
+{@html `
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "Service",
+			"name": "${selectedServiceData?.title || formatServiceName(page.params.id)}",
+			"description": "${selectedServiceData?.shortDescription || `Expert ${formatServiceName(page.params.id)} in Vancouver and the Lower Mainland.`}",
+			"url": "${domain}/services/${page.params.id}",
+			"image": "${domain}/assets/services/${page.params.id}/1.webp",
+			"provider": {
+				"@type": "LocalBusiness",
+				"name": "Splash n' Shine",
+				"url": "${domain}",
+				"telephone": "${contactInfo.phone}",
+				"address": {
+					"@type": "PostalAddress",
+					"addressLocality": "Vancouver",
+					"addressRegion": "BC",
+					"addressCountry": "CA"
+				}
+			},
+			"areaServed": ${selectedServiceData?.cities ? JSON.stringify(selectedServiceData.cities.map(city => ({
+				"@type": "City",
+				"name": city
+			}))) : `[
+				{"@type": "City", "name": "Vancouver"},
+				{"@type": "City", "name": "Surrey"},
+				{"@type": "City", "name": "Burnaby"}
+			]`},
+			"serviceType": "${formatServiceName(page.params.id)}",
+			"offers": {
+				"@type": "Offer",
+				"priceCurrency": "CAD",
+				"description": "Free consultation and quote available"
+			}
+		}
+	</script>
+`}
+
 <main use:fadeIn class="mt-24 *:py-10 lg:mt-16 *:lg:p-32">
 	<!-- Carousel -->
 	<section

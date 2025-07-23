@@ -21,6 +21,35 @@
 	<link rel="canonical" href="https://www.splashnshine.ca/contact" />
 </svelte:head>
 
+<!-- Structured Data for Contact Page -->
+{@html `
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "ContactPage",
+			"name": "Contact Us | Splash n' Shine | Free Quotes",
+			"description": "Get a free quote for our professional exterior cleaning services. Our Vancouver team is ready to answer questions and provide personalized solutions.",
+			"url": "https://www.splashnshine.ca/contact",
+			"mainEntity": {
+				"@type": "LocalBusiness",
+				"name": "Splash n' Shine",
+				"url": "https://www.splashnshine.ca",
+				"contactPoint": {
+					"@type": "ContactPoint",
+					"contactType": "customer service",
+					"availableLanguage": "English"
+				},
+				"address": {
+					"@type": "PostalAddress",
+					"addressLocality": "Vancouver",
+					"addressRegion": "BC", 
+					"addressCountry": "CA"
+				}
+			}
+		}
+	</script>
+`}
+
 <main use:fadeIn class="mt-24 flex w-full flex-col items-center pb-36 lg:mt-36">
 	<section class="flex w-full flex-col items-center gap-6 px-4 py-8">
 		<h1
