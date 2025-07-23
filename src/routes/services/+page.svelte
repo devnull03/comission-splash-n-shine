@@ -41,7 +41,7 @@
 	/>
 	<meta
 		name="keywords"
-		content="exterior cleaning services, house washing Vancouver, roof cleaning Surrey, gutter maintenance, window cleaning services, driveway power washing, deck restoration, commercial cleaning, strata cleaning, environmental cleaning solutions"
+		content="exterior cleaning services, house washing Vancouver, roof cleaning Surrey, gutter maintenance, window cleaning services, driveway power washing, deck restoration, commercial cleaning, strata cleaning, environmental cleaning solutions, cleaning services near me, power washing near me, exterior cleaning near me, house washing near me"
 	/>
 	<meta property="og:title" content="Complete Exterior Cleaning Services | Splash n' Shine" />
 	<meta
@@ -96,11 +96,10 @@
 
 <main use:fadeIn class="mt-24 p-10 lg:mt-16 lg:p-32">
 	<section class="mb-16">
-		<h1 class="mb-8 text-center text-4xl font-bold">Our Services</h1>
+		<h1 class="mb-8 text-center text-4xl font-bold">Professional Cleaning Services Vancouver</h1>
 		<p class="mx-auto mb-12 max-w-3xl text-center text-lg">
-			Splash n' Shine offers professional powerwashing and exterior cleaning services in Vancouver,
-			Surrey, and surrounding areas. Our expert team delivers exceptional results for residential
-			and commercial properties.
+			Splash n' Shine offers comprehensive professional cleaning services in Vancouver,
+			Surrey, and surrounding areas. Looking for reliable cleaning services near me? Our expert residential and commercial cleaning team delivers exceptional results with our pressure washing services, roof cleaning services, and complete exterior cleaning solutions.
 		</p>
 
 		<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">

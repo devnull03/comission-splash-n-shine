@@ -113,19 +113,19 @@
 </script>
 
 <svelte:head>
-	<title>Splash n' Shine | Exterior Cleaning Services Vancouver</title>
+	<title>Professional Cleaning Services Vancouver | Splash n' Shine | Residential & Commercial</title>
 	<meta
 		name="description"
-		content="Vancouver's premier exterior cleaning service. We specialize in power washing, soft washing, and roof cleaning throughout the Lower Mainland."
+		content="Vancouver's premier professional cleaning services. Expert pressure washing services, residential cleaning, roof cleaning services, and commercial cleaning throughout the Lower Mainland."
 	/>
 	<meta
 		name="keywords"
-		content="power washing Vancouver, exterior cleaning Surrey, soft washing, roof cleaning, gutter cleaning, window washing, house washing, driveway cleaning, deck cleaning, property maintenance, Lower Mainland pressure washing"
+		content="professional cleaning services Vancouver, pressure washing services, residential cleaning, commercial cleaning services, cleaning services Vancouver, roof cleaning services, gutter cleaning services, window washing services, house washing services, home cleaning Vancouver, professional power washing, services cleaning Surrey, cleaning services near me, power washing near me, house cleaning near me, exterior cleaning near me"
 	/>
-	<meta property="og:title" content="Splash n' Shine | Professional Exterior Cleaning" />
+	<meta property="og:title" content="Professional Cleaning Services Vancouver | Splash n' Shine" />
 	<meta
 		property="og:description"
-		content="Vancouver's premier exterior cleaning service. Restore your property's beauty with our professional power washing solutions."
+		content="Vancouver's premier professional cleaning services. Residential & commercial pressure washing services, roof cleaning, and comprehensive exterior cleaning solutions."
 	/>
 	<meta property="og:image" content="/assets/logo.png" />
 	<meta property="og:url" content="https://www.splashnshine.ca" />
@@ -357,12 +357,11 @@
 			<span
 				class="flex flex-wrap justify-center text-center font-[Cantarell] text-lg font-semibold *:bg-primary/30 *:px-1 md:text-2xl"
 			>
-				<span>Professional</span> <span>Residential</span> <span>&</span> <span>Commercial</span>
-				<span>Exterior</span> <span>Cleaning</span> <span>Near</span> <span>You</span>
+				<span>Professional</span> <span>Cleaning</span> <span>Services</span> <span>Vancouver</span>
+				<span>Residential</span> <span>&</span> <span>Commercial</span>
 			</span>
 			<p class="max-w-[80vw] text-center font-[Cantarell] text-lg md:text-2xl">
-				Expert Soft Wash & Pressure Washing in Vancouver & Surrey! We clean roofs, gutters, siding,
-				windows & driveways
+				Expert pressure washing services & residential cleaning in Vancouver & Surrey! Professional roof, gutter, house washing & more
 			</p>
 		<Button
 			onclick={() => goto('/contact')}
@@ -395,11 +394,11 @@
 		<h2
 			class="mx-auto max-w-4xl text-center text-2xl font-semibold leading-tight md:text-5xl lg:text-4xl"
 		>
-			Transform Your Home with Professional Cleaning
+			Transform Your Home with Professional Cleaning Services
 		</h2>
 		<div class="my-2 h-1 w-24 rounded-full bg-primary"></div>
 		<p class="mx-auto max-w-3xl text-center text-lg text-muted-foreground">
-			Experience the difference professional cleaning makes. Our expert team delivers exceptional
+			Experience the difference professional residential cleaning services make. Our expert cleaning team delivers exceptional
 			results that will enhance your property's curb appeal and value.
 		</p>
 	</section>
@@ -422,40 +421,39 @@
 			/> -->
 		</div>
 		<div class="w-full space-y-6 lg:w-1/2">
-			<h2 class="text-3xl font-semibold">Vancouver's Trusted Exterior Cleaning Experts</h2>
+			<h2 class="text-3xl font-semibold">Vancouver's Trusted Professional Cleaning Services Experts</h2>
 			<div class="h-1 w-20 rounded-full bg-primary"></div>
 			<p class="text-muted-foreground">
-				Welcome to Splash n' Shine, your premier exterior cleaning service provider in the Greater
+				Welcome to Splash n' Shine, your premier professional cleaning services provider in the Greater
 				Vancouver area. With years of expertise in <a
 					href="{domain}/services/pressure-washing"
-					class="rounded bg-primary/30 px-1 text-black">pressure washing</a
+					class="rounded bg-primary/30 px-1 text-black">pressure washing services</a
 				>
 				and
 				<a href="{domain}/services/pressure-washing" class="rounded bg-primary/30 px-1 text-black"
-					>soft washing</a
-				> solutions, we've built our reputation on delivering exceptional results for both residential
-				and commercial properties.
+					>soft washing services</a
+				>, we've built our reputation on delivering exceptional results for both residential cleaning and commercial cleaning
+				services.
 			</p>
 			<p class="text-muted-foreground">
 				Serving <a href="{domain}/locations/vancouver" class="rounded bg-primary/30 px-1 text-black"
 					>Vancouver</a
 				>,
 				<a href="{domain}/locations/surrey" class="rounded bg-primary/30 px-1 text-black">Surrey</a>, and
-				the entire Lower Mainland, our professional team specializes in comprehensive exterior
-				cleaning services, including
+				the entire Lower Mainland, our professional cleaning team specializes in comprehensive residential cleaning services, including
 				<a href="{domain}/services/roof-cleaning" class="rounded bg-primary/30 px-1 text-black"
-					>roof cleaning</a
+					>roof cleaning services</a
 				>,
 				<a href="{domain}/services/gutter-cleaning" class="rounded bg-primary/30 px-1 text-black"
-					>gutter maintenance</a
+					>gutter cleaning services</a
 				>, and
 				<a href="{domain}/services/window-washing" class="rounded bg-primary/30 px-1 text-black"
-					>window washing</a
+					>window washing services</a
 				>.
 			</p>
 			<p class="text-muted-foreground">
-				What sets us apart is our commitment to using cutting-edge equipment and eco-friendly
-				cleaning solutions, ensuring your property receives the care it deserves while protecting
+				What sets our cleaning services apart is our commitment to using cutting-edge equipment and eco-friendly
+				cleaning solutions, ensuring your property receives the professional cleaning care it deserves while protecting
 				the environment.
 			</p>
 			<Button onclick={() => goto('/contact')} class="mt-4 min-h-[44px] min-w-[44px]">
@@ -479,7 +477,7 @@
 		id="services"
 		bind:this={servicesSection}
 	>
-		<h2 class="text-center text-5xl font-semibold leading-10">Services we offer</h2>
+		<h2 class="text-center text-5xl font-semibold leading-10">Professional Cleaning Services We Offer</h2>
 
 		<div class="grid w-full items-end gap-2 lg:grid-cols-3">
 			{#each Object.keys(serviceData) as serviceKey, i}
@@ -512,8 +510,8 @@
 			<div class="absolute inset-0 bg-secondary-foreground/65">&nbsp;</div>
 		</div>
 		<div class="container relative z-10 mx-auto my-auto text-center">
-			<h2 class="mb-4 text-4xl font-semibold">Ready to Transform Your Property?</h2>
-			<p class="mb-8 text-xl opacity-90">Call now for a free consultation and estimate</p>
+			<h2 class="mb-4 text-4xl font-semibold">Ready to Transform Your Property with Professional Cleaning Services?</h2>
+			<p class="mb-8 text-xl opacity-90">Call now for a free consultation and cleaning estimate</p>
 			<a
 				href="tel:778-804-5911"
 				class="group inline-flex items-center gap-4 text-[8vw] font-bold hover:opacity-90"
