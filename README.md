@@ -1,38 +1,19 @@
-# sv
+# Splash & Shine - Commission Project
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+This repository contains the initial development work for a client commission project.
 
-## Creating a project
+## Project Status
 
-If you're seeing this, you've probably already done this step. Congrats!
+This was a commissioned project for a client. **Development has been transferred and is now continuing at the new repository:**
 
-```bash
-# create a new project in the current directory
-npx sv create
+**👉 [<https://github.com/dsflu7/splash-n-shine/>](#maybeCitation:<https://github.com/dsflu7/splash-n-shine/>)**
 
-# create a new project in my-app
-npx sv create my-app
-```
+All future development, updates, and contributions should be directed to the new repository location.
 
-## Developing
+## About
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+This project was built using Svelte and SvelteKit. The codebase has been successfully transferred to allow the client to continue development independently.
 
-```bash
-npm run dev
+---
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+*For any questions about this commission or the project transfer, please contact the arnav@dvnl.work*
